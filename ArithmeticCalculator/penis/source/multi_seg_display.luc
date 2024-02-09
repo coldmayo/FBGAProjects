@@ -1,0 +1,27 @@
+module multi_seg_display #(
+    DIGITS = 4 : DIGITS > 0,
+    DIV = 16 : DIV >= 0
+  ) (
+    input clk,
+    input rst,
+    input values[DIGITS][24],
+    input decimal[DIGITS],
+    output seg [8],
+    output sel [DIGITS]
+  ) {
+  const DIGIT_BITS = $clog2(DIGITS);
+  digit_lut lut;
+  decoder digit_dec (#WIDTH(DIGIT_BITS));
+  
+  .clk(clk), .rst(rst) {
+    counter ctr (#DIV(DIV), #SIZE(DIGIT_BITS), #TOP(DIGITS-1));
+  }
+  
+  always {
+    lut.value = values[ctr.value];
+    seg = c{decimal[ctr.value], lut.segs};
+    
+    digit_dec.in = ctr.value;
+    sel = digit_dec.out;
+  }
+}

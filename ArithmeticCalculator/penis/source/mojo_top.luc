@@ -1,0 +1,122 @@
+module mojo_top (
+    input clk,              // 50MHz clock
+    input rst_n,            // reset button (active low)
+    output led [8],         // 8 user controllable LEDs
+    input cclk,             // configuration clock, AVR ready when high
+    output spi_miso,        // AVR SPI MISO
+    input spi_ss,           // AVR SPI Slave Select
+    input spi_mosi,         // AVR SPI MOSI
+    input spi_sck,          // AVR SPI Clock
+    output spi_channel [4], // AVR general purpose pins (used by default to select ADC channel)
+    input avr_tx,           // AVR TX (FPGA RX)
+    output avr_rx,          // AVR RX (FPGA TX)
+    input avr_rx_busy,      // AVR RX buffer full
+    output io_led [3][8],   // LEDs on IO Shield
+    output io_seg [8],      // 7-segment LEDs on IO Shield
+    output io_sel [4],      // Digit select on IO Shield
+    input io_button [5],    // 5 buttons on IO Shield
+    input io_dip [3][8]     // DIP switches on IO Shield
+  ) {
+  
+  sig rst;                  // reset signal
+  sig result[24];
+  sig result_shown[24];
+  sig num[24];
+  sig num2[24];
+  digit_lut lut;
+  convert conv;
+  
+  sig val1[24];
+  sig val2[24];
+  
+  .clk(clk) {
+    // The reset conditioner is used to synchronize the reset signal to the FPGA
+    // clock. This ensures the entire FPGA comes out of reset at the same time.
+    reset_conditioner reset_cond;
+    .rst(rst) {
+      multi_seg_display seg_display;
+    }
+  }
+  
+  always {
+    
+    reset_cond.in = ~rst_n; // input raw inverted reset signal
+    rst = reset_cond.out;   // conditioned reset
+    
+    led = 8h00;             // turn LEDs off
+    spi_miso = bz;          // not using SPI
+    spi_channel = bzzzz;    // not using flags
+    avr_rx = bz;            // not using serial port
+    
+    io_led = 3x{{8h00}};    // turn LEDs off
+    io_seg = 8hff;          // turn segments off
+    io_sel = 4hf;           // select no digits
+    
+    val1 = io_dip[1];
+    val2 = io_dip[0];
+    
+    conv.value = val1;
+    val1 = conv.better;
+    
+    if (val2 == 1) {
+      val2 = 0;
+    }
+    if (val2 == 2) {
+      val2 = 1;
+    }
+    if (val2 == 4) {
+      val2 = 2;
+    }
+    if (val2 == 8) {
+      val2 = 3;
+    }
+    if (val2 == 16) {
+      val2 = 4;
+    }
+    if (val2 == 32) {
+      val2 = 5;
+    }
+    if (val2 == 64) {
+      val2 = 6;
+    }
+    if (val2 == 128) {
+      val2 = 7;
+    }
+    
+    result_shown = val1 + val2;
+    result = io_dip[1] + io_dip[0];
+    
+    if (io_dip[2][0]) {
+      result_shown = val1 - val2;
+      result = io_dip[1] - io_dip[0];
+    }
+    if (io_dip[2][1]) {
+      result_shown = val1 * val2;
+      result = io_dip[1] * io_dip[0];
+    }
+    if (io_dip[2][2]) {
+      result_shown = val1 / val2;
+      result = io_dip[1] / io_dip[0];
+    }
+    
+    io_led = {result[23-:8], result[15-:8], result[7-:8]};
+    lut.value = 0;
+    
+    seg_display.values = {24d0, 24d0, 24d0, 24d0};
+    seg_display.decimal = 4b0000;
+    
+    if (result_shown < 10) {
+      seg_display.values = {24d0, 24d0, 24d0, result_shown};
+      seg_display.decimal = 4b0000;
+    }
+    if (result_shown > 9) {
+      num = result_shown/10;
+      num2 = result_shown - (num*10);
+      seg_display.values = {24d0, 24d0, num, num2};
+      seg_display.decimal = 4b0000;
+    }
+    
+    io_seg = ~seg_display.seg;
+    io_sel = ~seg_display.sel;
+  }
+}

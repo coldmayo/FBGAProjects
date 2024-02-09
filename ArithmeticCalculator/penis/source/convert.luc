@@ -1,0 +1,19 @@
+module convert (
+    input value [24],
+    output better [24]
+  ) {
+
+  always {
+    case(value) {
+      1: better = 0;
+      2: better = 1;
+      4: better = 2;
+      8: better = 3;
+      16: better = 4;
+      32: better = 5;
+      64: better = 6;
+      128: better = 7;
+      default: better = 0;
+    }
+  }
+}
