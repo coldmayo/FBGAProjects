@@ -1,0 +1,21 @@
+module sec_to_mins (
+    input secs[16],
+    output mins[16]
+  ) {
+
+  always {
+    case(secs) {
+      599: mins = 1000;
+      1599: mins = 2000;
+      2599: mins = 3000;
+      3599: mins = 4000;
+      4599: mins = 5000;
+      5599: mins = 6000;
+      6599: mins = 7000;
+      7599: mins = 8000;
+      8599: mins = 9000;
+      9599: mins = 0;
+      default: mins = secs + 1;
+    }
+  }
+}

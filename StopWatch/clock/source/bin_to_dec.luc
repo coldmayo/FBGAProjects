@@ -1,0 +1,45 @@
+module bin_to_dec #(
+    DIGITS = 1 : DIGITS > 0,
+    LEADING_ZEROS = 0 : LEADING_ZEROS == 0 || LEADING_ZEROS == 1
+  ) (
+    input value[$clog2($pow(10, DIGITS))],
+    output digits[DIGITS][4]
+  ) {
+  
+  var i,j,scale;
+  sig remainder[value.WIDTH];
+  
+  sig sub_value[value.WIDTH];
+  sig blank;
+  
+  always {
+    for(i = 0; i < DIGITS; i++) {
+      digits[i] = d11;
+    }
+    remainder = value;
+    blank = !LEADING_ZEROS;
+    
+    if (value < $pow(10,DIGITS)) {
+      for (j = DIGITS - 1;  j >= $signed(0); j--) {
+        scale = $pow(10, j);
+        if (remainder < scale) {
+          if (j != 0 && blank) {
+            digits[j] = 10;
+          } else {
+            digits[j] = 0;
+          }
+        } else {
+          blank = 0;
+          sub_value = 0;
+          for (i = 9; i >= 1; i--) {
+            if (remainder < (i+1) * scale) {
+              digits[j] = i;
+              sub_value = i * scale;
+            }
+          }
+          remainder = remainder - sub_value;
+        }
+      }
+    }
+  }
+}
