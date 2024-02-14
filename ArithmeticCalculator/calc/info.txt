@@ -1,0 +1,19 @@
++----------------------------------+
+
+Arithmetic Calculator Project
+
++----------------------------------+
+
+This is a simple calculator that supports addition, subtraction, multiplication, and division.
+
+It uses the DIP switches to enter in numbers and operations.
+
+Once loaded, the operation is automatically switched to addition. The first number to be added corresponds to the index of the switch flipped on the middle group of switches and the second number corresponds to the index of the group of switches to the furthest left.
+The solution is displayed on the digit display. 
+
+The rightmost switches are for changing the operation done on the numbers. 
+	+ Addition occurs when no switch is flipped
+	+ Subtraction occurs when the first (index 0) is flipped on.
+	+ Multiplication occurs when the second (index 1) is flipped on.
+	+ Division occurs when the third (index 2) is flipped on.
+

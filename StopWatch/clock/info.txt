@@ -1,0 +1,15 @@
++----------------------------------+
+
+Stopwatch Project
+
++----------------------------------+
+
+This is a simple stopwatch that can count up to 10 minutes. This was done using the 50MHz clock built into the FBGA. 
+
+The LED addon is also able to be used if able (make sure it is connected to the correct ports shown in constraints/led.ucf).
+
+Once loaded, the stopwatch can be started by clicking the middle button on the IO Shield. The 1st digit on the display shows the tenths of seconds, the 2nd and 3rd digits show the seconds elapsed, and the 4th digit shows the minutes passed.
+The stopwatch can be paused when the middle button is pressed again. 
+The stopwatch can be reset when the leftmost button is pressed.
+
+The LED glows green while the stopwatch is running, glows red when the stopwatch is paused, and glows blue after the stopwatch is reset (idle).
