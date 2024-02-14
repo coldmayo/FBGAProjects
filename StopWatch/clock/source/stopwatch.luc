@@ -2,6 +2,9 @@ module stopwatch (
     input clk,  // clock
     input rst,  // reset
     input start_stop,
+    output red,
+    output green,
+    output blue,
     output value[14]
   ) {
 
@@ -17,15 +20,25 @@ module stopwatch (
   always {
     value = ctr.q;
     min.secs = 0;
+    red = 0;
+    green = 0;
+    blue = 0;
     
     case (state.q) {
       state.IDLE:
+        green = 1;
+        red = 1;
+        
         tenth_ctr.d = 0;
         ctr.d = 0;
         if (start_stop) {
           state.d = state.RUNNING;
         }
       state.RUNNING:
+        
+        red = 1;
+        blue = 1;
+        
         tenth_ctr.d = tenth_ctr.q + 1;
         
         if (tenth_ctr.q == 4999999) {
@@ -40,6 +53,8 @@ module stopwatch (
         }
           
       state.PAUSED:
+        blue = 1;
+        green = 1;
         if (start_stop) {
           state.d = state.RUNNING;
         } 

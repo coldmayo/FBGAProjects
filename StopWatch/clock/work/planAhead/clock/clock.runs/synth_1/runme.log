@@ -50,7 +50,7 @@ Elaborating module <pipeline_8>.
 Elaborating module <stopwatch_4>.
 
 Elaborating module <sec_to_mins_10>.
-WARNING:HDLCompiler:413 - "C:/Users/Maya Wallach/Documents/mojo/clock/work/planAhead/clock/clock.srcs/sources_1/imports/verilog/stopwatch_4.v" Line 53: Result of 16-bit expression is truncated to fit in 14-bit target.
+WARNING:HDLCompiler:413 - "C:/Users/Maya Wallach/Documents/mojo/clock/work/planAhead/clock/clock.srcs/sources_1/imports/verilog/stopwatch_4.v" Line 63: Result of 16-bit expression is truncated to fit in 14-bit target.
 
 Elaborating module <edge_detector_5>.
 
@@ -63,9 +63,9 @@ Elaborating module <seven_seg_12>.
 Elaborating module <decoder_13>.
 
 Elaborating module <counter_7>.
-WARNING:HDLCompiler:1127 - "C:/Users/Maya Wallach/Documents/mojo/clock/work/planAhead/clock/clock.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 79: Assignment to M_ctr_value ignored, since the identifier is never used
-WARNING:HDLCompiler:634 - "C:/Users/Maya Wallach/Documents/mojo/clock/work/planAhead/clock/clock.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 24: Net <rst> does not have a driver.
-WARNING:Xst:2972 - "C:/Users/Maya Wallach/Documents/mojo/clock/work/planAhead/clock/clock.srcs/sources_1/imports/verilog/mojo_top_0.v" line 76. All outputs of instance <ctr> of block <counter_7> are unconnected in block <mojo_top_0>. Underlying logic will be removed.
+WARNING:HDLCompiler:1127 - "C:/Users/Maya Wallach/Documents/mojo/clock/work/planAhead/clock/clock.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 88: Assignment to M_ctr_value ignored, since the identifier is never used
+WARNING:HDLCompiler:634 - "C:/Users/Maya Wallach/Documents/mojo/clock/work/planAhead/clock/clock.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 27: Net <rst> does not have a driver.
+WARNING:Xst:2972 - "C:/Users/Maya Wallach/Documents/mojo/clock/work/planAhead/clock/clock.srcs/sources_1/imports/verilog/mojo_top_0.v" line 85. All outputs of instance <ctr> of block <counter_7> are unconnected in block <mojo_top_0>. Underlying logic will be removed.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -84,7 +84,7 @@ WARNING:Xst:647 - Input <spi_mosi> is never used. This port will be preserved an
 WARNING:Xst:647 - Input <spi_sck> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <avr_tx> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <avr_rx_busy> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-INFO:Xst:3210 - "C:/Users/Maya Wallach/Documents/mojo/clock/work/planAhead/clock/clock.srcs/sources_1/imports/verilog/mojo_top_0.v" line 76: Output port <value> of the instance <ctr> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/Maya Wallach/Documents/mojo/clock/work/planAhead/clock/clock.srcs/sources_1/imports/verilog/mojo_top_0.v" line 85: Output port <value> of the instance <ctr> is unconnected or connected to loadless signal.
 WARNING:Xst:653 - Signal <rst> is used but never assigned. This sourceless signal will be automatically connected to value GND.
     Summary:
 	no macro.
@@ -167,7 +167,7 @@ Synthesizing Unit <stopwatch_4>.
     | States             | 3                                              |
     | Transitions        | 6                                              |
     | Inputs             | 1                                              |
-    | Outputs            | 2                                              |
+    | Outputs            | 3                                              |
     | Clock              | clk (rising_edge)                              |
     | Reset              | rst (positive)                                 |
     | Reset type         | synchronous                                    |
@@ -176,7 +176,7 @@ Synthesizing Unit <stopwatch_4>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 23-bit adder for signal <M_tenth_ctr_q[22]_GND_5_o_add_1_OUT> created at line 48.
+    Found 23-bit adder for signal <M_tenth_ctr_q[22]_GND_5_o_add_1_OUT> created at line 58.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  37 D-type flip-flop(s).
@@ -325,13 +325,13 @@ Macro Statistics
 *                         Low Level Synthesis                           *
 =========================================================================
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <stopwatch/FSM_0> on signal <M_state_q[1:2]> with user encoding.
+Optimizing FSM <stopwatch/FSM_0> on signal <M_state_q[1:2]> with gray encoding.
 -------------------
  State | Encoding
 -------------------
  00    | 00
  01    | 01
- 10    | 10
+ 10    | 11
 -------------------
 
 Optimizing unit <mojo_top_0> ...
@@ -344,15 +344,9 @@ Optimizing unit <bin_to_dec_1> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 9.
-FlipFlop stopwatch/M_ctr_q_13 has been replicated 1 time(s)
-FlipFlop stopwatch/M_ctr_q_4 has been replicated 1 time(s)
-FlipFlop stopwatch/M_ctr_q_6 has been replicated 1 time(s)
-FlipFlop stopwatch/M_ctr_q_7 has been replicated 1 time(s)
+Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 10.
 FlipFlop stopwatch/M_state_q_FSM_FFd1 has been replicated 2 time(s)
 FlipFlop stopwatch/M_state_q_FSM_FFd2 has been replicated 2 time(s)
-FlipFlop stopwatch/M_tenth_ctr_q_8 has been replicated 1 time(s)
-FlipFlop stopwatch/M_tenth_ctr_q_9 has been replicated 2 time(s)
 
 Final Macro Processing ...
 
@@ -365,8 +359,8 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 109
- Flip-Flops                                            : 109
+# Registers                                            : 102
+ Flip-Flops                                            : 102
 # Shift Registers                                      : 2
  2-bit shift register                                  : 2
 
@@ -392,7 +386,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 113   |
+clk                                | BUFGP                  | 106   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -403,9 +397,9 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 7.830ns (Maximum Frequency: 127.714MHz)
+   Minimum period: 8.508ns (Maximum Frequency: 117.536MHz)
    Minimum input arrival time before clock: 2.009ns
-   Maximum output required time after clock: 41.007ns
+   Maximum output required time after clock: 41.144ns
    Maximum combinational path delay: No path found
 
 =========================================================================

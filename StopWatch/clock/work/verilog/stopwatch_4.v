@@ -8,6 +8,9 @@ module stopwatch_4 (
     input clk,
     input rst,
     input start_stop,
+    output reg red,
+    output reg green,
+    output reg blue,
     output reg [13:0] value
   );
   
@@ -35,9 +38,14 @@ module stopwatch_4 (
     
     value = M_ctr_q;
     M_min_secs = 1'h0;
+    red = 1'h0;
+    green = 1'h0;
+    blue = 1'h0;
     
     case (M_state_q)
       IDLE_state: begin
+        green = 1'h1;
+        red = 1'h1;
         M_tenth_ctr_d = 1'h0;
         M_ctr_d = 1'h0;
         if (start_stop) begin
@@ -45,6 +53,8 @@ module stopwatch_4 (
         end
       end
       RUNNING_state: begin
+        red = 1'h1;
+        blue = 1'h1;
         M_tenth_ctr_d = M_tenth_ctr_q + 1'h1;
         if (M_tenth_ctr_q == 23'h4c4b3f) begin
           M_tenth_ctr_d = 1'h0;
@@ -57,6 +67,8 @@ module stopwatch_4 (
         end
       end
       PAUSED_state: begin
+        blue = 1'h1;
+        green = 1'h1;
         if (start_stop) begin
           M_state_d = RUNNING_state;
         end

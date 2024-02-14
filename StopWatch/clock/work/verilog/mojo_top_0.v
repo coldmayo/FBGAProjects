@@ -16,6 +16,9 @@ module mojo_top_0 (
     output reg [7:0] io_seg,
     output reg [3:0] io_sel,
     input [4:0] io_button,
+    output reg red,
+    output reg green,
+    output reg blue,
     input [23:0] io_dip
   );
   
@@ -44,6 +47,9 @@ module mojo_top_0 (
     .in(M_reset_button_in),
     .out(M_reset_button_out)
   );
+  wire [1-1:0] M_stopwatch_red;
+  wire [1-1:0] M_stopwatch_green;
+  wire [1-1:0] M_stopwatch_blue;
   wire [14-1:0] M_stopwatch_value;
   reg [1-1:0] M_stopwatch_rst;
   reg [1-1:0] M_stopwatch_start_stop;
@@ -51,6 +57,9 @@ module mojo_top_0 (
     .clk(clk),
     .rst(M_stopwatch_rst),
     .start_stop(M_stopwatch_start_stop),
+    .red(M_stopwatch_red),
+    .green(M_stopwatch_green),
+    .blue(M_stopwatch_blue),
     .value(M_stopwatch_value)
   );
   wire [1-1:0] M_edge_detector_out;
@@ -90,5 +99,8 @@ module mojo_top_0 (
     M_seg_decimal = 4'ha;
     io_seg = ~M_seg_seg;
     io_sel = ~M_seg_sel;
+    red = M_stopwatch_red;
+    blue = M_stopwatch_blue;
+    green = M_stopwatch_green;
   end
 endmodule

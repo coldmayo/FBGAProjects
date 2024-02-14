@@ -1,0 +1,6 @@
+NET "red" LOC = P50;
+NET "red" IOSTANDARD = LVTTL;
+NET "green" LOC = P40;
+NET "green" IOSTANDARD = LVTTL;
+NET "blue" LOC = P51;
+NET "blue" IOSTANDARD = LVTTL;
