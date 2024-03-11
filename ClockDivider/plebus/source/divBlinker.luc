@@ -1,0 +1,26 @@
+module divBlinker #(
+    MAX_VALUE = 50000000/2 : MAX_VALUE > 0 // 50000000 is max amount of cycles because the clock is 50MHz 
+  )(
+    input clk,
+    input rst,
+    input divi,
+    output out
+  ) {
+
+  .clk(clk) {
+    .rst(rst) {
+      dff ctr[$clog2(MAX_VALUE)];
+      dff led;
+    }
+  }
+
+  always {
+    ctr.d = ctr.q + 1;
+    if (ctr.q == MAX_VALUE-1) {
+      ctr.d = 0;
+      led.d = ~led.q;
+    }
+
+    out = led.q;
+  }
+}
