@@ -1,0 +1,22 @@
++----------------------------------+
+
+Clock Divider Project
+
++----------------------------------+
+
+This is a simple clock divider project in both Lucid and Verlog.
+
+For the Lucid version, the user has to use the Wave Capture in the Mojo IDE to see the waveform. This can be found in the "Tools" tab in the top left corner.
+
+Install the following components:
+	- Register Interface (Debug)
+	- Wave Capture
+	- AVR Interface
+
+When in the Wave Capture tab in Mojo IDE, click the plug looking icon and then the camera lens icon to veiw the waveform.
+
+For the Verlog version, the user can either use the Mojo IDE or ISim. 
+
+To use ISim, open a new Verlog project in the ISE Project Navigator. Then, click on the Simulation option (rather than Implementation).
+
+In the Processes tree the user should click on "Simulate Behavioral Model" and they will see the clk_in and clk_out waveforms in the new ISim window.
