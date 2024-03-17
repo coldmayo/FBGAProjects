@@ -1,36 +1,308 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Mon Mar 11 15:43:12 2024
+// Written by: Map P.20131013 on Sat Mar 16 21:24:47 2024
 //! **************************************************************************
 
 SCHEMATIC START;
 CONFIG VCCAUX = "3.3";
-COMP "spi_sck" LOCATE = SITE "P43" LEVEL 1;
 COMP "clk" LOCATE = SITE "P56" LEVEL 1;
-COMP "avr_rx_busy" LOCATE = SITE "P39" LEVEL 1;
-COMP "spi_mosi" LOCATE = SITE "P44" LEVEL 1;
-COMP "led[0]" LOCATE = SITE "P134" LEVEL 1;
-COMP "led[1]" LOCATE = SITE "P133" LEVEL 1;
-COMP "led[2]" LOCATE = SITE "P132" LEVEL 1;
-COMP "spi_ss" LOCATE = SITE "P48" LEVEL 1;
-COMP "led[3]" LOCATE = SITE "P131" LEVEL 1;
-COMP "led[4]" LOCATE = SITE "P127" LEVEL 1;
-COMP "avr_tx" LOCATE = SITE "P55" LEVEL 1;
-COMP "led[5]" LOCATE = SITE "P126" LEVEL 1;
-COMP "led[6]" LOCATE = SITE "P124" LEVEL 1;
-COMP "rst_n" LOCATE = SITE "P38" LEVEL 1;
-COMP "led[7]" LOCATE = SITE "P123" LEVEL 1;
 COMP "cclk" LOCATE = SITE "P70" LEVEL 1;
-TIMEGRP clk = BEL "reset_cond/M_stage_q_3" BEL "reset_cond/M_stage_q_2" BEL
-        "reset_cond/M_stage_q_1" BEL "reset_cond/M_stage_q_0" BEL
-        "clk_BUFGP/BUFG" BEL "div/M_ctr_q_0" BEL "div/M_led_q" BEL
-        "div/M_ctr_q_1" BEL "div/M_ctr_q_2" BEL "div/M_ctr_q_5" BEL
-        "div/M_ctr_q_3" BEL "div/M_ctr_q_4" BEL "div/M_ctr_q_8" BEL
-        "div/M_ctr_q_6" BEL "div/M_ctr_q_7" BEL "div/M_ctr_q_11" BEL
-        "div/M_ctr_q_9" BEL "div/M_ctr_q_10" BEL "div/M_ctr_q_12" BEL
-        "div/M_ctr_q_13" BEL "div/M_ctr_q_14" BEL "div/M_ctr_q_15" BEL
-        "div/M_ctr_q_18" BEL "div/M_ctr_q_16" BEL "div/M_ctr_q_17" BEL
-        "div/M_ctr_q_21" BEL "div/M_ctr_q_19" BEL "div/M_ctr_q_20" BEL
-        "div/M_ctr_q_24" BEL "div/M_ctr_q_22" BEL "div/M_ctr_q_23";
+COMP "rst_n" LOCATE = SITE "P38" LEVEL 1;
+COMP "spi_sck" LOCATE = SITE "P43" LEVEL 1;
+COMP "avr_rx_busy" LOCATE = SITE "P39" LEVEL 1;
+COMP "spi_channel[0]" LOCATE = SITE "P46" LEVEL 1;
+COMP "spi_channel[1]" LOCATE = SITE "P61" LEVEL 1;
+COMP "spi_channel[2]" LOCATE = SITE "P62" LEVEL 1;
+COMP "spi_channel[3]" LOCATE = SITE "P65" LEVEL 1;
+COMP "avr_rx" LOCATE = SITE "P59" LEVEL 1;
+COMP "avr_tx" LOCATE = SITE "P55" LEVEL 1;
+COMP "spi_ss" LOCATE = SITE "P48" LEVEL 1;
+COMP "spi_miso" LOCATE = SITE "P45" LEVEL 1;
+COMP "spi_mosi" LOCATE = SITE "P44" LEVEL 1;
+PIN L_reg/wave_capture/ram/Mram_mem_pins<16> = BEL
+        "L_reg/wave_capture/ram/Mram_mem" PINNAME CLKAWRCLK;
+PIN L_reg/wave_capture/ram/Mram_mem_pins<17> = BEL
+        "L_reg/wave_capture/ram/Mram_mem" PINNAME CLKBRDCLK;
+TIMEGRP clk = BEL "L_reg/reg_interface/M_addr_ct_q_0" BEL
+        "L_reg/reg_interface/M_addr_ct_q_1" BEL
+        "L_reg/reg_interface/M_addr_ct_q_2" BEL
+        "L_reg/reg_interface/M_addr_ct_q_3" BEL
+        "L_reg/reg_interface/M_addr_ct_q_4" BEL
+        "L_reg/reg_interface/M_addr_ct_q_5" BEL
+        "L_reg/reg_interface/M_addr_q_0" BEL "L_reg/reg_interface/M_addr_q_1"
+        BEL "L_reg/reg_interface/M_addr_q_2" BEL
+        "L_reg/reg_interface/M_addr_q_3" BEL "L_reg/reg_interface/M_addr_q_4"
+        BEL "L_reg/reg_interface/M_addr_q_5" BEL
+        "L_reg/reg_interface/M_addr_q_6" BEL "L_reg/reg_interface/M_addr_q_7"
+        BEL "L_reg/reg_interface/M_addr_q_8" BEL
+        "L_reg/reg_interface/M_addr_q_9" BEL "L_reg/reg_interface/M_data_q_0"
+        BEL "L_reg/reg_interface/M_data_q_1" BEL
+        "L_reg/reg_interface/M_data_q_2" BEL "L_reg/reg_interface/M_data_q_3"
+        BEL "L_reg/reg_interface/M_data_q_4" BEL
+        "L_reg/reg_interface/M_data_q_5" BEL "L_reg/reg_interface/M_data_q_6"
+        BEL "L_reg/reg_interface/M_data_q_7" BEL
+        "L_reg/reg_interface/M_data_q_8" BEL "L_reg/reg_interface/M_data_q_9"
+        BEL "L_reg/reg_interface/M_byte_ct_q_0" BEL
+        "L_reg/reg_interface/M_byte_ct_q_1" BEL
+        "L_reg/reg_interface/M_state_q_FSM_FFd1_1" BEL
+        "L_reg/reg_interface/M_state_q_FSM_FFd2_1" BEL
+        "L_reg/reg_interface/M_state_q_FSM_FFd1" BEL
+        "L_reg/reg_interface/M_state_q_FSM_FFd2" BEL
+        "L_reg/reg_interface/M_state_q_FSM_FFd3" BEL
+        "L_reg/reg_interface/M_inc_q" BEL "L_reg/reg_interface/M_addr_q_10"
+        BEL "L_reg/reg_interface/M_addr_q_11" BEL
+        "L_reg/reg_interface/M_addr_q_12" BEL
+        "L_reg/reg_interface/M_addr_q_13" BEL
+        "L_reg/reg_interface/M_addr_q_14" BEL
+        "L_reg/reg_interface/M_addr_q_20" BEL
+        "L_reg/reg_interface/M_addr_q_15" BEL
+        "L_reg/reg_interface/M_addr_q_21" BEL
+        "L_reg/reg_interface/M_addr_q_16" BEL
+        "L_reg/reg_interface/M_addr_q_22" BEL
+        "L_reg/reg_interface/M_addr_q_17" BEL
+        "L_reg/reg_interface/M_timeout_q_0" BEL
+        "L_reg/reg_interface/M_addr_q_23" BEL
+        "L_reg/reg_interface/M_addr_q_18" BEL
+        "L_reg/reg_interface/M_timeout_q_1" BEL
+        "L_reg/reg_interface/M_addr_q_24" BEL
+        "L_reg/reg_interface/M_addr_q_19" BEL
+        "L_reg/reg_interface/M_timeout_q_2" BEL
+        "L_reg/reg_interface/M_addr_q_30" BEL
+        "L_reg/reg_interface/M_addr_q_25" BEL
+        "L_reg/reg_interface/M_timeout_q_3" BEL
+        "L_reg/reg_interface/M_addr_q_31" BEL
+        "L_reg/reg_interface/M_addr_q_26" BEL
+        "L_reg/reg_interface/M_timeout_q_4" BEL
+        "L_reg/reg_interface/M_addr_q_27" BEL
+        "L_reg/reg_interface/M_timeout_q_5" BEL
+        "L_reg/reg_interface/M_addr_q_28" BEL
+        "L_reg/reg_interface/M_timeout_q_6" BEL
+        "L_reg/reg_interface/M_addr_q_29" BEL
+        "L_reg/reg_interface/M_timeout_q_7" BEL
+        "L_reg/reg_interface/M_timeout_q_8" BEL
+        "L_reg/reg_interface/M_timeout_q_9" BEL
+        "L_reg/reg_interface/M_timeout_q_10" BEL
+        "L_reg/reg_interface/M_timeout_q_11" BEL
+        "L_reg/reg_interface/M_timeout_q_12" BEL
+        "L_reg/reg_interface/M_timeout_q_13" BEL
+        "L_reg/reg_interface/M_timeout_q_14" BEL
+        "L_reg/reg_interface/M_timeout_q_15" BEL
+        "L_reg/reg_interface/M_timeout_q_20" BEL
+        "L_reg/reg_interface/M_timeout_q_16" BEL
+        "L_reg/reg_interface/M_timeout_q_21" BEL
+        "L_reg/reg_interface/M_timeout_q_17" BEL
+        "L_reg/reg_interface/M_timeout_q_22" BEL
+        "L_reg/reg_interface/M_timeout_q_18" BEL
+        "L_reg/reg_interface/M_timeout_q_23" BEL
+        "L_reg/reg_interface/M_timeout_q_19" BEL
+        "L_reg/reg_interface/M_data_q_10" BEL
+        "L_reg/reg_interface/M_data_q_11" BEL
+        "L_reg/reg_interface/M_data_q_12" BEL
+        "L_reg/reg_interface/M_data_q_13" BEL
+        "L_reg/reg_interface/M_data_q_14" BEL "L_reg/reg_interface/M_wr_q" BEL
+        "L_reg/reg_interface/M_data_q_15" BEL
+        "L_reg/reg_interface/M_data_q_20" BEL
+        "L_reg/reg_interface/M_data_q_16" BEL
+        "L_reg/reg_interface/M_data_q_21" BEL
+        "L_reg/reg_interface/M_data_q_17" BEL
+        "L_reg/reg_interface/M_data_q_22" BEL
+        "L_reg/reg_interface/M_data_q_18" BEL
+        "L_reg/reg_interface/M_data_q_23" BEL
+        "L_reg/reg_interface/M_data_q_24" BEL
+        "L_reg/reg_interface/M_data_q_19" BEL
+        "L_reg/reg_interface/M_data_q_25" BEL
+        "L_reg/reg_interface/M_data_q_30" BEL
+        "L_reg/reg_interface/M_data_q_26" BEL
+        "L_reg/reg_interface/M_data_q_31" BEL
+        "L_reg/reg_interface/M_data_q_27" BEL
+        "L_reg/reg_interface/M_data_q_28" BEL
+        "L_reg/reg_interface/M_data_q_29" PIN
+        "L_reg/wave_capture/ram/Mram_mem_pins<16>" PIN
+        "L_reg/wave_capture/ram/Mram_mem_pins<17>" BEL
+        "L_reg/wave_capture/M_trigger_index_q_0" BEL
+        "L_reg/wave_capture/M_trigger_index_q_1" BEL
+        "L_reg/wave_capture/M_trigger_index_q_2" BEL
+        "L_reg/wave_capture/M_trigger_index_q_3" BEL
+        "L_reg/wave_capture/M_trigger_index_q_4" BEL
+        "L_reg/wave_capture/M_state_q_FSM_FFd1" BEL
+        "L_reg/wave_capture/M_state_q_FSM_FFd2" BEL
+        "L_reg/wave_capture/M_state_q_FSM_FFd3" BEL
+        "L_reg/wave_capture/M_state_q_FSM_FFd4" BEL
+        "L_reg/wave_capture/M_trigger_type_q_100" BEL
+        "L_reg/wave_capture/M_trigger_type_q_101" BEL
+        "L_reg/wave_capture/M_trigger_type_q_102" BEL
+        "L_reg/wave_capture/M_trigger_type_q_103" BEL
+        "L_reg/wave_capture/M_trigger_type_q_104" BEL
+        "L_reg/wave_capture/M_trigger_type_q_105" BEL
+        "L_reg/wave_capture/M_trigger_type_q_110" BEL
+        "L_reg/wave_capture/M_trigger_type_q_106" BEL
+        "L_reg/wave_capture/M_trigger_type_q_111" BEL
+        "L_reg/wave_capture/M_trigger_type_q_107" BEL
+        "L_reg/wave_capture/M_trigger_type_q_112" BEL
+        "L_reg/wave_capture/M_trigger_type_q_108" BEL
+        "L_reg/wave_capture/M_trigger_type_q_113" BEL
+        "L_reg/wave_capture/M_trigger_type_q_109" BEL
+        "L_reg/wave_capture/M_trigger_type_q_114" BEL
+        "L_reg/wave_capture/M_trigger_type_q_115" BEL
+        "L_reg/wave_capture/M_trigger_type_q_120" BEL
+        "L_reg/wave_capture/M_trigger_type_q_116" BEL
+        "L_reg/wave_capture/M_trigger_type_q_121" BEL
+        "L_reg/wave_capture/M_trigger_type_q_117" BEL
+        "L_reg/wave_capture/M_trigger_type_q_122" BEL
+        "L_reg/wave_capture/M_trigger_type_q_118" BEL
+        "L_reg/wave_capture/M_trigger_type_q_123" BEL
+        "L_reg/wave_capture/M_trigger_type_q_119" BEL
+        "L_reg/wave_capture/M_trigger_type_q_124" BEL
+        "L_reg/wave_capture/M_trigger_type_q_125" BEL
+        "L_reg/wave_capture/M_trigger_type_q_126" BEL
+        "L_reg/wave_capture/M_trigger_type_q_127" BEL
+        "L_reg/wave_capture/M_waddr_q_0" BEL "L_reg/wave_capture/M_waddr_q_1"
+        BEL "L_reg/wave_capture/M_waddr_q_2" BEL
+        "L_reg/wave_capture/M_waddr_q_3" BEL "L_reg/wave_capture/M_waddr_q_4"
+        BEL "L_reg/wave_capture/M_waddr_q_5" BEL
+        "L_reg/wave_capture/M_waddr_q_6" BEL "L_reg/wave_capture/M_waddr_q_7"
+        BEL "L_reg/wave_capture/M_trigger_type_q_0" BEL
+        "L_reg/wave_capture/M_trigger_type_q_1" BEL
+        "L_reg/wave_capture/M_trigger_type_q_2" BEL
+        "L_reg/wave_capture/M_trigger_type_q_3" BEL
+        "L_reg/wave_capture/M_trigger_type_q_4" BEL
+        "L_reg/wave_capture/M_trigger_type_q_5" BEL
+        "L_reg/wave_capture/M_trigger_type_q_6" BEL
+        "L_reg/wave_capture/M_trigger_type_q_7" BEL
+        "L_reg/wave_capture/M_trigger_type_q_8" BEL
+        "L_reg/wave_capture/M_trigger_type_q_9" BEL
+        "L_reg/wave_capture/M_raddr_q_0" BEL "L_reg/wave_capture/M_raddr_q_1"
+        BEL "L_reg/wave_capture/M_raddr_q_2" BEL
+        "L_reg/wave_capture/M_raddr_q_3" BEL "L_reg/wave_capture/M_raddr_q_4"
+        BEL "L_reg/wave_capture/M_raddr_q_5" BEL
+        "L_reg/wave_capture/M_raddr_q_6" BEL "L_reg/wave_capture/M_raddr_q_7"
+        BEL "L_reg/wave_capture/M_trigger_type_q_10" BEL
+        "L_reg/wave_capture/M_trigger_type_q_11" BEL
+        "L_reg/wave_capture/M_trigger_type_q_12" BEL
+        "L_reg/wave_capture/M_trigger_type_q_13" BEL
+        "L_reg/wave_capture/M_trigger_type_q_14" BEL
+        "L_reg/wave_capture/M_trigger_type_q_15" BEL
+        "L_reg/wave_capture/M_trigger_type_q_20" BEL
+        "L_reg/wave_capture/M_trigger_type_q_16" BEL
+        "L_reg/wave_capture/M_trigger_type_q_21" BEL
+        "L_reg/wave_capture/M_trigger_type_q_22" BEL
+        "L_reg/wave_capture/M_trigger_type_q_17" BEL
+        "L_reg/wave_capture/M_trigger_type_q_18" BEL
+        "L_reg/wave_capture/M_trigger_type_q_23" BEL
+        "L_reg/wave_capture/M_trigger_type_q_19" BEL
+        "L_reg/wave_capture/M_trigger_type_q_24" BEL
+        "L_reg/wave_capture/M_trigger_type_q_25" BEL
+        "L_reg/wave_capture/M_trigger_type_q_30" BEL
+        "L_reg/wave_capture/M_trigger_type_q_26" BEL
+        "L_reg/wave_capture/M_trigger_type_q_31" BEL
+        "L_reg/wave_capture/M_trigger_type_q_27" BEL
+        "L_reg/wave_capture/M_trigger_type_q_32" BEL
+        "L_reg/wave_capture/M_trigger_type_q_28" BEL
+        "L_reg/wave_capture/M_trigger_type_q_33" BEL
+        "L_reg/wave_capture/M_trigger_type_q_29" BEL
+        "L_reg/wave_capture/M_trigger_type_q_34" BEL
+        "L_reg/wave_capture/M_trigger_type_q_35" BEL
+        "L_reg/wave_capture/M_trigger_type_q_40" BEL
+        "L_reg/wave_capture/M_trigger_type_q_36" BEL
+        "L_reg/wave_capture/M_trigger_type_q_41" BEL
+        "L_reg/wave_capture/M_trigger_type_q_42" BEL
+        "L_reg/wave_capture/M_trigger_type_q_37" BEL
+        "L_reg/wave_capture/M_trigger_type_q_43" BEL
+        "L_reg/wave_capture/M_trigger_type_q_38" BEL
+        "L_reg/wave_capture/M_trigger_type_q_44" BEL
+        "L_reg/wave_capture/M_trigger_type_q_39" BEL
+        "L_reg/wave_capture/M_trigger_type_q_50" BEL
+        "L_reg/wave_capture/M_trigger_type_q_45" BEL
+        "L_reg/wave_capture/M_trigger_type_q_51" BEL
+        "L_reg/wave_capture/M_trigger_type_q_46" BEL
+        "L_reg/wave_capture/M_trigger_type_q_52" BEL
+        "L_reg/wave_capture/M_trigger_type_q_47" BEL
+        "L_reg/wave_capture/M_trigger_type_q_53" BEL
+        "L_reg/wave_capture/M_trigger_type_q_48" BEL
+        "L_reg/wave_capture/M_trigger_type_q_54" BEL
+        "L_reg/wave_capture/M_trigger_type_q_49" BEL
+        "L_reg/wave_capture/M_trigger_type_q_60" BEL
+        "L_reg/wave_capture/M_trigger_type_q_55" BEL
+        "L_reg/wave_capture/M_trigger_type_q_61" BEL
+        "L_reg/wave_capture/M_trigger_type_q_56" BEL
+        "L_reg/wave_capture/M_trigger_type_q_62" BEL
+        "L_reg/wave_capture/M_trigger_type_q_57" BEL
+        "L_reg/wave_capture/M_trigger_type_q_63" BEL
+        "L_reg/wave_capture/M_trigger_type_q_58" BEL
+        "L_reg/wave_capture/M_trigger_type_q_64" BEL
+        "L_reg/wave_capture/M_trigger_type_q_59" BEL
+        "L_reg/wave_capture/M_trigger_type_q_70" BEL
+        "L_reg/wave_capture/M_trigger_type_q_65" BEL
+        "L_reg/wave_capture/M_trigger_type_q_71" BEL
+        "L_reg/wave_capture/M_trigger_type_q_66" BEL
+        "L_reg/wave_capture/M_trigger_type_q_72" BEL
+        "L_reg/wave_capture/M_trigger_type_q_67" BEL
+        "L_reg/wave_capture/M_trigger_type_q_73" BEL
+        "L_reg/wave_capture/M_trigger_type_q_68" BEL
+        "L_reg/wave_capture/M_trigger_type_q_74" BEL
+        "L_reg/wave_capture/M_trigger_type_q_69" BEL
+        "L_reg/wave_capture/M_trigger_type_q_75" BEL
+        "L_reg/wave_capture/M_trigger_type_q_80" BEL
+        "L_reg/wave_capture/M_trigger_type_q_76" BEL
+        "L_reg/wave_capture/M_trigger_type_q_81" BEL
+        "L_reg/wave_capture/M_trigger_type_q_77" BEL
+        "L_reg/wave_capture/M_trigger_type_q_82" BEL
+        "L_reg/wave_capture/M_trigger_type_q_78" BEL
+        "L_reg/wave_capture/M_trigger_type_q_83" BEL
+        "L_reg/wave_capture/M_trigger_type_q_79" BEL
+        "L_reg/wave_capture/M_trigger_type_q_84" BEL
+        "L_reg/wave_capture/M_trigger_type_q_85" BEL
+        "L_reg/wave_capture/M_trigger_type_q_90" BEL
+        "L_reg/wave_capture/M_trigger_type_q_86" BEL
+        "L_reg/wave_capture/M_trigger_type_q_91" BEL
+        "L_reg/wave_capture/M_trigger_type_q_87" BEL
+        "L_reg/wave_capture/M_trigger_type_q_92" BEL
+        "L_reg/wave_capture/M_trigger_type_q_88" BEL
+        "L_reg/wave_capture/M_trigger_type_q_93" BEL
+        "L_reg/wave_capture/M_trigger_type_q_89" BEL
+        "L_reg/wave_capture/M_trigger_type_q_94" BEL
+        "L_reg/wave_capture/M_trigger_type_q_95" BEL
+        "L_reg/wave_capture/M_trigger_type_q_96" BEL
+        "L_reg/wave_capture/M_trigger_type_q_97" BEL
+        "L_reg/wave_capture/M_trigger_type_q_98" BEL
+        "L_reg/wave_capture/M_trigger_type_q_99" BEL
+        "L_reg/wave_capture/M_data_old_q_0" BEL "clk_BUFGP/BUFG" BEL
+        "div/M_ctr_q_0" BEL "div/M_ctr_q_1" BEL "reset_cond/M_stage_q_3" BEL
+        "reset_cond/M_stage_q_2" BEL "reset_cond/M_stage_q_1" BEL
+        "reset_cond/M_stage_q_0" BEL "avr/M_block_q_3" BEL "avr/M_busy_q" BEL
+        "avr/M_block_q_2" BEL "avr/spi_slave/M_ss_reg_q" BEL
+        "avr/spi_slave/M_sck_reg_q_1" BEL "avr/spi_slave/M_sck_reg_q_0" BEL
+        "avr/spi_slave/M_bit_ct_q_2" BEL "avr/spi_slave/M_bit_ct_q_1" BEL
+        "avr/spi_slave/M_bit_ct_q_0" BEL "avr/spi_slave/M_miso_reg_q" BEL
+        "avr/spi_slave/M_data_q_0" BEL "avr/cclk_detector/M_ctr_q_13" BEL
+        "avr/cclk_detector/M_ctr_q_12" BEL "avr/cclk_detector/M_ctr_q_11" BEL
+        "avr/cclk_detector/M_ctr_q_10" BEL "avr/cclk_detector/M_ctr_q_9" BEL
+        "avr/cclk_detector/M_ctr_q_8" BEL "avr/cclk_detector/M_ctr_q_7" BEL
+        "avr/cclk_detector/M_ctr_q_6" BEL "avr/cclk_detector/M_ctr_q_5" BEL
+        "avr/cclk_detector/M_ctr_q_4" BEL "avr/cclk_detector/M_ctr_q_3" BEL
+        "avr/cclk_detector/M_ctr_q_2" BEL "avr/cclk_detector/M_ctr_q_1" BEL
+        "avr/cclk_detector/M_ctr_q_0" BEL "avr/uart_rx/M_bitCtr_q_2" BEL
+        "avr/uart_rx/M_bitCtr_q_1" BEL "avr/uart_rx/M_bitCtr_q_0" BEL
+        "avr/uart_rx/M_state_q_FSM_FFd1" BEL "avr/uart_rx/M_state_q_FSM_FFd2"
+        BEL "avr/uart_rx/M_ctr_q_6" BEL "avr/uart_rx/M_ctr_q_5" BEL
+        "avr/uart_rx/M_ctr_q_4" BEL "avr/uart_rx/M_ctr_q_3" BEL
+        "avr/uart_rx/M_ctr_q_2" BEL "avr/uart_rx/M_ctr_q_1" BEL
+        "avr/uart_rx/M_ctr_q_0" BEL "avr/uart_rx/M_savedData_q_7" BEL
+        "avr/uart_rx/M_savedData_q_6" BEL "avr/uart_rx/M_savedData_q_5" BEL
+        "avr/uart_rx/M_savedData_q_4" BEL "avr/uart_rx/M_savedData_q_3" BEL
+        "avr/uart_rx/M_savedData_q_2" BEL "avr/uart_rx/M_savedData_q_1" BEL
+        "avr/uart_rx/M_savedData_q_0" BEL "avr/uart_rx/M_rxd_q" BEL
+        "avr/uart_rx/M_newData_q" BEL "avr/uart_tx/M_state_q_FSM_FFd1" BEL
+        "avr/uart_tx/M_state_q_FSM_FFd2" BEL "avr/uart_tx/M_bitCtr_q_2" BEL
+        "avr/uart_tx/M_bitCtr_q_1" BEL "avr/uart_tx/M_bitCtr_q_0" BEL
+        "avr/uart_tx/M_ctr_q_6" BEL "avr/uart_tx/M_ctr_q_5" BEL
+        "avr/uart_tx/M_ctr_q_4" BEL "avr/uart_tx/M_ctr_q_3" BEL
+        "avr/uart_tx/M_ctr_q_2" BEL "avr/uart_tx/M_ctr_q_1" BEL
+        "avr/uart_tx/M_ctr_q_0" BEL "avr/uart_tx/M_txReg_q" BEL
+        "avr/uart_tx/M_savedData_q_7" BEL "avr/uart_tx/M_savedData_q_6" BEL
+        "avr/uart_tx/M_savedData_q_5" BEL "avr/uart_tx/M_savedData_q_4" BEL
+        "avr/uart_tx/M_savedData_q_3" BEL "avr/uart_tx/M_savedData_q_2" BEL
+        "avr/uart_tx/M_savedData_q_1" BEL "avr/uart_tx/M_savedData_q_0" BEL
+        "avr/uart_tx/M_blockFlag_q" BEL "avr/Mshreg_M_block_q_2";
 TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH 50%;
 SCHEMATIC END;
 

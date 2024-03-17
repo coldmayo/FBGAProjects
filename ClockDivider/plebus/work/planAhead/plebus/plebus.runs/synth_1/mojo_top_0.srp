@@ -2,7 +2,7 @@ Release 14.7 - xst P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> 
 
-Total REAL time to Xst completion: 1.00 secs
+Total REAL time to Xst completion: 0.00 secs
 Total CPU time to Xst completion: 0.05 secs
  
 --> Reading design: mojo_top_0.prj
@@ -53,10 +53,28 @@ Netlist Hierarchy                  : rebuilt
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
+Analyzing Verilog file "C:/Users/Maya Wallach/Documents/mojo/plebus/work/planAhead/plebus/plebus.srcs/sources_1/imports/verilog/simple_dual_ram_11.v" into library work
+Parsing module <simple_dual_ram_11>.
+Analyzing Verilog file "C:/Users/Maya Wallach/Documents/mojo/plebus/work/planAhead/plebus/plebus.srcs/sources_1/imports/verilog/wave_capture_10.v" into library work
+Parsing module <wave_capture_10>.
+Analyzing Verilog file "C:/Users/Maya Wallach/Documents/mojo/plebus/work/planAhead/plebus/plebus.srcs/sources_1/imports/verilog/uart_tx_8.v" into library work
+Parsing module <uart_tx_8>.
+Analyzing Verilog file "C:/Users/Maya Wallach/Documents/mojo/plebus/work/planAhead/plebus/plebus.srcs/sources_1/imports/verilog/uart_rx_7.v" into library work
+Parsing module <uart_rx_7>.
+Analyzing Verilog file "C:/Users/Maya Wallach/Documents/mojo/plebus/work/planAhead/plebus/plebus.srcs/sources_1/imports/verilog/spi_slave_6.v" into library work
+Parsing module <spi_slave_6>.
+Analyzing Verilog file "C:/Users/Maya Wallach/Documents/mojo/plebus/work/planAhead/plebus/plebus.srcs/sources_1/imports/verilog/reg_interface_9.v" into library work
+Parsing module <reg_interface_9>.
+Analyzing Verilog file "C:/Users/Maya Wallach/Documents/mojo/plebus/work/planAhead/plebus/plebus.srcs/sources_1/imports/verilog/cclk_detector_5.v" into library work
+Parsing module <cclk_detector_5>.
 Analyzing Verilog file "C:/Users/Maya Wallach/Documents/mojo/plebus/work/planAhead/plebus/plebus.srcs/sources_1/imports/verilog/reset_conditioner_1.v" into library work
 Parsing module <reset_conditioner_1>.
-Analyzing Verilog file "C:/Users/Maya Wallach/Documents/mojo/plebus/work/planAhead/plebus/plebus.srcs/sources_1/imports/verilog/divBlinker_2.v" into library work
-Parsing module <divBlinker_2>.
+Analyzing Verilog file "C:/Users/Maya Wallach/Documents/mojo/plebus/work/planAhead/plebus/plebus.srcs/sources_1/imports/verilog/reg_interface_debug_3.v" into library work
+Parsing module <reg_interface_debug_3>.
+Analyzing Verilog file "C:/Users/Maya Wallach/Documents/mojo/plebus/work/planAhead/plebus/plebus.srcs/sources_1/imports/verilog/divBlinker_4.v" into library work
+Parsing module <divBlinker_4>.
+Analyzing Verilog file "C:/Users/Maya Wallach/Documents/mojo/plebus/work/planAhead/plebus/plebus.srcs/sources_1/imports/verilog/avr_interface_2.v" into library work
+Parsing module <avr_interface_2>.
 Analyzing Verilog file "C:/Users/Maya Wallach/Documents/mojo/plebus/work/planAhead/plebus/plebus.srcs/sources_1/imports/verilog/mojo_top_0.v" into library work
 Parsing module <mojo_top_0>.
 
@@ -68,8 +86,29 @@ Elaborating module <mojo_top_0>.
 
 Elaborating module <reset_conditioner_1>.
 
-Elaborating module <divBlinker_2>.
-WARNING:HDLCompiler:413 - "C:/Users/Maya Wallach/Documents/mojo/plebus/work/planAhead/plebus/plebus.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 45: Result of 2-bit expression is truncated to fit in 1-bit target.
+Elaborating module <avr_interface_2>.
+
+Elaborating module <cclk_detector_5>.
+
+Elaborating module <spi_slave_6>.
+
+Elaborating module <uart_rx_7>.
+
+Elaborating module <uart_tx_8>.
+WARNING:HDLCompiler:1127 - "C:/Users/Maya Wallach/Documents/mojo/plebus/work/planAhead/plebus/plebus.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 65: Assignment to M_avr_new_sample ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/Users/Maya Wallach/Documents/mojo/plebus/work/planAhead/plebus/plebus.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 66: Assignment to M_avr_sample ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:/Users/Maya Wallach/Documents/mojo/plebus/work/planAhead/plebus/plebus.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 67: Assignment to M_avr_sample_channel ignored, since the identifier is never used
+
+Elaborating module <reg_interface_debug_3>.
+
+Elaborating module <reg_interface_9>.
+
+Elaborating module <wave_capture_10>.
+
+Elaborating module <simple_dual_ram_11(SIZE=6'b100000,DEPTH=9'b100000000)>.
+WARNING:HDLCompiler:1127 - "C:/Users/Maya Wallach/Documents/mojo/plebus/work/planAhead/plebus/plebus.srcs/sources_1/imports/verilog/mojo_top_0.v" Line 90: Assignment to M_reg_regOut ignored, since the identifier is never used
+
+Elaborating module <divBlinker_4>.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -77,20 +116,12 @@ WARNING:HDLCompiler:413 - "C:/Users/Maya Wallach/Documents/mojo/plebus/work/plan
 
 Synthesizing Unit <mojo_top_0>.
     Related source file is "C:/Users/Maya Wallach/Documents/mojo/plebus/work/planAhead/plebus/plebus.srcs/sources_1/imports/verilog/mojo_top_0.v".
-WARNING:Xst:647 - Input <cclk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <spi_ss> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <spi_mosi> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <spi_sck> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <avr_tx> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <avr_rx_busy> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 1-bit tristate buffer for signal <spi_miso> created at line 42
-    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 42
-    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 42
-    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 42
-    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 42
-    Found 1-bit tristate buffer for signal <avr_rx> created at line 42
+INFO:Xst:3210 - "C:/Users/Maya Wallach/Documents/mojo/plebus/work/planAhead/plebus/plebus.srcs/sources_1/imports/verilog/mojo_top_0.v" line 50: Output port <sample> of the instance <avr> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/Maya Wallach/Documents/mojo/plebus/work/planAhead/plebus/plebus.srcs/sources_1/imports/verilog/mojo_top_0.v" line 50: Output port <sample_channel> of the instance <avr> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/Maya Wallach/Documents/mojo/plebus/work/planAhead/plebus/plebus.srcs/sources_1/imports/verilog/mojo_top_0.v" line 50: Output port <new_sample> of the instance <avr> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:/Users/Maya Wallach/Documents/mojo/plebus/work/planAhead/plebus/plebus.srcs/sources_1/imports/verilog/mojo_top_0.v" line 80: Output port <regOut> of the instance <L_reg> is unconnected or connected to loadless signal.
     Summary:
-	inferred   6 Tristate(s).
+	no macro.
 Unit <mojo_top_0> synthesized.
 
 Synthesizing Unit <reset_conditioner_1>.
@@ -100,29 +131,291 @@ Synthesizing Unit <reset_conditioner_1>.
 	inferred   4 D-type flip-flop(s).
 Unit <reset_conditioner_1> synthesized.
 
-Synthesizing Unit <divBlinker_2>.
-    Related source file is "C:/Users/Maya Wallach/Documents/mojo/plebus/work/planAhead/plebus/plebus.srcs/sources_1/imports/verilog/divBlinker_2.v".
-WARNING:Xst:647 - Input <divi> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 1-bit register for signal <M_led_q>.
-    Found 25-bit register for signal <M_ctr_q>.
-    Found 25-bit adder for signal <M_ctr_q[24]_GND_3_o_add_0_OUT> created at line 28.
+Synthesizing Unit <avr_interface_2>.
+    Related source file is "C:/Users/Maya Wallach/Documents/mojo/plebus/work/planAhead/plebus/plebus.srcs/sources_1/imports/verilog/avr_interface_2.v".
+    Found 1-bit register for signal <M_busy_q>.
+    Found 1-bit register for signal <M_newSampleReg_q>.
+    Found 10-bit register for signal <M_sampleReg_q>.
+    Found 4-bit register for signal <M_sampleChannelReg_q>.
+    Found 2-bit register for signal <M_byteCt_q>.
+    Found 4-bit register for signal <M_block_q>.
+    Found finite state machine <FSM_0> for signal <M_byteCt_q>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 7                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 5                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | n_rdy (positive)                               |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00                                             |
+    | Power Up State     | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 1-bit tristate buffer for signal <spi_channel<3>> created at line 98
+    Found 1-bit tristate buffer for signal <spi_channel<2>> created at line 98
+    Found 1-bit tristate buffer for signal <spi_channel<1>> created at line 98
+    Found 1-bit tristate buffer for signal <spi_channel<0>> created at line 98
+    Found 1-bit tristate buffer for signal <spi_miso> created at line 98
+    Found 1-bit tristate buffer for signal <tx> created at line 98
+    Summary:
+	inferred  20 D-type flip-flop(s).
+	inferred   3 Multiplexer(s).
+	inferred   6 Tristate(s).
+	inferred   1 Finite State Machine(s).
+Unit <avr_interface_2> synthesized.
+
+Synthesizing Unit <cclk_detector_5>.
+    Related source file is "C:/Users/Maya Wallach/Documents/mojo/plebus/work/planAhead/plebus/plebus.srcs/sources_1/imports/verilog/cclk_detector_5.v".
+    Found 14-bit register for signal <M_ctr_q>.
+    Found 14-bit adder for signal <M_ctr_q[13]_GND_4_o_add_3_OUT> created at line 33.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  14 D-type flip-flop(s).
+Unit <cclk_detector_5> synthesized.
+
+Synthesizing Unit <spi_slave_6>.
+    Related source file is "C:/Users/Maya Wallach/Documents/mojo/plebus/work/planAhead/plebus/plebus.srcs/sources_1/imports/verilog/spi_slave_6.v".
+    Found 1-bit register for signal <M_miso_reg_q>.
+    Found 2-bit register for signal <M_sck_reg_q>.
+    Found 1-bit register for signal <M_ss_reg_q>.
+    Found 8-bit register for signal <M_data_out_reg_q>.
+    Found 1-bit register for signal <M_done_reg_q>.
+    Found 3-bit register for signal <M_bit_ct_q>.
+    Found 8-bit register for signal <M_data_q>.
+    Found 1-bit register for signal <M_mosi_reg_q>.
+    Found 3-bit subtractor for signal <M_bit_ct_q[2]_GND_5_o_sub_3_OUT> created at line 61.
+    Found 15-bit shifter logical right for signal <n0056> created at line 68
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  25 D-type flip-flop(s).
+	inferred   8 Multiplexer(s).
+	inferred   1 Combinational logic shifter(s).
+Unit <spi_slave_6> synthesized.
+
+Synthesizing Unit <uart_rx_7>.
+    Related source file is "C:/Users/Maya Wallach/Documents/mojo/plebus/work/planAhead/plebus/plebus.srcs/sources_1/imports/verilog/uart_rx_7.v".
+    Found 7-bit register for signal <M_ctr_q>.
+    Found 3-bit register for signal <M_bitCtr_q>.
+    Found 8-bit register for signal <M_savedData_q>.
+    Found 1-bit register for signal <M_newData_q>.
+    Found 1-bit register for signal <M_rxd_q>.
+    Found 2-bit register for signal <M_state_q>.
+    Found finite state machine <FSM_1> for signal <M_state_q>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 9                                              |
+    | Inputs             | 4                                              |
+    | Outputs            | 2                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00                                             |
+    | Power Up State     | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 7-bit adder for signal <M_ctr_q[6]_GND_6_o_add_6_OUT> created at line 69.
+    Found 3-bit adder for signal <M_bitCtr_q[2]_GND_6_o_add_8_OUT> created at line 72.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  20 D-type flip-flop(s).
+	inferred   6 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <uart_rx_7> synthesized.
+
+Synthesizing Unit <uart_tx_8>.
+    Related source file is "C:/Users/Maya Wallach/Documents/mojo/plebus/work/planAhead/plebus/plebus.srcs/sources_1/imports/verilog/uart_tx_8.v".
+    Found 3-bit register for signal <M_bitCtr_q>.
+    Found 8-bit register for signal <M_savedData_q>.
+    Found 1-bit register for signal <M_txReg_q>.
+    Found 1-bit register for signal <M_blockFlag_q>.
+    Found 2-bit register for signal <M_state_q>.
+    Found 7-bit register for signal <M_ctr_q>.
+    Found finite state machine <FSM_2> for signal <M_state_q>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 2                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00                                             |
+    | Power Up State     | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 3-bit adder for signal <M_bitCtr_q[2]_GND_7_o_add_13_OUT> created at line 80.
+    Found 7-bit adder for signal <M_ctr_q[6]_GND_7_o_add_19_OUT> created at line 88.
+    Found 15-bit shifter logical right for signal <n0050> created at line 76
+    Found 7-bit 4-to-1 multiplexer for signal <M_ctr_d> created at line 54.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  20 D-type flip-flop(s).
+	inferred   5 Multiplexer(s).
+	inferred   1 Combinational logic shifter(s).
+	inferred   1 Finite State Machine(s).
+Unit <uart_tx_8> synthesized.
+
+Synthesizing Unit <reg_interface_debug_3>.
+    Related source file is "C:/Users/Maya Wallach/Documents/mojo/plebus/work/planAhead/plebus/plebus.srcs/sources_1/imports/verilog/reg_interface_debug_3.v".
+    Found 32-bit comparator lessequal for signal <n0000> created at line 70
+    Summary:
+	inferred   1 Comparator(s).
+	inferred   2 Multiplexer(s).
+Unit <reg_interface_debug_3> synthesized.
+
+Synthesizing Unit <reg_interface_9>.
+    Related source file is "C:/Users/Maya Wallach/Documents/mojo/plebus/work/planAhead/plebus/plebus.srcs/sources_1/imports/verilog/reg_interface_9.v".
+    Found 2-bit register for signal <M_byte_ct_q>.
+    Found 1-bit register for signal <M_inc_q>.
+    Found 1-bit register for signal <M_wr_q>.
+    Found 24-bit register for signal <M_timeout_q>.
+    Found 32-bit register for signal <M_addr_q>.
+    Found 32-bit register for signal <M_data_q>.
+    Found 3-bit register for signal <M_state_q>.
+    Found 6-bit register for signal <M_addr_ct_q>.
+    Found finite state machine <FSM_3> for signal <M_state_q>.
+    -----------------------------------------------------------------------
+    | States             | 7                                              |
+    | Transitions        | 26                                             |
+    | Inputs             | 7                                              |
+    | Outputs            | 4                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 000                                            |
+    | Power Up State     | 000                                            |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 6-bit subtractor for signal <M_addr_ct_q[5]_GND_15_o_sub_30_OUT> created at line 134.
+    Found 24-bit adder for signal <M_timeout_q[23]_GND_15_o_add_0_OUT> created at line 59.
+    Found 2-bit adder for signal <M_byte_ct_q[1]_GND_15_o_add_27_OUT> created at line 132.
+    Found 32-bit adder for signal <M_addr_q[31]_GND_15_o_add_31_OUT> created at line 140.
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred  98 D-type flip-flop(s).
+	inferred  13 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <reg_interface_9> synthesized.
+
+Synthesizing Unit <wave_capture_10>.
+    Related source file is "C:/Users/Maya Wallach/Documents/mojo/plebus/work/planAhead/plebus/plebus.srcs/sources_1/imports/verilog/wave_capture_10.v".
+    Found 8-bit register for signal <M_waddr_q>.
+    Found 32-bit register for signal <M_data_old_q>.
+    Found 128-bit register for signal <M_trigger_type_q>.
+    Found 5-bit register for signal <M_trigger_index_q>.
+    Found 2-bit register for signal <M_state_q>.
+    Found 8-bit register for signal <M_raddr_q>.
+    Found finite state machine <FSM_4> for signal <M_state_q>.
+    -----------------------------------------------------------------------
+    | States             | 4                                              |
+    | Transitions        | 230                                            |
+    | Inputs             | 40                                             |
+    | Outputs            | 3                                              |
+    | Clock              | clk (rising_edge)                              |
+    | Reset              | rst (positive)                                 |
+    | Reset type         | synchronous                                    |
+    | Reset State        | 00                                             |
+    | Power Up State     | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 8-bit adder for signal <M_waddr_q[7]_GND_16_o_add_224_OUT> created at line 90.
+    Found 8-bit adder for signal <M_raddr_q[7]_GND_16_o_add_387_OUT> created at line 142.
+    Found 8-bit adder for signal <n0888> created at line 155.
+    Found 255-bit shifter logical right for signal <n0876> created at line 155
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred 181 D-type flip-flop(s).
+	inferred 142 Multiplexer(s).
+	inferred   1 Combinational logic shifter(s).
+	inferred   1 Finite State Machine(s).
+Unit <wave_capture_10> synthesized.
+
+Synthesizing Unit <simple_dual_ram_11>.
+    Related source file is "C:/Users/Maya Wallach/Documents/mojo/plebus/work/planAhead/plebus/plebus.srcs/sources_1/imports/verilog/simple_dual_ram_11.v".
+        SIZE = 6'b100000
+        DEPTH = 9'b100000000
+    Found 256x32-bit dual-port RAM <Mram_mem> for signal <mem>.
+    Found 32-bit register for signal <read_data>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred  32 D-type flip-flop(s).
+Unit <simple_dual_ram_11> synthesized.
+
+Synthesizing Unit <divBlinker_4>.
+    Related source file is "C:/Users/Maya Wallach/Documents/mojo/plebus/work/planAhead/plebus/plebus.srcs/sources_1/imports/verilog/divBlinker_4.v".
+    Found 26-bit register for signal <M_ctr_q>.
+    Found 26-bit adder for signal <M_ctr_q[25]_GND_18_o_add_0_OUT> created at line 27.
+    Found 26-bit comparator lessequal for signal <M_ctr_q[25]_GND_18_o_LessThan_4_o> created at line 31
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  26 D-type flip-flop(s).
-Unit <divBlinker_2> synthesized.
+	inferred   1 Comparator(s).
+	inferred   1 Multiplexer(s).
+Unit <divBlinker_4> synthesized.
 
 =========================================================================
 HDL Synthesis Report
 
 Macro Statistics
-# Adders/Subtractors                                   : 1
- 25-bit adder                                          : 1
-# Registers                                            : 3
- 1-bit register                                        : 1
- 25-bit register                                       : 1
- 4-bit register                                        : 1
+# RAMs                                                 : 1
+ 256x32-bit dual-port RAM                              : 1
+# Adders/Subtractors                                   : 14
+ 14-bit adder                                          : 1
+ 2-bit adder                                           : 1
+ 24-bit adder                                          : 1
+ 26-bit adder                                          : 1
+ 3-bit adder                                           : 2
+ 3-bit subtractor                                      : 1
+ 32-bit adder                                          : 1
+ 6-bit subtractor                                      : 1
+ 7-bit adder                                           : 2
+ 8-bit adder                                           : 3
+# Registers                                            : 39
+ 1-bit register                                        : 12
+ 10-bit register                                       : 1
+ 128-bit register                                      : 1
+ 14-bit register                                       : 1
+ 2-bit register                                        : 2
+ 24-bit register                                       : 1
+ 26-bit register                                       : 1
+ 3-bit register                                        : 3
+ 32-bit register                                       : 4
+ 4-bit register                                        : 3
+ 5-bit register                                        : 1
+ 6-bit register                                        : 1
+ 7-bit register                                        : 2
+ 8-bit register                                        : 6
+# Comparators                                          : 2
+ 26-bit comparator lessequal                           : 1
+ 32-bit comparator lessequal                           : 1
+# Multiplexers                                         : 180
+ 1-bit 2-to-1 multiplexer                              : 16
+ 10-bit 2-to-1 multiplexer                             : 1
+ 2-bit 2-to-1 multiplexer                              : 5
+ 24-bit 2-to-1 multiplexer                             : 1
+ 26-bit 2-to-1 multiplexer                             : 1
+ 3-bit 2-to-1 multiplexer                              : 4
+ 32-bit 2-to-1 multiplexer                             : 4
+ 33-bit 2-to-1 multiplexer                             : 3
+ 4-bit 2-to-1 multiplexer                              : 125
+ 6-bit 2-to-1 multiplexer                              : 2
+ 7-bit 2-to-1 multiplexer                              : 6
+ 7-bit 4-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 11
+# Logic shifters                                       : 3
+ 15-bit shifter logical right                          : 2
+ 255-bit shifter logical right                         : 1
 # Tristates                                            : 6
  1-bit tristate buffer                                 : 6
+# FSMs                                                 : 5
+# Xors                                                 : 1
+ 1-bit xor2                                            : 1
 
 =========================================================================
 
@@ -131,34 +424,233 @@ Macro Statistics
 =========================================================================
 
 
-Synthesizing (advanced) Unit <divBlinker_2>.
+Synthesizing (advanced) Unit <cclk_detector_5>.
 The following registers are absorbed into counter <M_ctr_q>: 1 register on signal <M_ctr_q>.
-Unit <divBlinker_2> synthesized (advanced).
+Unit <cclk_detector_5> synthesized (advanced).
+
+Synthesizing (advanced) Unit <divBlinker_4>.
+The following registers are absorbed into counter <M_ctr_q>: 1 register on signal <M_ctr_q>.
+Unit <divBlinker_4> synthesized (advanced).
+
+Synthesizing (advanced) Unit <reg_interface_9>.
+The following registers are absorbed into counter <M_timeout_q>: 1 register on signal <M_timeout_q>.
+Unit <reg_interface_9> synthesized (advanced).
+
+Synthesizing (advanced) Unit <spi_slave_6>.
+The following registers are absorbed into counter <M_bit_ct_q>: 1 register on signal <M_bit_ct_q>.
+Unit <spi_slave_6> synthesized (advanced).
+
+Synthesizing (advanced) Unit <uart_rx_7>.
+The following registers are absorbed into counter <M_bitCtr_q>: 1 register on signal <M_bitCtr_q>.
+Unit <uart_rx_7> synthesized (advanced).
+
+Synthesizing (advanced) Unit <uart_tx_8>.
+The following registers are absorbed into counter <M_bitCtr_q>: 1 register on signal <M_bitCtr_q>.
+Unit <uart_tx_8> synthesized (advanced).
+
+Synthesizing (advanced) Unit <wave_capture_10>.
+The following registers are absorbed into counter <M_raddr_q>: 1 register on signal <M_raddr_q>.
+INFO:Xst:3226 - The RAM <ram/Mram_mem> will be implemented as a BLOCK RAM, absorbing the following register(s): <ram/read_data>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 32-bit                   |          |
+    |     mode           | read-first                          |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <M_ram_write_en> | high     |
+    |     addrA          | connected to signal <M_waddr_q>     |          |
+    |     diA            | connected to signal <data>          |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 256-word x 32-bit                   |          |
+    |     mode           | read-first                          |          |
+    |     clkB           | connected to signal <clk>           | rise     |
+    |     addrB          | connected to signal <M_raddr_q>     |          |
+    |     doB            | connected to signal <M_ram_read_data> |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <wave_capture_10> synthesized (advanced).
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# Counters                                             : 1
- 25-bit up counter                                     : 1
-# Registers                                            : 5
- Flip-Flops                                            : 5
+# RAMs                                                 : 1
+ 256x32-bit dual-port block RAM                        : 1
+# Adders/Subtractors                                   : 7
+ 2-bit adder                                           : 1
+ 32-bit adder                                          : 1
+ 6-bit subtractor                                      : 1
+ 7-bit adder                                           : 2
+ 8-bit adder                                           : 2
+# Counters                                             : 7
+ 14-bit up counter                                     : 1
+ 24-bit up counter                                     : 1
+ 26-bit up counter                                     : 1
+ 3-bit down counter                                    : 1
+ 3-bit up counter                                      : 2
+ 8-bit up counter                                      : 1
+# Registers                                            : 327
+ Flip-Flops                                            : 327
+# Comparators                                          : 2
+ 26-bit comparator lessequal                           : 1
+ 32-bit comparator lessequal                           : 1
+# Multiplexers                                         : 183
+ 1-bit 2-to-1 multiplexer                              : 25
+ 2-bit 2-to-1 multiplexer                              : 5
+ 3-bit 2-to-1 multiplexer                              : 2
+ 32-bit 2-to-1 multiplexer                             : 4
+ 33-bit 2-to-1 multiplexer                             : 3
+ 4-bit 2-to-1 multiplexer                              : 125
+ 6-bit 2-to-1 multiplexer                              : 2
+ 7-bit 2-to-1 multiplexer                              : 6
+ 7-bit 4-to-1 multiplexer                              : 1
+ 8-bit 2-to-1 multiplexer                              : 10
+# Logic shifters                                       : 3
+ 15-bit shifter logical right                          : 2
+ 255-bit shifter logical right                         : 1
+# FSMs                                                 : 5
+# Xors                                                 : 1
+ 1-bit xor2                                            : 1
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+INFO:Xst:2261 - The FF/Latch <M_data_q_0> in Unit <spi_slave_6> is equivalent to the following 7 FFs/Latches, which will be removed : <M_data_q_1> <M_data_q_2> <M_data_q_3> <M_data_q_4> <M_data_q_5> <M_data_q_6> <M_data_q_7> 
+INFO:Xst:2261 - The FF/Latch <M_data_old_q_1> in Unit <wave_capture_10> is equivalent to the following 30 FFs/Latches, which will be removed : <M_data_old_q_2> <M_data_old_q_3> <M_data_old_q_4> <M_data_old_q_5> <M_data_old_q_6> <M_data_old_q_7> <M_data_old_q_8> <M_data_old_q_9> <M_data_old_q_10> <M_data_old_q_11> <M_data_old_q_12> <M_data_old_q_13> <M_data_old_q_14> <M_data_old_q_15> <M_data_old_q_16> <M_data_old_q_17> <M_data_old_q_18> <M_data_old_q_19> <M_data_old_q_20> <M_data_old_q_21> <M_data_old_q_22> <M_data_old_q_23> <M_data_old_q_24> <M_data_old_q_25> <M_data_old_q_26> <M_data_old_q_27> <M_data_old_q_28> <M_data_old_q_29> <M_data_old_q_30> <M_data_old_q_31> 
+WARNING:Xst:1293 - FF/Latch <M_data_old_q_1> has a constant value of 0 in block <wave_capture_10>. This FF/Latch will be trimmed during the optimization process.
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <avr/FSM_0> on signal <M_byteCt_q[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 10
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <avr/uart_tx/FSM_2> on signal <M_state_q[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 11
+ 11    | 10
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <avr/uart_rx/FSM_1> on signal <M_state_q[1:2]> with gray encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 01    | 01
+ 10    | 11
+ 11    | 10
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <L_reg/reg_interface/FSM_3> on signal <M_state_q[1:3]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 000   | 000
+ 001   | 001
+ 100   | 100
+ 010   | 010
+ 011   | 011
+ 101   | 101
+ 110   | 110
+-------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <L_reg/wave_capture/FSM_4> on signal <M_state_q[1:4]> with one-hot encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 0001
+ 01    | 0010
+ 10    | 0100
+ 11    | 1000
+-------------------
+WARNING:Xst:2677 - Node <avr/M_byteCt_q_FSM_FFd1> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <avr/M_byteCt_q_FSM_FFd2> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <avr/M_sampleReg_q_9> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <avr/M_sampleReg_q_8> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <avr/M_sampleReg_q_7> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <avr/M_sampleReg_q_6> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <avr/M_sampleReg_q_5> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <avr/M_sampleReg_q_4> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <avr/M_sampleReg_q_3> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <avr/M_sampleReg_q_2> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <avr/M_sampleReg_q_1> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <avr/M_sampleReg_q_0> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <avr/M_newSampleReg_q> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <avr/M_sampleChannelReg_q_3> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <avr/M_sampleChannelReg_q_2> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <avr/M_sampleChannelReg_q_1> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <avr/M_sampleChannelReg_q_0> of sequential type is unconnected in block <mojo_top_0>.
 
 Optimizing unit <mojo_top_0> ...
 
+Optimizing unit <uart_tx_8> ...
+
+Optimizing unit <spi_slave_6> ...
+
+Optimizing unit <uart_rx_7> ...
+
+Optimizing unit <reg_interface_9> ...
+
+Optimizing unit <wave_capture_10> ...
+WARNING:Xst:2677 - Node <avr/spi_slave/M_data_out_reg_q_7> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <avr/spi_slave/M_data_out_reg_q_6> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <avr/spi_slave/M_data_out_reg_q_5> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <avr/spi_slave/M_data_out_reg_q_4> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <avr/spi_slave/M_data_out_reg_q_3> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <avr/spi_slave/M_data_out_reg_q_2> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <avr/spi_slave/M_data_out_reg_q_1> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <avr/spi_slave/M_data_out_reg_q_0> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <avr/spi_slave/M_done_reg_q> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:2677 - Node <avr/spi_slave/M_mosi_reg_q> of sequential type is unconnected in block <mojo_top_0>.
+WARNING:Xst:1293 - FF/Latch <div/M_ctr_q_25> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <div/M_ctr_q_24> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <div/M_ctr_q_23> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <div/M_ctr_q_22> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <div/M_ctr_q_21> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <div/M_ctr_q_20> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <div/M_ctr_q_19> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <div/M_ctr_q_18> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <div/M_ctr_q_17> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <div/M_ctr_q_16> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <div/M_ctr_q_15> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <div/M_ctr_q_14> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <div/M_ctr_q_13> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <div/M_ctr_q_12> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <div/M_ctr_q_11> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <div/M_ctr_q_10> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <div/M_ctr_q_9> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <div/M_ctr_q_8> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <div/M_ctr_q_7> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <div/M_ctr_q_6> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <div/M_ctr_q_5> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <div/M_ctr_q_4> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <div/M_ctr_q_3> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <div/M_ctr_q_2> has a constant value of 0 in block <mojo_top_0>. This FF/Latch will be trimmed during the optimization process.
+
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 0.
+Found area constraint ratio of 100 (+ 0) on block mojo_top_0, actual ratio is 12.
+FlipFlop L_reg/reg_interface/M_state_q_FSM_FFd1 has been replicated 1 time(s)
+FlipFlop L_reg/reg_interface/M_state_q_FSM_FFd2 has been replicated 1 time(s)
 
 Final Macro Processing ...
 
 Processing Unit <mojo_top_0> :
+	Found 3-bit shift register for signal <avr/M_block_q_2>.
 INFO:Xst:741 - HDL ADVISOR - A 4-bit shift register was found for signal <reset_cond/M_stage_q_3> and currently occupies 4 logic cells (2 slices). Removing the set/reset logic would take advantage of SRL32 (and derived) primitives and reduce this to 1 logic cells (1 slices). Evaluate if the set/reset can be removed for this simple shift register. The majority of simple pipeline structures do not need to be set/reset operationally.
 Unit <mojo_top_0> processed.
 
@@ -166,8 +658,10 @@ Unit <mojo_top_0> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 30
- Flip-Flops                                            : 30
+# Registers                                            : 331
+ Flip-Flops                                            : 331
+# Shift Registers                                      : 1
+ 3-bit shift register                                  : 1
 
 =========================================================================
 
@@ -190,25 +684,33 @@ Top Level Output File Name         : mojo_top_0.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 114
-#      GND                         : 3
-#      INV                         : 2
-#      LUT1                        : 24
-#      LUT2                        : 26
-#      LUT3                        : 1
-#      LUT5                        : 1
-#      LUT6                        : 6
-#      MUXCY                       : 24
-#      VCC                         : 2
-#      XORCY                       : 25
-# FlipFlops/Latches                : 30
-#      FD                          : 26
-#      FDS                         : 4
+# BELS                             : 813
+#      GND                         : 7
+#      INV                         : 5
+#      LUT1                        : 45
+#      LUT2                        : 24
+#      LUT3                        : 66
+#      LUT4                        : 224
+#      LUT5                        : 81
+#      LUT6                        : 178
+#      MUXCY                       : 81
+#      MUXF7                       : 16
+#      VCC                         : 6
+#      XORCY                       : 80
+# FlipFlops/Latches                : 332
+#      FD                          : 27
+#      FDE                         : 245
+#      FDR                         : 41
+#      FDRE                        : 14
+#      FDS                         : 5
+# RAMS                             : 1
+#      RAMB8BWER                   : 1
+# Shift Registers                  : 1
+#      SRLC16E                     : 1
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 15
-#      IBUF                        : 1
-#      OBUF                        : 8
+# IO Buffers                       : 12
+#      IBUF                        : 6
 #      OBUFT                       : 6
 
 Device utilization summary:
@@ -218,22 +720,26 @@ Selected Device : 6slx9tqg144-2
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              30  out of  11440     0%  
- Number of Slice LUTs:                   60  out of   5720     1%  
-    Number used as Logic:                60  out of   5720     1%  
+ Number of Slice Registers:             332  out of  11440     2%  
+ Number of Slice LUTs:                  624  out of   5720    10%  
+    Number used as Logic:               623  out of   5720    10%  
+    Number used as Memory:                1  out of   1440     0%  
+       Number used as SRL:                1
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     64
-   Number with an unused Flip Flop:      34  out of     64    53%  
-   Number with an unused LUT:             4  out of     64     6%  
-   Number of fully used LUT-FF pairs:    26  out of     64    40%  
-   Number of unique control sets:         2
+ Number of LUT Flip Flop pairs used:    655
+   Number with an unused Flip Flop:     323  out of    655    49%  
+   Number with an unused LUT:            31  out of    655     4%  
+   Number of fully used LUT-FF pairs:   301  out of    655    45%  
+   Number of unique control sets:        27
 
 IO Utilization: 
- Number of IOs:                          22
- Number of bonded IOBs:                  16  out of    102    15%  
+ Number of IOs:                          14
+ Number of bonded IOBs:                  13  out of    102    12%  
 
 Specific Feature Utilization:
+ Number of Block RAM/FIFO:                1  out of     32     3%  
+    Number using Block RAM only:          1
  Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
 
 ---------------------------
@@ -257,7 +763,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 30    |
+clk                                | BUFGP                  | 334   |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -268,10 +774,10 @@ Timing Summary:
 ---------------
 Speed Grade: -2
 
-   Minimum period: 4.657ns (Maximum Frequency: 214.731MHz)
-   Minimum input arrival time before clock: 3.526ns
-   Maximum output required time after clock: 4.412ns
-   Maximum combinational path delay: No path found
+   Minimum period: 7.269ns (Maximum Frequency: 137.570MHz)
+   Minimum input arrival time before clock: 3.849ns
+   Maximum output required time after clock: 7.563ns
+   Maximum combinational path delay: 5.901ns
 
 Timing Details:
 ---------------
@@ -279,68 +785,95 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 4.657ns (frequency: 214.731MHz)
-  Total number of paths / destination ports: 1005 / 29
+  Clock period: 7.269ns (frequency: 137.570MHz)
+  Total number of paths / destination ports: 17354 / 663
 -------------------------------------------------------------------------
-Delay:               4.657ns (Levels of Logic = 3)
-  Source:            div/M_ctr_q_20 (FF)
-  Destination:       div/M_ctr_q_0 (FF)
+Delay:               7.269ns (Levels of Logic = 5)
+  Source:            L_reg/wave_capture/M_trigger_type_q_99 (FF)
+  Destination:       L_reg/wave_capture/ram/Mram_mem (RAM)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: div/M_ctr_q_20 to div/M_ctr_q_0
+  Data Path: L_reg/wave_capture/M_trigger_type_q_99 to L_reg/wave_capture/ram/Mram_mem
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               2   0.525   1.156  M_ctr_q_20 (M_ctr_q_20)
-     LUT5:I0->O            3   0.254   1.042  GND_3_o_GND_3_o_equal_2_o<24>2 (GND_3_o_GND_3_o_equal_2_o<24>1)
-     LUT6:I2->O           13   0.254   1.098  Mcount_M_ctr_q_val251 (Mcount_M_ctr_q_val)
-     LUT2:I1->O            1   0.254   0.000  M_ctr_q_0_rstpot (M_ctr_q_0_rstpot)
-     FD:D                      0.074          M_ctr_q_0
+     FDE:C->Q              3   0.525   1.042  M_trigger_type_q_99 (M_trigger_type_q_99)
+     LUT4:I0->O            2   0.254   1.181  M_trigger_type_q[96]_M_trigger_type_q[99]_OR_166_o1 (M_trigger_type_q[96]_M_trigger_type_q[99]_OR_166_o)
+     LUT6:I0->O           18   0.254   1.690  M_state_q_FSM_FFd2-In315 (M_state_q_FSM_FFd2-In315)
+     LUT6:I0->O            1   0.254   0.682  M_state_q_M_ram_write_en1_G (N137)
+     LUT3:I2->O            4   0.254   0.803  M_state_q_M_ram_write_en11 (M_ram_write_en)
+     begin scope: 'L_reg/wave_capture/ram:write_en'
+     RAMB8BWER:WEAWEL0         0.330          Mram_mem
     ----------------------------------------
-    Total                      4.657ns (1.361ns logic, 3.296ns route)
-                                       (29.2% logic, 70.8% route)
+    Total                      7.269ns (1.871ns logic, 5.398ns route)
+                                       (25.7% logic, 74.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 4 / 4
+  Total number of paths / destination ports: 22 / 22
 -------------------------------------------------------------------------
-Offset:              3.526ns (Levels of Logic = 3)
-  Source:            rst_n (PAD)
-  Destination:       reset_cond/M_stage_q_3 (FF)
+Offset:              3.849ns (Levels of Logic = 3)
+  Source:            cclk (PAD)
+  Destination:       avr/cclk_detector/M_ctr_q_13 (FF)
   Destination Clock: clk rising
 
-  Data Path: rst_n to reset_cond/M_stage_q_3
+  Data Path: cclk to avr/cclk_detector/M_ctr_q_13
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   1.328   0.681  rst_n_IBUF (rst_n_IBUF)
-     INV:I->O              4   0.255   0.803  M_reset_cond_in1_INV_0 (M_reset_cond_in)
-     begin scope: 'reset_cond:in'
-     FDS:S                     0.459          M_stage_q_0
+     IBUF:I->O             1   1.328   0.682  cclk_IBUF (cclk_IBUF)
+     begin scope: 'avr:cclk'
+     begin scope: 'avr/cclk_detector:cclk'
+     LUT2:I1->O           14   0.254   1.126  Mcount_M_ctr_q_val1 (Mcount_M_ctr_q_val)
+     FDRE:R                    0.459          M_ctr_q_0
     ----------------------------------------
-    Total                      3.526ns (2.042ns logic, 1.484ns route)
-                                       (57.9% logic, 42.1% route)
+    Total                      3.849ns (2.041ns logic, 1.808ns route)
+                                       (53.0% logic, 47.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 8 / 8
+  Total number of paths / destination ports: 86 / 6
 -------------------------------------------------------------------------
-Offset:              4.412ns (Levels of Logic = 2)
-  Source:            div/M_led_q (FF)
-  Destination:       led<7> (PAD)
+Offset:              7.563ns (Levels of Logic = 4)
+  Source:            avr/cclk_detector/M_ctr_q_9 (FF)
+  Destination:       spi_channel<3> (PAD)
   Source Clock:      clk rising
 
-  Data Path: div/M_led_q to led<7>
+  Data Path: avr/cclk_detector/M_ctr_q_9 to spi_channel<3>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               9   0.525   0.975  M_led_q (M_led_q)
-     end scope: 'div:out'
-     OBUF:I->O                 2.912          led_7_OBUF (led<7>)
+     FDRE:C->Q             2   0.525   1.181  M_ctr_q_9 (M_ctr_q_9)
+     LUT6:I0->O            2   0.254   1.002  out1 (out)
+     end scope: 'avr/cclk_detector:out'
+     LUT4:I0->O           27   0.254   1.435  M_cclk_detector_ready_inv1 (M_cclk_detector_ready_inv)
+     end scope: 'avr:M_cclk_detector_ready_inv'
+     OBUFT:T->O                2.912          spi_channel_3_OBUFT (spi_channel<3>)
     ----------------------------------------
-    Total                      4.412ns (3.437ns logic, 0.975ns route)
-                                       (77.9% logic, 22.1% route)
+    Total                      7.563ns (3.945ns logic, 3.618ns route)
+                                       (52.2% logic, 47.8% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               5.901ns (Levels of Logic = 4)
+  Source:            spi_ss (PAD)
+  Destination:       spi_miso (PAD)
+
+  Data Path: spi_ss to spi_miso
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   1.328   0.726  spi_ss_IBUF (spi_ss_IBUF)
+     begin scope: 'avr:spi_ss'
+     LUT5:I4->O            1   0.254   0.681  M_cclk_detector_ready[0]_spi_ss_AND_28_o_inv1 (M_cclk_detector_ready[0]_spi_ss_AND_28_o_inv)
+     end scope: 'avr:M_cclk_detector_ready[0]_spi_ss_AND_28_o_inv'
+     OBUFT:T->O                2.912          spi_miso_OBUFT (spi_miso)
+    ----------------------------------------
+    Total                      5.901ns (4.494ns logic, 1.407ns route)
+                                       (76.2% logic, 23.8% route)
 
 =========================================================================
 
@@ -352,20 +885,20 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    4.657|         |         |         |
+clk            |    7.269|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 3.44 secs
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 6.40 secs
  
 --> 
 
-Total memory usage is 4486620 kilobytes
+Total memory usage is 4502948 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    8 (   0 filtered)
-Number of infos    :    1 (   0 filtered)
+Number of warnings :   56 (   0 filtered)
+Number of infos    :    8 (   0 filtered)
 

@@ -5,10 +5,14 @@ C:\Xilinx\14.7\ISE_DS\ISE\.
    "mojo_top_0" is an NCD, version 3.2, device xc6slx9, package tqg144, speed -2
 Opened constraints file mojo_top_0.pcf.
 
-Mon Mar 11 15:43:25 2024
+Sat Mar 16 21:25:02 2024
 
 C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\bitgen.exe -g Binary:Yes -g Compress -w -intstyle pa mojo_top_0_routed.ncd mojo_top_0.bit mojo_top_0.pcf 
 
+INFO:Bitgen:341 - This design is using one or more 9K Block RAMs (RAMB8BWER). 
+   9K Block RAM initialization data, both user defined and default, requires a
+   special bit stream format.  For more information, please reference Xilinx
+   Answer Record 39999.
 Summary of Bitgen Options:
 +----------------------+----------------------+
 | Option Name          | Current Setting      |
@@ -129,9 +133,14 @@ There were 1 CONFIG constraint(s) processed from mojo_top_0.pcf.
    CONFIG VCCAUX = "3.3"
 
 Running DRC.
-DRC detected 0 errors and 0 warnings.
+WARNING:PhysDesignRules:2410 - This design is using one or more 9K Block RAMs
+   (RAMB8BWER).  9K Block RAM initialization data, both user defined and
+   default, may be incorrect and should not be used.  For more information,
+   please reference Xilinx Answer Record 39999.
+DRC detected 0 errors and 1 warnings.  Please see the previously displayed
+individual error or warning messages for more details.
 Creating bit map...
 Saving bit stream in "mojo_top_0.bit".
-Bitstream compression saved 1695808 bits.
+Bitstream compression saved 1202544 bits.
 Saving bit stream in "mojo_top_0.bin".
 Bitstream generation is complete.

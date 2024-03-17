@@ -21,22 +21,6 @@ NET "rst_n" IOSTANDARD = LVTTL;
 NET "cclk" LOC = P70;
 NET "cclk" IOSTANDARD = LVTTL;
 
-NET "led[0]" LOC = P134;
-NET "led[0]" IOSTANDARD = LVTTL;
-NET "led[1]" LOC = P133;
-NET "led[1]" IOSTANDARD = LVTTL;
-NET "led[2]" LOC = P132;
-NET "led[2]" IOSTANDARD = LVTTL;
-NET "led[3]" LOC = P131;
-NET "led[3]" IOSTANDARD = LVTTL;
-NET "led[4]" LOC = P127;
-NET "led[4]" IOSTANDARD = LVTTL;
-NET "led[5]" LOC = P126;
-NET "led[5]" IOSTANDARD = LVTTL;
-NET "led[6]" LOC = P124;
-NET "led[6]" IOSTANDARD = LVTTL;
-NET "led[7]" LOC = P123;
-NET "led[7]" IOSTANDARD = LVTTL;
 
 NET "spi_mosi" LOC = P44;
 NET "spi_mosi" IOSTANDARD = LVTTL;

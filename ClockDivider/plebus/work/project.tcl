@@ -5,7 +5,7 @@ set device xc6slx9-2tqg144
 if {[file exists "$projDir/$projName"]} { file delete -force "$projDir/$projName" }
 create_project $projName "$projDir/$projName" -part $device
 set_property design_mode RTL [get_filesets sources_1]
-set verilogSources [list "C:/Users/Maya Wallach/Documents/mojo/plebus/work/verilog/mojo_top_0.v" "C:/Users/Maya Wallach/Documents/mojo/plebus/work/verilog/reset_conditioner_1.v" "C:/Users/Maya Wallach/Documents/mojo/plebus/work/verilog/divBlinker_2.v"]
+set verilogSources [list "C:/Users/Maya Wallach/Documents/mojo/plebus/work/verilog/mojo_top_0.v" "C:/Users/Maya Wallach/Documents/mojo/plebus/work/verilog/reset_conditioner_1.v" "C:/Users/Maya Wallach/Documents/mojo/plebus/work/verilog/avr_interface_2.v" "C:/Users/Maya Wallach/Documents/mojo/plebus/work/verilog/reg_interface_debug_3.v" "C:/Users/Maya Wallach/Documents/mojo/plebus/work/verilog/divBlinker_4.v" "C:/Users/Maya Wallach/Documents/mojo/plebus/work/verilog/cclk_detector_5.v" "C:/Users/Maya Wallach/Documents/mojo/plebus/work/verilog/spi_slave_6.v" "C:/Users/Maya Wallach/Documents/mojo/plebus/work/verilog/uart_rx_7.v" "C:/Users/Maya Wallach/Documents/mojo/plebus/work/verilog/uart_tx_8.v" "C:/Users/Maya Wallach/Documents/mojo/plebus/work/verilog/reg_interface_9.v" "C:/Users/Maya Wallach/Documents/mojo/plebus/work/verilog/wave_capture_10.v" "C:/Users/Maya Wallach/Documents/mojo/plebus/work/verilog/simple_dual_ram_11.v"]
 import_files -fileset [get_filesets sources_1] -force -norecurse $verilogSources
 set ucfSources [list  "C:/Program\ Files/Mojo\ IDE/library/components/mojo.ucf"]
 import_files -fileset [get_filesets constrs_1] -force -norecurse $ucfSources

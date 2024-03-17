@@ -28,16 +28,16 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
 Timing constraint: TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH 50%;
 For more information, see Period Analysis in the Timing Closure User Guide (UG612).
 
- 1005 paths analyzed, 56 endpoints analyzed, 0 failing endpoints
+ 17353 paths analyzed, 1728 endpoints analyzed, 0 failing endpoints
  0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
- Minimum period is   4.260ns.
+ Minimum period is   7.212ns.
 --------------------------------------------------------------------------------
-Slack:                  15.740ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               div/M_ctr_q_23 (FF)
-  Destination:          div/M_ctr_q_8 (FF)
+Slack:                  12.788ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               L_reg/wave_capture/M_trigger_type_q_100 (FF)
+  Destination:          L_reg/wave_capture/ram/Mram_mem (RAM)
   Requirement:          20.000ns
-  Data Path Delay:      4.211ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.014ns (0.320 - 0.334)
+  Data Path Delay:      7.117ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.060ns (0.594 - 0.654)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -48,33 +48,38 @@ Slack:                  15.740ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: div/M_ctr_q_23 to div/M_ctr_q_8
+  Maximum Data Path at Slow Process Corner: L_reg/wave_capture/M_trigger_type_q_100 to L_reg/wave_capture/ram/Mram_mem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X9Y42.BQ       Tcko                  0.430   div/M_ctr_q[24]
-                                                       div/M_ctr_q_23
-    SLICE_X7Y39.A2       net (fanout=2)        1.077   div/M_ctr_q[23]
-    SLICE_X7Y39.A        Tilo                  0.259   div/N3
-                                                       div/GND_3_o_GND_3_o_equal_2_o<24>4
-    SLICE_X9Y37.B5       net (fanout=3)        0.967   div/GND_3_o_GND_3_o_equal_2_o<24>3
-    SLICE_X9Y37.B        Tilo                  0.259   div/M_ctr_q[2]
-                                                       div/Mcount_M_ctr_q_val251
-    SLICE_X6Y39.B4       net (fanout=13)       0.870   div/Mcount_M_ctr_q_val
-    SLICE_X6Y39.CLK      Tas                   0.349   div/M_ctr_q[10]
-                                                       div/M_ctr_q_8_rstpot
-                                                       div/M_ctr_q_8
+    SLICE_X4Y21.BQ       Tcko                  0.525   L_reg/M_trigger_type_q_102
+                                                       L_reg/wave_capture/M_trigger_type_q_100
+    SLICE_X3Y21.B5       net (fanout=3)        0.821   L_reg/M_trigger_type_q_100
+    SLICE_X3Y21.B        Tilo                  0.259   L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o
+                                                       L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o1
+    SLICE_X2Y23.B1       net (fanout=2)        1.103   L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o
+    SLICE_X2Y23.B        Tilo                  0.235   L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+    SLICE_X9Y18.D1       net (fanout=18)       1.955   L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+    SLICE_X9Y18.D        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en1_G
+    SLICE_X9Y18.C6       net (fanout=1)        0.143   L_reg/wave_capture/N137
+    SLICE_X9Y18.C        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en11
+    RAMB8_X1Y10.WEAWEL1  net (fanout=4)        1.228   L_reg/wave_capture/M_ram_write_en
+    RAMB8_X1Y10.CLKAWRCLKTrcck_WEA             0.330   L_reg/wave_capture/ram/Mram_mem
+                                                       L_reg/wave_capture/ram/Mram_mem
     -------------------------------------------------  ---------------------------
-    Total                                      4.211ns (1.297ns logic, 2.914ns route)
-                                                       (30.8% logic, 69.2% route)
+    Total                                      7.117ns (1.867ns logic, 5.250ns route)
+                                                       (26.2% logic, 73.8% route)
 
 --------------------------------------------------------------------------------
-Slack:                  15.744ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               div/M_ctr_q_7 (FF)
-  Destination:          div/M_ctr_q_8 (FF)
+Slack:                  12.788ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               L_reg/wave_capture/M_trigger_type_q_100 (FF)
+  Destination:          L_reg/wave_capture/ram/Mram_mem (RAM)
   Requirement:          20.000ns
-  Data Path Delay:      4.221ns (Levels of Logic = 3)
-  Clock Path Skew:      0.000ns
+  Data Path Delay:      7.117ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.060ns (0.594 - 0.654)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -85,33 +90,38 @@ Slack:                  15.744ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: div/M_ctr_q_7 to div/M_ctr_q_8
+  Maximum Data Path at Slow Process Corner: L_reg/wave_capture/M_trigger_type_q_100 to L_reg/wave_capture/ram/Mram_mem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X6Y39.AQ       Tcko                  0.476   div/M_ctr_q[10]
-                                                       div/M_ctr_q_7
-    SLICE_X9Y39.D3       net (fanout=2)        1.076   div/M_ctr_q[7]
-    SLICE_X9Y39.D        Tilo                  0.259   M_div_out
-                                                       div/GND_3_o_GND_3_o_equal_2_o<24>3
-    SLICE_X9Y37.B1       net (fanout=3)        0.932   div/GND_3_o_GND_3_o_equal_2_o<24>2
-    SLICE_X9Y37.B        Tilo                  0.259   div/M_ctr_q[2]
-                                                       div/Mcount_M_ctr_q_val251
-    SLICE_X6Y39.B4       net (fanout=13)       0.870   div/Mcount_M_ctr_q_val
-    SLICE_X6Y39.CLK      Tas                   0.349   div/M_ctr_q[10]
-                                                       div/M_ctr_q_8_rstpot
-                                                       div/M_ctr_q_8
+    SLICE_X4Y21.BQ       Tcko                  0.525   L_reg/M_trigger_type_q_102
+                                                       L_reg/wave_capture/M_trigger_type_q_100
+    SLICE_X3Y21.B5       net (fanout=3)        0.821   L_reg/M_trigger_type_q_100
+    SLICE_X3Y21.B        Tilo                  0.259   L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o
+                                                       L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o1
+    SLICE_X2Y23.B1       net (fanout=2)        1.103   L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o
+    SLICE_X2Y23.B        Tilo                  0.235   L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+    SLICE_X9Y18.D1       net (fanout=18)       1.955   L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+    SLICE_X9Y18.D        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en1_G
+    SLICE_X9Y18.C6       net (fanout=1)        0.143   L_reg/wave_capture/N137
+    SLICE_X9Y18.C        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en11
+    RAMB8_X1Y10.WEAWEL0  net (fanout=4)        1.228   L_reg/wave_capture/M_ram_write_en
+    RAMB8_X1Y10.CLKAWRCLKTrcck_WEA             0.330   L_reg/wave_capture/ram/Mram_mem
+                                                       L_reg/wave_capture/ram/Mram_mem
     -------------------------------------------------  ---------------------------
-    Total                                      4.221ns (1.343ns logic, 2.878ns route)
-                                                       (31.8% logic, 68.2% route)
+    Total                                      7.117ns (1.867ns logic, 5.250ns route)
+                                                       (26.2% logic, 73.8% route)
 
 --------------------------------------------------------------------------------
-Slack:                  15.754ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               div/M_ctr_q_15 (FF)
-  Destination:          div/M_ctr_q_8 (FF)
+Slack:                  12.807ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               L_reg/wave_capture/M_trigger_type_q_102 (FF)
+  Destination:          L_reg/wave_capture/ram/Mram_mem (RAM)
   Requirement:          20.000ns
-  Data Path Delay:      4.199ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.012ns (0.320 - 0.332)
+  Data Path Delay:      7.098ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.060ns (0.594 - 0.654)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -122,33 +132,38 @@ Slack:                  15.754ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: div/M_ctr_q_15 to div/M_ctr_q_8
+  Maximum Data Path at Slow Process Corner: L_reg/wave_capture/M_trigger_type_q_102 to L_reg/wave_capture/ram/Mram_mem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X9Y41.BQ       Tcko                  0.430   div/M_ctr_q[17]
-                                                       div/M_ctr_q_15
-    SLICE_X7Y39.A1       net (fanout=2)        1.065   div/M_ctr_q[15]
-    SLICE_X7Y39.A        Tilo                  0.259   div/N3
-                                                       div/GND_3_o_GND_3_o_equal_2_o<24>4
-    SLICE_X9Y37.B5       net (fanout=3)        0.967   div/GND_3_o_GND_3_o_equal_2_o<24>3
-    SLICE_X9Y37.B        Tilo                  0.259   div/M_ctr_q[2]
-                                                       div/Mcount_M_ctr_q_val251
-    SLICE_X6Y39.B4       net (fanout=13)       0.870   div/Mcount_M_ctr_q_val
-    SLICE_X6Y39.CLK      Tas                   0.349   div/M_ctr_q[10]
-                                                       div/M_ctr_q_8_rstpot
-                                                       div/M_ctr_q_8
+    SLICE_X4Y21.DQ       Tcko                  0.525   L_reg/M_trigger_type_q_102
+                                                       L_reg/wave_capture/M_trigger_type_q_102
+    SLICE_X3Y21.B3       net (fanout=3)        0.802   L_reg/M_trigger_type_q_102
+    SLICE_X3Y21.B        Tilo                  0.259   L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o
+                                                       L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o1
+    SLICE_X2Y23.B1       net (fanout=2)        1.103   L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o
+    SLICE_X2Y23.B        Tilo                  0.235   L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+    SLICE_X9Y18.D1       net (fanout=18)       1.955   L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+    SLICE_X9Y18.D        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en1_G
+    SLICE_X9Y18.C6       net (fanout=1)        0.143   L_reg/wave_capture/N137
+    SLICE_X9Y18.C        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en11
+    RAMB8_X1Y10.WEAWEL1  net (fanout=4)        1.228   L_reg/wave_capture/M_ram_write_en
+    RAMB8_X1Y10.CLKAWRCLKTrcck_WEA             0.330   L_reg/wave_capture/ram/Mram_mem
+                                                       L_reg/wave_capture/ram/Mram_mem
     -------------------------------------------------  ---------------------------
-    Total                                      4.199ns (1.297ns logic, 2.902ns route)
-                                                       (30.9% logic, 69.1% route)
+    Total                                      7.098ns (1.867ns logic, 5.231ns route)
+                                                       (26.3% logic, 73.7% route)
 
 --------------------------------------------------------------------------------
-Slack:                  15.792ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               div/M_ctr_q_23 (FF)
-  Destination:          div/M_ctr_q_10 (FF)
+Slack:                  12.807ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               L_reg/wave_capture/M_trigger_type_q_102 (FF)
+  Destination:          L_reg/wave_capture/ram/Mram_mem (RAM)
   Requirement:          20.000ns
-  Data Path Delay:      4.159ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.014ns (0.320 - 0.334)
+  Data Path Delay:      7.098ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.060ns (0.594 - 0.654)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -159,33 +174,38 @@ Slack:                  15.792ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: div/M_ctr_q_23 to div/M_ctr_q_10
+  Maximum Data Path at Slow Process Corner: L_reg/wave_capture/M_trigger_type_q_102 to L_reg/wave_capture/ram/Mram_mem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X9Y42.BQ       Tcko                  0.430   div/M_ctr_q[24]
-                                                       div/M_ctr_q_23
-    SLICE_X7Y39.A2       net (fanout=2)        1.077   div/M_ctr_q[23]
-    SLICE_X7Y39.A        Tilo                  0.259   div/N3
-                                                       div/GND_3_o_GND_3_o_equal_2_o<24>4
-    SLICE_X9Y37.B5       net (fanout=3)        0.967   div/GND_3_o_GND_3_o_equal_2_o<24>3
-    SLICE_X9Y37.B        Tilo                  0.259   div/M_ctr_q[2]
-                                                       div/Mcount_M_ctr_q_val251
-    SLICE_X6Y39.D5       net (fanout=13)       0.818   div/Mcount_M_ctr_q_val
-    SLICE_X6Y39.CLK      Tas                   0.349   div/M_ctr_q[10]
-                                                       div/M_ctr_q_10_rstpot
-                                                       div/M_ctr_q_10
+    SLICE_X4Y21.DQ       Tcko                  0.525   L_reg/M_trigger_type_q_102
+                                                       L_reg/wave_capture/M_trigger_type_q_102
+    SLICE_X3Y21.B3       net (fanout=3)        0.802   L_reg/M_trigger_type_q_102
+    SLICE_X3Y21.B        Tilo                  0.259   L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o
+                                                       L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o1
+    SLICE_X2Y23.B1       net (fanout=2)        1.103   L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o
+    SLICE_X2Y23.B        Tilo                  0.235   L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+    SLICE_X9Y18.D1       net (fanout=18)       1.955   L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+    SLICE_X9Y18.D        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en1_G
+    SLICE_X9Y18.C6       net (fanout=1)        0.143   L_reg/wave_capture/N137
+    SLICE_X9Y18.C        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en11
+    RAMB8_X1Y10.WEAWEL0  net (fanout=4)        1.228   L_reg/wave_capture/M_ram_write_en
+    RAMB8_X1Y10.CLKAWRCLKTrcck_WEA             0.330   L_reg/wave_capture/ram/Mram_mem
+                                                       L_reg/wave_capture/ram/Mram_mem
     -------------------------------------------------  ---------------------------
-    Total                                      4.159ns (1.297ns logic, 2.862ns route)
-                                                       (31.2% logic, 68.8% route)
+    Total                                      7.098ns (1.867ns logic, 5.231ns route)
+                                                       (26.3% logic, 73.7% route)
 
 --------------------------------------------------------------------------------
-Slack:                  15.796ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               div/M_ctr_q_7 (FF)
-  Destination:          div/M_ctr_q_10 (FF)
+Slack:                  12.817ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               L_reg/wave_capture/M_trigger_type_q_100 (FF)
+  Destination:          L_reg/wave_capture/ram/Mram_mem (RAM)
   Requirement:          20.000ns
-  Data Path Delay:      4.169ns (Levels of Logic = 3)
-  Clock Path Skew:      0.000ns
+  Data Path Delay:      7.088ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.060ns (0.594 - 0.654)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -196,33 +216,38 @@ Slack:                  15.796ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: div/M_ctr_q_7 to div/M_ctr_q_10
+  Maximum Data Path at Slow Process Corner: L_reg/wave_capture/M_trigger_type_q_100 to L_reg/wave_capture/ram/Mram_mem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X6Y39.AQ       Tcko                  0.476   div/M_ctr_q[10]
-                                                       div/M_ctr_q_7
-    SLICE_X9Y39.D3       net (fanout=2)        1.076   div/M_ctr_q[7]
-    SLICE_X9Y39.D        Tilo                  0.259   M_div_out
-                                                       div/GND_3_o_GND_3_o_equal_2_o<24>3
-    SLICE_X9Y37.B1       net (fanout=3)        0.932   div/GND_3_o_GND_3_o_equal_2_o<24>2
-    SLICE_X9Y37.B        Tilo                  0.259   div/M_ctr_q[2]
-                                                       div/Mcount_M_ctr_q_val251
-    SLICE_X6Y39.D5       net (fanout=13)       0.818   div/Mcount_M_ctr_q_val
-    SLICE_X6Y39.CLK      Tas                   0.349   div/M_ctr_q[10]
-                                                       div/M_ctr_q_10_rstpot
-                                                       div/M_ctr_q_10
+    SLICE_X4Y21.BQ       Tcko                  0.525   L_reg/M_trigger_type_q_102
+                                                       L_reg/wave_capture/M_trigger_type_q_100
+    SLICE_X3Y21.B5       net (fanout=3)        0.821   L_reg/M_trigger_type_q_100
+    SLICE_X3Y21.B        Tilo                  0.259   L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o
+                                                       L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o1
+    SLICE_X2Y23.B1       net (fanout=2)        1.103   L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o
+    SLICE_X2Y23.B        Tilo                  0.235   L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+    SLICE_X9Y18.D1       net (fanout=18)       1.955   L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+    SLICE_X9Y18.D        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en1_G
+    SLICE_X9Y18.C6       net (fanout=1)        0.143   L_reg/wave_capture/N137
+    SLICE_X9Y18.C        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en11
+    RAMB8_X1Y10.WEBWEU1  net (fanout=4)        1.199   L_reg/wave_capture/M_ram_write_en
+    RAMB8_X1Y10.CLKAWRCLKTrcck_WEB             0.330   L_reg/wave_capture/ram/Mram_mem
+                                                       L_reg/wave_capture/ram/Mram_mem
     -------------------------------------------------  ---------------------------
-    Total                                      4.169ns (1.343ns logic, 2.826ns route)
-                                                       (32.2% logic, 67.8% route)
+    Total                                      7.088ns (1.867ns logic, 5.221ns route)
+                                                       (26.3% logic, 73.7% route)
 
 --------------------------------------------------------------------------------
-Slack:                  15.806ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               div/M_ctr_q_15 (FF)
-  Destination:          div/M_ctr_q_10 (FF)
+Slack:                  12.817ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               L_reg/wave_capture/M_trigger_type_q_100 (FF)
+  Destination:          L_reg/wave_capture/ram/Mram_mem (RAM)
   Requirement:          20.000ns
-  Data Path Delay:      4.147ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.012ns (0.320 - 0.332)
+  Data Path Delay:      7.088ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.060ns (0.594 - 0.654)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -233,33 +258,38 @@ Slack:                  15.806ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: div/M_ctr_q_15 to div/M_ctr_q_10
+  Maximum Data Path at Slow Process Corner: L_reg/wave_capture/M_trigger_type_q_100 to L_reg/wave_capture/ram/Mram_mem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X9Y41.BQ       Tcko                  0.430   div/M_ctr_q[17]
-                                                       div/M_ctr_q_15
-    SLICE_X7Y39.A1       net (fanout=2)        1.065   div/M_ctr_q[15]
-    SLICE_X7Y39.A        Tilo                  0.259   div/N3
-                                                       div/GND_3_o_GND_3_o_equal_2_o<24>4
-    SLICE_X9Y37.B5       net (fanout=3)        0.967   div/GND_3_o_GND_3_o_equal_2_o<24>3
-    SLICE_X9Y37.B        Tilo                  0.259   div/M_ctr_q[2]
-                                                       div/Mcount_M_ctr_q_val251
-    SLICE_X6Y39.D5       net (fanout=13)       0.818   div/Mcount_M_ctr_q_val
-    SLICE_X6Y39.CLK      Tas                   0.349   div/M_ctr_q[10]
-                                                       div/M_ctr_q_10_rstpot
-                                                       div/M_ctr_q_10
+    SLICE_X4Y21.BQ       Tcko                  0.525   L_reg/M_trigger_type_q_102
+                                                       L_reg/wave_capture/M_trigger_type_q_100
+    SLICE_X3Y21.B5       net (fanout=3)        0.821   L_reg/M_trigger_type_q_100
+    SLICE_X3Y21.B        Tilo                  0.259   L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o
+                                                       L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o1
+    SLICE_X2Y23.B1       net (fanout=2)        1.103   L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o
+    SLICE_X2Y23.B        Tilo                  0.235   L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+    SLICE_X9Y18.D1       net (fanout=18)       1.955   L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+    SLICE_X9Y18.D        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en1_G
+    SLICE_X9Y18.C6       net (fanout=1)        0.143   L_reg/wave_capture/N137
+    SLICE_X9Y18.C        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en11
+    RAMB8_X1Y10.WEBWEU0  net (fanout=4)        1.199   L_reg/wave_capture/M_ram_write_en
+    RAMB8_X1Y10.CLKAWRCLKTrcck_WEB             0.330   L_reg/wave_capture/ram/Mram_mem
+                                                       L_reg/wave_capture/ram/Mram_mem
     -------------------------------------------------  ---------------------------
-    Total                                      4.147ns (1.297ns logic, 2.850ns route)
-                                                       (31.3% logic, 68.7% route)
+    Total                                      7.088ns (1.867ns logic, 5.221ns route)
+                                                       (26.3% logic, 73.7% route)
 
 --------------------------------------------------------------------------------
-Slack:                  15.817ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               div/M_ctr_q_23 (FF)
-  Destination:          div/M_ctr_q_9 (FF)
+Slack:                  12.822ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               L_reg/wave_capture/M_trigger_type_q_101 (FF)
+  Destination:          L_reg/wave_capture/ram/Mram_mem (RAM)
   Requirement:          20.000ns
-  Data Path Delay:      4.134ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.014ns (0.320 - 0.334)
+  Data Path Delay:      7.083ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.060ns (0.594 - 0.654)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -270,33 +300,38 @@ Slack:                  15.817ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: div/M_ctr_q_23 to div/M_ctr_q_9
+  Maximum Data Path at Slow Process Corner: L_reg/wave_capture/M_trigger_type_q_101 to L_reg/wave_capture/ram/Mram_mem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X9Y42.BQ       Tcko                  0.430   div/M_ctr_q[24]
-                                                       div/M_ctr_q_23
-    SLICE_X7Y39.A2       net (fanout=2)        1.077   div/M_ctr_q[23]
-    SLICE_X7Y39.A        Tilo                  0.259   div/N3
-                                                       div/GND_3_o_GND_3_o_equal_2_o<24>4
-    SLICE_X9Y37.B5       net (fanout=3)        0.967   div/GND_3_o_GND_3_o_equal_2_o<24>3
-    SLICE_X9Y37.B        Tilo                  0.259   div/M_ctr_q[2]
-                                                       div/Mcount_M_ctr_q_val251
-    SLICE_X6Y39.C5       net (fanout=13)       0.793   div/Mcount_M_ctr_q_val
-    SLICE_X6Y39.CLK      Tas                   0.349   div/M_ctr_q[10]
-                                                       div/M_ctr_q_9_rstpot
-                                                       div/M_ctr_q_9
+    SLICE_X4Y21.CQ       Tcko                  0.525   L_reg/M_trigger_type_q_102
+                                                       L_reg/wave_capture/M_trigger_type_q_101
+    SLICE_X3Y21.B4       net (fanout=3)        0.787   L_reg/M_trigger_type_q_101
+    SLICE_X3Y21.B        Tilo                  0.259   L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o
+                                                       L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o1
+    SLICE_X2Y23.B1       net (fanout=2)        1.103   L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o
+    SLICE_X2Y23.B        Tilo                  0.235   L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+    SLICE_X9Y18.D1       net (fanout=18)       1.955   L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+    SLICE_X9Y18.D        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en1_G
+    SLICE_X9Y18.C6       net (fanout=1)        0.143   L_reg/wave_capture/N137
+    SLICE_X9Y18.C        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en11
+    RAMB8_X1Y10.WEAWEL1  net (fanout=4)        1.228   L_reg/wave_capture/M_ram_write_en
+    RAMB8_X1Y10.CLKAWRCLKTrcck_WEA             0.330   L_reg/wave_capture/ram/Mram_mem
+                                                       L_reg/wave_capture/ram/Mram_mem
     -------------------------------------------------  ---------------------------
-    Total                                      4.134ns (1.297ns logic, 2.837ns route)
-                                                       (31.4% logic, 68.6% route)
+    Total                                      7.083ns (1.867ns logic, 5.216ns route)
+                                                       (26.4% logic, 73.6% route)
 
 --------------------------------------------------------------------------------
-Slack:                  15.820ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               div/M_ctr_q_23 (FF)
-  Destination:          div/M_ctr_q_20 (FF)
+Slack:                  12.822ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               L_reg/wave_capture/M_trigger_type_q_101 (FF)
+  Destination:          L_reg/wave_capture/ram/Mram_mem (RAM)
   Requirement:          20.000ns
-  Data Path Delay:      4.127ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.018ns (0.316 - 0.334)
+  Data Path Delay:      7.083ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.060ns (0.594 - 0.654)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -307,33 +342,38 @@ Slack:                  15.820ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: div/M_ctr_q_23 to div/M_ctr_q_20
+  Maximum Data Path at Slow Process Corner: L_reg/wave_capture/M_trigger_type_q_101 to L_reg/wave_capture/ram/Mram_mem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X9Y42.BQ       Tcko                  0.430   div/M_ctr_q[24]
-                                                       div/M_ctr_q_23
-    SLICE_X7Y39.A2       net (fanout=2)        1.077   div/M_ctr_q[23]
-    SLICE_X7Y39.A        Tilo                  0.259   div/N3
-                                                       div/GND_3_o_GND_3_o_equal_2_o<24>4
-    SLICE_X9Y40.C3       net (fanout=3)        0.911   div/GND_3_o_GND_3_o_equal_2_o<24>3
-    SLICE_X9Y40.C        Tilo                  0.259   div/M_ctr_q[13]
-                                                       div/Mcount_M_ctr_q_val251_1
-    SLICE_X10Y42.C4      net (fanout=12)       0.842   div/Mcount_M_ctr_q_val251
-    SLICE_X10Y42.CLK     Tas                   0.349   div/M_ctr_q[21]
-                                                       div/M_ctr_q_20_rstpot
-                                                       div/M_ctr_q_20
+    SLICE_X4Y21.CQ       Tcko                  0.525   L_reg/M_trigger_type_q_102
+                                                       L_reg/wave_capture/M_trigger_type_q_101
+    SLICE_X3Y21.B4       net (fanout=3)        0.787   L_reg/M_trigger_type_q_101
+    SLICE_X3Y21.B        Tilo                  0.259   L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o
+                                                       L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o1
+    SLICE_X2Y23.B1       net (fanout=2)        1.103   L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o
+    SLICE_X2Y23.B        Tilo                  0.235   L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+    SLICE_X9Y18.D1       net (fanout=18)       1.955   L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+    SLICE_X9Y18.D        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en1_G
+    SLICE_X9Y18.C6       net (fanout=1)        0.143   L_reg/wave_capture/N137
+    SLICE_X9Y18.C        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en11
+    RAMB8_X1Y10.WEAWEL0  net (fanout=4)        1.228   L_reg/wave_capture/M_ram_write_en
+    RAMB8_X1Y10.CLKAWRCLKTrcck_WEA             0.330   L_reg/wave_capture/ram/Mram_mem
+                                                       L_reg/wave_capture/ram/Mram_mem
     -------------------------------------------------  ---------------------------
-    Total                                      4.127ns (1.297ns logic, 2.830ns route)
-                                                       (31.4% logic, 68.6% route)
+    Total                                      7.083ns (1.867ns logic, 5.216ns route)
+                                                       (26.4% logic, 73.6% route)
 
 --------------------------------------------------------------------------------
-Slack:                  15.821ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               div/M_ctr_q_7 (FF)
-  Destination:          div/M_ctr_q_9 (FF)
+Slack:                  12.836ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               L_reg/wave_capture/M_trigger_type_q_102 (FF)
+  Destination:          L_reg/wave_capture/ram/Mram_mem (RAM)
   Requirement:          20.000ns
-  Data Path Delay:      4.144ns (Levels of Logic = 3)
-  Clock Path Skew:      0.000ns
+  Data Path Delay:      7.069ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.060ns (0.594 - 0.654)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -344,33 +384,38 @@ Slack:                  15.821ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: div/M_ctr_q_7 to div/M_ctr_q_9
+  Maximum Data Path at Slow Process Corner: L_reg/wave_capture/M_trigger_type_q_102 to L_reg/wave_capture/ram/Mram_mem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X6Y39.AQ       Tcko                  0.476   div/M_ctr_q[10]
-                                                       div/M_ctr_q_7
-    SLICE_X9Y39.D3       net (fanout=2)        1.076   div/M_ctr_q[7]
-    SLICE_X9Y39.D        Tilo                  0.259   M_div_out
-                                                       div/GND_3_o_GND_3_o_equal_2_o<24>3
-    SLICE_X9Y37.B1       net (fanout=3)        0.932   div/GND_3_o_GND_3_o_equal_2_o<24>2
-    SLICE_X9Y37.B        Tilo                  0.259   div/M_ctr_q[2]
-                                                       div/Mcount_M_ctr_q_val251
-    SLICE_X6Y39.C5       net (fanout=13)       0.793   div/Mcount_M_ctr_q_val
-    SLICE_X6Y39.CLK      Tas                   0.349   div/M_ctr_q[10]
-                                                       div/M_ctr_q_9_rstpot
-                                                       div/M_ctr_q_9
+    SLICE_X4Y21.DQ       Tcko                  0.525   L_reg/M_trigger_type_q_102
+                                                       L_reg/wave_capture/M_trigger_type_q_102
+    SLICE_X3Y21.B3       net (fanout=3)        0.802   L_reg/M_trigger_type_q_102
+    SLICE_X3Y21.B        Tilo                  0.259   L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o
+                                                       L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o1
+    SLICE_X2Y23.B1       net (fanout=2)        1.103   L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o
+    SLICE_X2Y23.B        Tilo                  0.235   L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+    SLICE_X9Y18.D1       net (fanout=18)       1.955   L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+    SLICE_X9Y18.D        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en1_G
+    SLICE_X9Y18.C6       net (fanout=1)        0.143   L_reg/wave_capture/N137
+    SLICE_X9Y18.C        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en11
+    RAMB8_X1Y10.WEBWEU1  net (fanout=4)        1.199   L_reg/wave_capture/M_ram_write_en
+    RAMB8_X1Y10.CLKAWRCLKTrcck_WEB             0.330   L_reg/wave_capture/ram/Mram_mem
+                                                       L_reg/wave_capture/ram/Mram_mem
     -------------------------------------------------  ---------------------------
-    Total                                      4.144ns (1.343ns logic, 2.801ns route)
-                                                       (32.4% logic, 67.6% route)
+    Total                                      7.069ns (1.867ns logic, 5.202ns route)
+                                                       (26.4% logic, 73.6% route)
 
 --------------------------------------------------------------------------------
-Slack:                  15.831ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               div/M_ctr_q_15 (FF)
-  Destination:          div/M_ctr_q_9 (FF)
+Slack:                  12.836ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               L_reg/wave_capture/M_trigger_type_q_102 (FF)
+  Destination:          L_reg/wave_capture/ram/Mram_mem (RAM)
   Requirement:          20.000ns
-  Data Path Delay:      4.122ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.012ns (0.320 - 0.332)
+  Data Path Delay:      7.069ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.060ns (0.594 - 0.654)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -381,33 +426,38 @@ Slack:                  15.831ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: div/M_ctr_q_15 to div/M_ctr_q_9
+  Maximum Data Path at Slow Process Corner: L_reg/wave_capture/M_trigger_type_q_102 to L_reg/wave_capture/ram/Mram_mem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X9Y41.BQ       Tcko                  0.430   div/M_ctr_q[17]
-                                                       div/M_ctr_q_15
-    SLICE_X7Y39.A1       net (fanout=2)        1.065   div/M_ctr_q[15]
-    SLICE_X7Y39.A        Tilo                  0.259   div/N3
-                                                       div/GND_3_o_GND_3_o_equal_2_o<24>4
-    SLICE_X9Y37.B5       net (fanout=3)        0.967   div/GND_3_o_GND_3_o_equal_2_o<24>3
-    SLICE_X9Y37.B        Tilo                  0.259   div/M_ctr_q[2]
-                                                       div/Mcount_M_ctr_q_val251
-    SLICE_X6Y39.C5       net (fanout=13)       0.793   div/Mcount_M_ctr_q_val
-    SLICE_X6Y39.CLK      Tas                   0.349   div/M_ctr_q[10]
-                                                       div/M_ctr_q_9_rstpot
-                                                       div/M_ctr_q_9
+    SLICE_X4Y21.DQ       Tcko                  0.525   L_reg/M_trigger_type_q_102
+                                                       L_reg/wave_capture/M_trigger_type_q_102
+    SLICE_X3Y21.B3       net (fanout=3)        0.802   L_reg/M_trigger_type_q_102
+    SLICE_X3Y21.B        Tilo                  0.259   L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o
+                                                       L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o1
+    SLICE_X2Y23.B1       net (fanout=2)        1.103   L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o
+    SLICE_X2Y23.B        Tilo                  0.235   L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+    SLICE_X9Y18.D1       net (fanout=18)       1.955   L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+    SLICE_X9Y18.D        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en1_G
+    SLICE_X9Y18.C6       net (fanout=1)        0.143   L_reg/wave_capture/N137
+    SLICE_X9Y18.C        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en11
+    RAMB8_X1Y10.WEBWEU0  net (fanout=4)        1.199   L_reg/wave_capture/M_ram_write_en
+    RAMB8_X1Y10.CLKAWRCLKTrcck_WEB             0.330   L_reg/wave_capture/ram/Mram_mem
+                                                       L_reg/wave_capture/ram/Mram_mem
     -------------------------------------------------  ---------------------------
-    Total                                      4.122ns (1.297ns logic, 2.825ns route)
-                                                       (31.5% logic, 68.5% route)
+    Total                                      7.069ns (1.867ns logic, 5.202ns route)
+                                                       (26.4% logic, 73.6% route)
 
 --------------------------------------------------------------------------------
-Slack:                  15.834ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               div/M_ctr_q_15 (FF)
-  Destination:          div/M_ctr_q_20 (FF)
+Slack:                  12.837ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               L_reg/wave_capture/M_trigger_type_q_103 (FF)
+  Destination:          L_reg/wave_capture/ram/Mram_mem (RAM)
   Requirement:          20.000ns
-  Data Path Delay:      4.115ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.016ns (0.316 - 0.332)
+  Data Path Delay:      7.060ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.068ns (0.594 - 0.662)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -418,33 +468,38 @@ Slack:                  15.834ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: div/M_ctr_q_15 to div/M_ctr_q_20
+  Maximum Data Path at Slow Process Corner: L_reg/wave_capture/M_trigger_type_q_103 to L_reg/wave_capture/ram/Mram_mem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X9Y41.BQ       Tcko                  0.430   div/M_ctr_q[17]
-                                                       div/M_ctr_q_15
-    SLICE_X7Y39.A1       net (fanout=2)        1.065   div/M_ctr_q[15]
-    SLICE_X7Y39.A        Tilo                  0.259   div/N3
-                                                       div/GND_3_o_GND_3_o_equal_2_o<24>4
-    SLICE_X9Y40.C3       net (fanout=3)        0.911   div/GND_3_o_GND_3_o_equal_2_o<24>3
-    SLICE_X9Y40.C        Tilo                  0.259   div/M_ctr_q[13]
-                                                       div/Mcount_M_ctr_q_val251_1
-    SLICE_X10Y42.C4      net (fanout=12)       0.842   div/Mcount_M_ctr_q_val251
-    SLICE_X10Y42.CLK     Tas                   0.349   div/M_ctr_q[21]
-                                                       div/M_ctr_q_20_rstpot
-                                                       div/M_ctr_q_20
+    SLICE_X0Y21.AQ       Tcko                  0.525   L_reg/M_trigger_type_q_106
+                                                       L_reg/wave_capture/M_trigger_type_q_103
+    SLICE_X3Y21.B2       net (fanout=3)        0.764   L_reg/M_trigger_type_q_103
+    SLICE_X3Y21.B        Tilo                  0.259   L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o
+                                                       L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o1
+    SLICE_X2Y23.B1       net (fanout=2)        1.103   L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o
+    SLICE_X2Y23.B        Tilo                  0.235   L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+    SLICE_X9Y18.D1       net (fanout=18)       1.955   L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+    SLICE_X9Y18.D        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en1_G
+    SLICE_X9Y18.C6       net (fanout=1)        0.143   L_reg/wave_capture/N137
+    SLICE_X9Y18.C        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en11
+    RAMB8_X1Y10.WEAWEL1  net (fanout=4)        1.228   L_reg/wave_capture/M_ram_write_en
+    RAMB8_X1Y10.CLKAWRCLKTrcck_WEA             0.330   L_reg/wave_capture/ram/Mram_mem
+                                                       L_reg/wave_capture/ram/Mram_mem
     -------------------------------------------------  ---------------------------
-    Total                                      4.115ns (1.297ns logic, 2.818ns route)
-                                                       (31.5% logic, 68.5% route)
+    Total                                      7.060ns (1.867ns logic, 5.193ns route)
+                                                       (26.4% logic, 73.6% route)
 
 --------------------------------------------------------------------------------
-Slack:                  15.847ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               div/M_ctr_q_23 (FF)
-  Destination:          div/M_ctr_q_7 (FF)
+Slack:                  12.837ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               L_reg/wave_capture/M_trigger_type_q_103 (FF)
+  Destination:          L_reg/wave_capture/ram/Mram_mem (RAM)
   Requirement:          20.000ns
-  Data Path Delay:      4.104ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.014ns (0.320 - 0.334)
+  Data Path Delay:      7.060ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.068ns (0.594 - 0.662)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -455,33 +510,38 @@ Slack:                  15.847ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: div/M_ctr_q_23 to div/M_ctr_q_7
+  Maximum Data Path at Slow Process Corner: L_reg/wave_capture/M_trigger_type_q_103 to L_reg/wave_capture/ram/Mram_mem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X9Y42.BQ       Tcko                  0.430   div/M_ctr_q[24]
-                                                       div/M_ctr_q_23
-    SLICE_X7Y39.A2       net (fanout=2)        1.077   div/M_ctr_q[23]
-    SLICE_X7Y39.A        Tilo                  0.259   div/N3
-                                                       div/GND_3_o_GND_3_o_equal_2_o<24>4
-    SLICE_X9Y37.B5       net (fanout=3)        0.967   div/GND_3_o_GND_3_o_equal_2_o<24>3
-    SLICE_X9Y37.B        Tilo                  0.259   div/M_ctr_q[2]
-                                                       div/Mcount_M_ctr_q_val251
-    SLICE_X6Y39.A5       net (fanout=13)       0.763   div/Mcount_M_ctr_q_val
-    SLICE_X6Y39.CLK      Tas                   0.349   div/M_ctr_q[10]
-                                                       div/M_ctr_q_7_rstpot
-                                                       div/M_ctr_q_7
+    SLICE_X0Y21.AQ       Tcko                  0.525   L_reg/M_trigger_type_q_106
+                                                       L_reg/wave_capture/M_trigger_type_q_103
+    SLICE_X3Y21.B2       net (fanout=3)        0.764   L_reg/M_trigger_type_q_103
+    SLICE_X3Y21.B        Tilo                  0.259   L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o
+                                                       L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o1
+    SLICE_X2Y23.B1       net (fanout=2)        1.103   L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o
+    SLICE_X2Y23.B        Tilo                  0.235   L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+    SLICE_X9Y18.D1       net (fanout=18)       1.955   L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+    SLICE_X9Y18.D        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en1_G
+    SLICE_X9Y18.C6       net (fanout=1)        0.143   L_reg/wave_capture/N137
+    SLICE_X9Y18.C        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en11
+    RAMB8_X1Y10.WEAWEL0  net (fanout=4)        1.228   L_reg/wave_capture/M_ram_write_en
+    RAMB8_X1Y10.CLKAWRCLKTrcck_WEA             0.330   L_reg/wave_capture/ram/Mram_mem
+                                                       L_reg/wave_capture/ram/Mram_mem
     -------------------------------------------------  ---------------------------
-    Total                                      4.104ns (1.297ns logic, 2.807ns route)
-                                                       (31.6% logic, 68.4% route)
+    Total                                      7.060ns (1.867ns logic, 5.193ns route)
+                                                       (26.4% logic, 73.6% route)
 
 --------------------------------------------------------------------------------
-Slack:                  15.851ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               div/M_ctr_q_7 (FF)
-  Destination:          div/M_ctr_q_7 (FF)
+Slack:                  12.851ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               L_reg/wave_capture/M_trigger_type_q_101 (FF)
+  Destination:          L_reg/wave_capture/ram/Mram_mem (RAM)
   Requirement:          20.000ns
-  Data Path Delay:      4.114ns (Levels of Logic = 3)
-  Clock Path Skew:      0.000ns
+  Data Path Delay:      7.054ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.060ns (0.594 - 0.654)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -492,33 +552,38 @@ Slack:                  15.851ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: div/M_ctr_q_7 to div/M_ctr_q_7
+  Maximum Data Path at Slow Process Corner: L_reg/wave_capture/M_trigger_type_q_101 to L_reg/wave_capture/ram/Mram_mem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X6Y39.AQ       Tcko                  0.476   div/M_ctr_q[10]
-                                                       div/M_ctr_q_7
-    SLICE_X9Y39.D3       net (fanout=2)        1.076   div/M_ctr_q[7]
-    SLICE_X9Y39.D        Tilo                  0.259   M_div_out
-                                                       div/GND_3_o_GND_3_o_equal_2_o<24>3
-    SLICE_X9Y37.B1       net (fanout=3)        0.932   div/GND_3_o_GND_3_o_equal_2_o<24>2
-    SLICE_X9Y37.B        Tilo                  0.259   div/M_ctr_q[2]
-                                                       div/Mcount_M_ctr_q_val251
-    SLICE_X6Y39.A5       net (fanout=13)       0.763   div/Mcount_M_ctr_q_val
-    SLICE_X6Y39.CLK      Tas                   0.349   div/M_ctr_q[10]
-                                                       div/M_ctr_q_7_rstpot
-                                                       div/M_ctr_q_7
+    SLICE_X4Y21.CQ       Tcko                  0.525   L_reg/M_trigger_type_q_102
+                                                       L_reg/wave_capture/M_trigger_type_q_101
+    SLICE_X3Y21.B4       net (fanout=3)        0.787   L_reg/M_trigger_type_q_101
+    SLICE_X3Y21.B        Tilo                  0.259   L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o
+                                                       L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o1
+    SLICE_X2Y23.B1       net (fanout=2)        1.103   L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o
+    SLICE_X2Y23.B        Tilo                  0.235   L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+    SLICE_X9Y18.D1       net (fanout=18)       1.955   L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+    SLICE_X9Y18.D        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en1_G
+    SLICE_X9Y18.C6       net (fanout=1)        0.143   L_reg/wave_capture/N137
+    SLICE_X9Y18.C        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en11
+    RAMB8_X1Y10.WEBWEU1  net (fanout=4)        1.199   L_reg/wave_capture/M_ram_write_en
+    RAMB8_X1Y10.CLKAWRCLKTrcck_WEB             0.330   L_reg/wave_capture/ram/Mram_mem
+                                                       L_reg/wave_capture/ram/Mram_mem
     -------------------------------------------------  ---------------------------
-    Total                                      4.114ns (1.343ns logic, 2.771ns route)
-                                                       (32.6% logic, 67.4% route)
+    Total                                      7.054ns (1.867ns logic, 5.187ns route)
+                                                       (26.5% logic, 73.5% route)
 
 --------------------------------------------------------------------------------
-Slack:                  15.861ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               div/M_ctr_q_15 (FF)
-  Destination:          div/M_ctr_q_7 (FF)
+Slack:                  12.851ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               L_reg/wave_capture/M_trigger_type_q_101 (FF)
+  Destination:          L_reg/wave_capture/ram/Mram_mem (RAM)
   Requirement:          20.000ns
-  Data Path Delay:      4.092ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.012ns (0.320 - 0.332)
+  Data Path Delay:      7.054ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.060ns (0.594 - 0.654)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -529,33 +594,38 @@ Slack:                  15.861ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: div/M_ctr_q_15 to div/M_ctr_q_7
+  Maximum Data Path at Slow Process Corner: L_reg/wave_capture/M_trigger_type_q_101 to L_reg/wave_capture/ram/Mram_mem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X9Y41.BQ       Tcko                  0.430   div/M_ctr_q[17]
-                                                       div/M_ctr_q_15
-    SLICE_X7Y39.A1       net (fanout=2)        1.065   div/M_ctr_q[15]
-    SLICE_X7Y39.A        Tilo                  0.259   div/N3
-                                                       div/GND_3_o_GND_3_o_equal_2_o<24>4
-    SLICE_X9Y37.B5       net (fanout=3)        0.967   div/GND_3_o_GND_3_o_equal_2_o<24>3
-    SLICE_X9Y37.B        Tilo                  0.259   div/M_ctr_q[2]
-                                                       div/Mcount_M_ctr_q_val251
-    SLICE_X6Y39.A5       net (fanout=13)       0.763   div/Mcount_M_ctr_q_val
-    SLICE_X6Y39.CLK      Tas                   0.349   div/M_ctr_q[10]
-                                                       div/M_ctr_q_7_rstpot
-                                                       div/M_ctr_q_7
+    SLICE_X4Y21.CQ       Tcko                  0.525   L_reg/M_trigger_type_q_102
+                                                       L_reg/wave_capture/M_trigger_type_q_101
+    SLICE_X3Y21.B4       net (fanout=3)        0.787   L_reg/M_trigger_type_q_101
+    SLICE_X3Y21.B        Tilo                  0.259   L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o
+                                                       L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o1
+    SLICE_X2Y23.B1       net (fanout=2)        1.103   L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o
+    SLICE_X2Y23.B        Tilo                  0.235   L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+    SLICE_X9Y18.D1       net (fanout=18)       1.955   L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+    SLICE_X9Y18.D        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en1_G
+    SLICE_X9Y18.C6       net (fanout=1)        0.143   L_reg/wave_capture/N137
+    SLICE_X9Y18.C        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en11
+    RAMB8_X1Y10.WEBWEU0  net (fanout=4)        1.199   L_reg/wave_capture/M_ram_write_en
+    RAMB8_X1Y10.CLKAWRCLKTrcck_WEB             0.330   L_reg/wave_capture/ram/Mram_mem
+                                                       L_reg/wave_capture/ram/Mram_mem
     -------------------------------------------------  ---------------------------
-    Total                                      4.092ns (1.297ns logic, 2.795ns route)
-                                                       (31.7% logic, 68.3% route)
+    Total                                      7.054ns (1.867ns logic, 5.187ns route)
+                                                       (26.5% logic, 73.5% route)
 
 --------------------------------------------------------------------------------
-Slack:                  15.863ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               div/M_ctr_q_7 (FF)
-  Destination:          div/M_ctr_q_12 (FF)
+Slack:                  12.866ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               L_reg/wave_capture/M_trigger_type_q_103 (FF)
+  Destination:          L_reg/wave_capture/ram/Mram_mem (RAM)
   Requirement:          20.000ns
-  Data Path Delay:      4.078ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.024ns (0.313 - 0.337)
+  Data Path Delay:      7.031ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.068ns (0.594 - 0.662)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -566,33 +636,38 @@ Slack:                  15.863ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: div/M_ctr_q_7 to div/M_ctr_q_12
+  Maximum Data Path at Slow Process Corner: L_reg/wave_capture/M_trigger_type_q_103 to L_reg/wave_capture/ram/Mram_mem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X6Y39.AQ       Tcko                  0.476   div/M_ctr_q[10]
-                                                       div/M_ctr_q_7
-    SLICE_X9Y39.D3       net (fanout=2)        1.076   div/M_ctr_q[7]
-    SLICE_X9Y39.D        Tilo                  0.259   M_div_out
-                                                       div/GND_3_o_GND_3_o_equal_2_o<24>3
-    SLICE_X9Y37.B1       net (fanout=3)        0.932   div/GND_3_o_GND_3_o_equal_2_o<24>2
-    SLICE_X9Y37.B        Tilo                  0.259   div/M_ctr_q[2]
-                                                       div/Mcount_M_ctr_q_val251
-    SLICE_X9Y40.B5       net (fanout=13)       0.703   div/Mcount_M_ctr_q_val
-    SLICE_X9Y40.CLK      Tas                   0.373   div/M_ctr_q[13]
-                                                       div/M_ctr_q_12_rstpot
-                                                       div/M_ctr_q_12
+    SLICE_X0Y21.AQ       Tcko                  0.525   L_reg/M_trigger_type_q_106
+                                                       L_reg/wave_capture/M_trigger_type_q_103
+    SLICE_X3Y21.B2       net (fanout=3)        0.764   L_reg/M_trigger_type_q_103
+    SLICE_X3Y21.B        Tilo                  0.259   L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o
+                                                       L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o1
+    SLICE_X2Y23.B1       net (fanout=2)        1.103   L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o
+    SLICE_X2Y23.B        Tilo                  0.235   L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+    SLICE_X9Y18.D1       net (fanout=18)       1.955   L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+    SLICE_X9Y18.D        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en1_G
+    SLICE_X9Y18.C6       net (fanout=1)        0.143   L_reg/wave_capture/N137
+    SLICE_X9Y18.C        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en11
+    RAMB8_X1Y10.WEBWEU0  net (fanout=4)        1.199   L_reg/wave_capture/M_ram_write_en
+    RAMB8_X1Y10.CLKAWRCLKTrcck_WEB             0.330   L_reg/wave_capture/ram/Mram_mem
+                                                       L_reg/wave_capture/ram/Mram_mem
     -------------------------------------------------  ---------------------------
-    Total                                      4.078ns (1.367ns logic, 2.711ns route)
-                                                       (33.5% logic, 66.5% route)
+    Total                                      7.031ns (1.867ns logic, 5.164ns route)
+                                                       (26.6% logic, 73.4% route)
 
 --------------------------------------------------------------------------------
-Slack:                  15.868ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               div/M_ctr_q_7 (FF)
-  Destination:          div/M_ctr_q_11 (FF)
+Slack:                  12.866ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               L_reg/wave_capture/M_trigger_type_q_103 (FF)
+  Destination:          L_reg/wave_capture/ram/Mram_mem (RAM)
   Requirement:          20.000ns
-  Data Path Delay:      4.073ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.024ns (0.313 - 0.337)
+  Data Path Delay:      7.031ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.068ns (0.594 - 0.662)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -603,33 +678,38 @@ Slack:                  15.868ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: div/M_ctr_q_7 to div/M_ctr_q_11
+  Maximum Data Path at Slow Process Corner: L_reg/wave_capture/M_trigger_type_q_103 to L_reg/wave_capture/ram/Mram_mem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X6Y39.AQ       Tcko                  0.476   div/M_ctr_q[10]
-                                                       div/M_ctr_q_7
-    SLICE_X9Y39.D3       net (fanout=2)        1.076   div/M_ctr_q[7]
-    SLICE_X9Y39.D        Tilo                  0.259   M_div_out
-                                                       div/GND_3_o_GND_3_o_equal_2_o<24>3
-    SLICE_X9Y37.B1       net (fanout=3)        0.932   div/GND_3_o_GND_3_o_equal_2_o<24>2
-    SLICE_X9Y37.B        Tilo                  0.259   div/M_ctr_q[2]
-                                                       div/Mcount_M_ctr_q_val251
-    SLICE_X9Y40.A5       net (fanout=13)       0.698   div/Mcount_M_ctr_q_val
-    SLICE_X9Y40.CLK      Tas                   0.373   div/M_ctr_q[13]
-                                                       div/M_ctr_q_11_rstpot
-                                                       div/M_ctr_q_11
+    SLICE_X0Y21.AQ       Tcko                  0.525   L_reg/M_trigger_type_q_106
+                                                       L_reg/wave_capture/M_trigger_type_q_103
+    SLICE_X3Y21.B2       net (fanout=3)        0.764   L_reg/M_trigger_type_q_103
+    SLICE_X3Y21.B        Tilo                  0.259   L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o
+                                                       L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o1
+    SLICE_X2Y23.B1       net (fanout=2)        1.103   L_reg/wave_capture/M_trigger_type_q[100]_M_trigger_type_q[103]_OR_170_o
+    SLICE_X2Y23.B        Tilo                  0.235   L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+    SLICE_X9Y18.D1       net (fanout=18)       1.955   L_reg/wave_capture/M_state_q_FSM_FFd2-In316
+    SLICE_X9Y18.D        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en1_G
+    SLICE_X9Y18.C6       net (fanout=1)        0.143   L_reg/wave_capture/N137
+    SLICE_X9Y18.C        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en11
+    RAMB8_X1Y10.WEBWEU1  net (fanout=4)        1.199   L_reg/wave_capture/M_ram_write_en
+    RAMB8_X1Y10.CLKAWRCLKTrcck_WEB             0.330   L_reg/wave_capture/ram/Mram_mem
+                                                       L_reg/wave_capture/ram/Mram_mem
     -------------------------------------------------  ---------------------------
-    Total                                      4.073ns (1.367ns logic, 2.706ns route)
-                                                       (33.6% logic, 66.4% route)
+    Total                                      7.031ns (1.867ns logic, 5.164ns route)
+                                                       (26.6% logic, 73.4% route)
 
 --------------------------------------------------------------------------------
-Slack:                  15.882ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               div/M_ctr_q_23 (FF)
-  Destination:          div/M_ctr_q_12 (FF)
+Slack:                  12.916ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               L_reg/wave_capture/M_trigger_type_q_16 (FF)
+  Destination:          L_reg/wave_capture/ram/Mram_mem (RAM)
   Requirement:          20.000ns
-  Data Path Delay:      4.068ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.015ns (0.184 - 0.199)
+  Data Path Delay:      6.913ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.136ns (0.594 - 0.730)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -640,33 +720,38 @@ Slack:                  15.882ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: div/M_ctr_q_23 to div/M_ctr_q_12
+  Maximum Data Path at Slow Process Corner: L_reg/wave_capture/M_trigger_type_q_16 to L_reg/wave_capture/ram/Mram_mem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X9Y42.BQ       Tcko                  0.430   div/M_ctr_q[24]
-                                                       div/M_ctr_q_23
-    SLICE_X7Y39.A2       net (fanout=2)        1.077   div/M_ctr_q[23]
-    SLICE_X7Y39.A        Tilo                  0.259   div/N3
-                                                       div/GND_3_o_GND_3_o_equal_2_o<24>4
-    SLICE_X9Y37.B5       net (fanout=3)        0.967   div/GND_3_o_GND_3_o_equal_2_o<24>3
-    SLICE_X9Y37.B        Tilo                  0.259   div/M_ctr_q[2]
-                                                       div/Mcount_M_ctr_q_val251
-    SLICE_X9Y40.B5       net (fanout=13)       0.703   div/Mcount_M_ctr_q_val
-    SLICE_X9Y40.CLK      Tas                   0.373   div/M_ctr_q[13]
-                                                       div/M_ctr_q_12_rstpot
-                                                       div/M_ctr_q_12
+    SLICE_X3Y13.AQ       Tcko                  0.430   L_reg/M_trigger_type_q_19
+                                                       L_reg/wave_capture/M_trigger_type_q_16
+    SLICE_X5Y13.C3       net (fanout=3)        0.793   L_reg/M_trigger_type_q_16
+    SLICE_X5Y13.C        Tilo                  0.259   L_reg/wave_capture/M_trigger_type_q[32]_M_trigger_type_q[35]_OR_102_o
+                                                       L_reg/wave_capture/M_trigger_type_q[16]_M_trigger_type_q[19]_OR_86_o1
+    SLICE_X2Y13.A2       net (fanout=2)        1.069   L_reg/wave_capture/M_trigger_type_q[16]_M_trigger_type_q[19]_OR_86_o
+    SLICE_X2Y13.A        Tilo                  0.235   L_reg/wave_capture/M_trigger_type_q[24]_M_trigger_type_q[27]_OR_94_o
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In311
+    SLICE_X9Y18.A2       net (fanout=1)        1.513   L_reg/wave_capture/M_state_q_FSM_FFd2-In311
+    SLICE_X9Y18.A        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In314
+    SLICE_X9Y18.C2       net (fanout=10)       0.538   L_reg/wave_capture/M_state_q_FSM_FFd2-In314
+    SLICE_X9Y18.C        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en11
+    RAMB8_X1Y10.WEAWEL1  net (fanout=4)        1.228   L_reg/wave_capture/M_ram_write_en
+    RAMB8_X1Y10.CLKAWRCLKTrcck_WEA             0.330   L_reg/wave_capture/ram/Mram_mem
+                                                       L_reg/wave_capture/ram/Mram_mem
     -------------------------------------------------  ---------------------------
-    Total                                      4.068ns (1.321ns logic, 2.747ns route)
-                                                       (32.5% logic, 67.5% route)
+    Total                                      6.913ns (1.772ns logic, 5.141ns route)
+                                                       (25.6% logic, 74.4% route)
 
 --------------------------------------------------------------------------------
-Slack:                  15.887ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               div/M_ctr_q_23 (FF)
-  Destination:          div/M_ctr_q_11 (FF)
+Slack:                  12.916ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               L_reg/wave_capture/M_trigger_type_q_16 (FF)
+  Destination:          L_reg/wave_capture/ram/Mram_mem (RAM)
   Requirement:          20.000ns
-  Data Path Delay:      4.063ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.015ns (0.184 - 0.199)
+  Data Path Delay:      6.913ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.136ns (0.594 - 0.730)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -677,33 +762,38 @@ Slack:                  15.887ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: div/M_ctr_q_23 to div/M_ctr_q_11
+  Maximum Data Path at Slow Process Corner: L_reg/wave_capture/M_trigger_type_q_16 to L_reg/wave_capture/ram/Mram_mem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X9Y42.BQ       Tcko                  0.430   div/M_ctr_q[24]
-                                                       div/M_ctr_q_23
-    SLICE_X7Y39.A2       net (fanout=2)        1.077   div/M_ctr_q[23]
-    SLICE_X7Y39.A        Tilo                  0.259   div/N3
-                                                       div/GND_3_o_GND_3_o_equal_2_o<24>4
-    SLICE_X9Y37.B5       net (fanout=3)        0.967   div/GND_3_o_GND_3_o_equal_2_o<24>3
-    SLICE_X9Y37.B        Tilo                  0.259   div/M_ctr_q[2]
-                                                       div/Mcount_M_ctr_q_val251
-    SLICE_X9Y40.A5       net (fanout=13)       0.698   div/Mcount_M_ctr_q_val
-    SLICE_X9Y40.CLK      Tas                   0.373   div/M_ctr_q[13]
-                                                       div/M_ctr_q_11_rstpot
-                                                       div/M_ctr_q_11
+    SLICE_X3Y13.AQ       Tcko                  0.430   L_reg/M_trigger_type_q_19
+                                                       L_reg/wave_capture/M_trigger_type_q_16
+    SLICE_X5Y13.C3       net (fanout=3)        0.793   L_reg/M_trigger_type_q_16
+    SLICE_X5Y13.C        Tilo                  0.259   L_reg/wave_capture/M_trigger_type_q[32]_M_trigger_type_q[35]_OR_102_o
+                                                       L_reg/wave_capture/M_trigger_type_q[16]_M_trigger_type_q[19]_OR_86_o1
+    SLICE_X2Y13.A2       net (fanout=2)        1.069   L_reg/wave_capture/M_trigger_type_q[16]_M_trigger_type_q[19]_OR_86_o
+    SLICE_X2Y13.A        Tilo                  0.235   L_reg/wave_capture/M_trigger_type_q[24]_M_trigger_type_q[27]_OR_94_o
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In311
+    SLICE_X9Y18.A2       net (fanout=1)        1.513   L_reg/wave_capture/M_state_q_FSM_FFd2-In311
+    SLICE_X9Y18.A        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In314
+    SLICE_X9Y18.C2       net (fanout=10)       0.538   L_reg/wave_capture/M_state_q_FSM_FFd2-In314
+    SLICE_X9Y18.C        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en11
+    RAMB8_X1Y10.WEAWEL0  net (fanout=4)        1.228   L_reg/wave_capture/M_ram_write_en
+    RAMB8_X1Y10.CLKAWRCLKTrcck_WEA             0.330   L_reg/wave_capture/ram/Mram_mem
+                                                       L_reg/wave_capture/ram/Mram_mem
     -------------------------------------------------  ---------------------------
-    Total                                      4.063ns (1.321ns logic, 2.742ns route)
-                                                       (32.5% logic, 67.5% route)
+    Total                                      6.913ns (1.772ns logic, 5.141ns route)
+                                                       (25.6% logic, 74.4% route)
 
 --------------------------------------------------------------------------------
-Slack:                  15.894ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               div/M_ctr_q_2 (FF)
-  Destination:          div/M_ctr_q_8 (FF)
+Slack:                  12.945ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               L_reg/wave_capture/M_trigger_type_q_16 (FF)
+  Destination:          L_reg/wave_capture/ram/Mram_mem (RAM)
   Requirement:          20.000ns
-  Data Path Delay:      4.057ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.014ns (0.320 - 0.334)
+  Data Path Delay:      6.884ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.136ns (0.594 - 0.730)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -714,33 +804,38 @@ Slack:                  15.894ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: div/M_ctr_q_2 to div/M_ctr_q_8
+  Maximum Data Path at Slow Process Corner: L_reg/wave_capture/M_trigger_type_q_16 to L_reg/wave_capture/ram/Mram_mem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X9Y37.DQ       Tcko                  0.430   div/M_ctr_q[2]
-                                                       div/M_ctr_q_2
-    SLICE_X9Y39.D2       net (fanout=2)        0.958   div/M_ctr_q[2]
-    SLICE_X9Y39.D        Tilo                  0.259   M_div_out
-                                                       div/GND_3_o_GND_3_o_equal_2_o<24>3
-    SLICE_X9Y37.B1       net (fanout=3)        0.932   div/GND_3_o_GND_3_o_equal_2_o<24>2
-    SLICE_X9Y37.B        Tilo                  0.259   div/M_ctr_q[2]
-                                                       div/Mcount_M_ctr_q_val251
-    SLICE_X6Y39.B4       net (fanout=13)       0.870   div/Mcount_M_ctr_q_val
-    SLICE_X6Y39.CLK      Tas                   0.349   div/M_ctr_q[10]
-                                                       div/M_ctr_q_8_rstpot
-                                                       div/M_ctr_q_8
+    SLICE_X3Y13.AQ       Tcko                  0.430   L_reg/M_trigger_type_q_19
+                                                       L_reg/wave_capture/M_trigger_type_q_16
+    SLICE_X5Y13.C3       net (fanout=3)        0.793   L_reg/M_trigger_type_q_16
+    SLICE_X5Y13.C        Tilo                  0.259   L_reg/wave_capture/M_trigger_type_q[32]_M_trigger_type_q[35]_OR_102_o
+                                                       L_reg/wave_capture/M_trigger_type_q[16]_M_trigger_type_q[19]_OR_86_o1
+    SLICE_X2Y13.A2       net (fanout=2)        1.069   L_reg/wave_capture/M_trigger_type_q[16]_M_trigger_type_q[19]_OR_86_o
+    SLICE_X2Y13.A        Tilo                  0.235   L_reg/wave_capture/M_trigger_type_q[24]_M_trigger_type_q[27]_OR_94_o
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In311
+    SLICE_X9Y18.A2       net (fanout=1)        1.513   L_reg/wave_capture/M_state_q_FSM_FFd2-In311
+    SLICE_X9Y18.A        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In314
+    SLICE_X9Y18.C2       net (fanout=10)       0.538   L_reg/wave_capture/M_state_q_FSM_FFd2-In314
+    SLICE_X9Y18.C        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en11
+    RAMB8_X1Y10.WEBWEU1  net (fanout=4)        1.199   L_reg/wave_capture/M_ram_write_en
+    RAMB8_X1Y10.CLKAWRCLKTrcck_WEB             0.330   L_reg/wave_capture/ram/Mram_mem
+                                                       L_reg/wave_capture/ram/Mram_mem
     -------------------------------------------------  ---------------------------
-    Total                                      4.057ns (1.297ns logic, 2.760ns route)
-                                                       (32.0% logic, 68.0% route)
+    Total                                      6.884ns (1.772ns logic, 5.112ns route)
+                                                       (25.7% logic, 74.3% route)
 
 --------------------------------------------------------------------------------
-Slack:                  15.896ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               div/M_ctr_q_15 (FF)
-  Destination:          div/M_ctr_q_12 (FF)
+Slack:                  12.945ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               L_reg/wave_capture/M_trigger_type_q_16 (FF)
+  Destination:          L_reg/wave_capture/ram/Mram_mem (RAM)
   Requirement:          20.000ns
-  Data Path Delay:      4.056ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.013ns (0.184 - 0.197)
+  Data Path Delay:      6.884ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.136ns (0.594 - 0.730)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -751,33 +846,38 @@ Slack:                  15.896ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: div/M_ctr_q_15 to div/M_ctr_q_12
+  Maximum Data Path at Slow Process Corner: L_reg/wave_capture/M_trigger_type_q_16 to L_reg/wave_capture/ram/Mram_mem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X9Y41.BQ       Tcko                  0.430   div/M_ctr_q[17]
-                                                       div/M_ctr_q_15
-    SLICE_X7Y39.A1       net (fanout=2)        1.065   div/M_ctr_q[15]
-    SLICE_X7Y39.A        Tilo                  0.259   div/N3
-                                                       div/GND_3_o_GND_3_o_equal_2_o<24>4
-    SLICE_X9Y37.B5       net (fanout=3)        0.967   div/GND_3_o_GND_3_o_equal_2_o<24>3
-    SLICE_X9Y37.B        Tilo                  0.259   div/M_ctr_q[2]
-                                                       div/Mcount_M_ctr_q_val251
-    SLICE_X9Y40.B5       net (fanout=13)       0.703   div/Mcount_M_ctr_q_val
-    SLICE_X9Y40.CLK      Tas                   0.373   div/M_ctr_q[13]
-                                                       div/M_ctr_q_12_rstpot
-                                                       div/M_ctr_q_12
+    SLICE_X3Y13.AQ       Tcko                  0.430   L_reg/M_trigger_type_q_19
+                                                       L_reg/wave_capture/M_trigger_type_q_16
+    SLICE_X5Y13.C3       net (fanout=3)        0.793   L_reg/M_trigger_type_q_16
+    SLICE_X5Y13.C        Tilo                  0.259   L_reg/wave_capture/M_trigger_type_q[32]_M_trigger_type_q[35]_OR_102_o
+                                                       L_reg/wave_capture/M_trigger_type_q[16]_M_trigger_type_q[19]_OR_86_o1
+    SLICE_X2Y13.A2       net (fanout=2)        1.069   L_reg/wave_capture/M_trigger_type_q[16]_M_trigger_type_q[19]_OR_86_o
+    SLICE_X2Y13.A        Tilo                  0.235   L_reg/wave_capture/M_trigger_type_q[24]_M_trigger_type_q[27]_OR_94_o
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In311
+    SLICE_X9Y18.A2       net (fanout=1)        1.513   L_reg/wave_capture/M_state_q_FSM_FFd2-In311
+    SLICE_X9Y18.A        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In314
+    SLICE_X9Y18.C2       net (fanout=10)       0.538   L_reg/wave_capture/M_state_q_FSM_FFd2-In314
+    SLICE_X9Y18.C        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en11
+    RAMB8_X1Y10.WEBWEU0  net (fanout=4)        1.199   L_reg/wave_capture/M_ram_write_en
+    RAMB8_X1Y10.CLKAWRCLKTrcck_WEB             0.330   L_reg/wave_capture/ram/Mram_mem
+                                                       L_reg/wave_capture/ram/Mram_mem
     -------------------------------------------------  ---------------------------
-    Total                                      4.056ns (1.321ns logic, 2.735ns route)
-                                                       (32.6% logic, 67.4% route)
+    Total                                      6.884ns (1.772ns logic, 5.112ns route)
+                                                       (25.7% logic, 74.3% route)
 
 --------------------------------------------------------------------------------
-Slack:                  15.901ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               div/M_ctr_q_15 (FF)
-  Destination:          div/M_ctr_q_11 (FF)
+Slack:                  12.954ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               L_reg/wave_capture/M_trigger_type_q_17 (FF)
+  Destination:          L_reg/wave_capture/ram/Mram_mem (RAM)
   Requirement:          20.000ns
-  Data Path Delay:      4.051ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.013ns (0.184 - 0.197)
+  Data Path Delay:      6.875ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.136ns (0.594 - 0.730)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -788,33 +888,38 @@ Slack:                  15.901ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: div/M_ctr_q_15 to div/M_ctr_q_11
+  Maximum Data Path at Slow Process Corner: L_reg/wave_capture/M_trigger_type_q_17 to L_reg/wave_capture/ram/Mram_mem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X9Y41.BQ       Tcko                  0.430   div/M_ctr_q[17]
-                                                       div/M_ctr_q_15
-    SLICE_X7Y39.A1       net (fanout=2)        1.065   div/M_ctr_q[15]
-    SLICE_X7Y39.A        Tilo                  0.259   div/N3
-                                                       div/GND_3_o_GND_3_o_equal_2_o<24>4
-    SLICE_X9Y37.B5       net (fanout=3)        0.967   div/GND_3_o_GND_3_o_equal_2_o<24>3
-    SLICE_X9Y37.B        Tilo                  0.259   div/M_ctr_q[2]
-                                                       div/Mcount_M_ctr_q_val251
-    SLICE_X9Y40.A5       net (fanout=13)       0.698   div/Mcount_M_ctr_q_val
-    SLICE_X9Y40.CLK      Tas                   0.373   div/M_ctr_q[13]
-                                                       div/M_ctr_q_11_rstpot
-                                                       div/M_ctr_q_11
+    SLICE_X3Y13.BQ       Tcko                  0.430   L_reg/M_trigger_type_q_19
+                                                       L_reg/wave_capture/M_trigger_type_q_17
+    SLICE_X5Y13.C4       net (fanout=3)        0.755   L_reg/M_trigger_type_q_17
+    SLICE_X5Y13.C        Tilo                  0.259   L_reg/wave_capture/M_trigger_type_q[32]_M_trigger_type_q[35]_OR_102_o
+                                                       L_reg/wave_capture/M_trigger_type_q[16]_M_trigger_type_q[19]_OR_86_o1
+    SLICE_X2Y13.A2       net (fanout=2)        1.069   L_reg/wave_capture/M_trigger_type_q[16]_M_trigger_type_q[19]_OR_86_o
+    SLICE_X2Y13.A        Tilo                  0.235   L_reg/wave_capture/M_trigger_type_q[24]_M_trigger_type_q[27]_OR_94_o
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In311
+    SLICE_X9Y18.A2       net (fanout=1)        1.513   L_reg/wave_capture/M_state_q_FSM_FFd2-In311
+    SLICE_X9Y18.A        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In314
+    SLICE_X9Y18.C2       net (fanout=10)       0.538   L_reg/wave_capture/M_state_q_FSM_FFd2-In314
+    SLICE_X9Y18.C        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en11
+    RAMB8_X1Y10.WEAWEL1  net (fanout=4)        1.228   L_reg/wave_capture/M_ram_write_en
+    RAMB8_X1Y10.CLKAWRCLKTrcck_WEA             0.330   L_reg/wave_capture/ram/Mram_mem
+                                                       L_reg/wave_capture/ram/Mram_mem
     -------------------------------------------------  ---------------------------
-    Total                                      4.051ns (1.321ns logic, 2.730ns route)
-                                                       (32.6% logic, 67.4% route)
+    Total                                      6.875ns (1.772ns logic, 5.103ns route)
+                                                       (25.8% logic, 74.2% route)
 
 --------------------------------------------------------------------------------
-Slack:                  15.908ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               div/M_ctr_q_17 (FF)
-  Destination:          div/M_ctr_q_8 (FF)
+Slack:                  12.954ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               L_reg/wave_capture/M_trigger_type_q_17 (FF)
+  Destination:          L_reg/wave_capture/ram/Mram_mem (RAM)
   Requirement:          20.000ns
-  Data Path Delay:      4.045ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.012ns (0.320 - 0.332)
+  Data Path Delay:      6.875ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.136ns (0.594 - 0.730)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -825,33 +930,38 @@ Slack:                  15.908ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: div/M_ctr_q_17 to div/M_ctr_q_8
+  Maximum Data Path at Slow Process Corner: L_reg/wave_capture/M_trigger_type_q_17 to L_reg/wave_capture/ram/Mram_mem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X9Y41.DQ       Tcko                  0.430   div/M_ctr_q[17]
-                                                       div/M_ctr_q_17
-    SLICE_X7Y39.A3       net (fanout=2)        0.911   div/M_ctr_q[17]
-    SLICE_X7Y39.A        Tilo                  0.259   div/N3
-                                                       div/GND_3_o_GND_3_o_equal_2_o<24>4
-    SLICE_X9Y37.B5       net (fanout=3)        0.967   div/GND_3_o_GND_3_o_equal_2_o<24>3
-    SLICE_X9Y37.B        Tilo                  0.259   div/M_ctr_q[2]
-                                                       div/Mcount_M_ctr_q_val251
-    SLICE_X6Y39.B4       net (fanout=13)       0.870   div/Mcount_M_ctr_q_val
-    SLICE_X6Y39.CLK      Tas                   0.349   div/M_ctr_q[10]
-                                                       div/M_ctr_q_8_rstpot
-                                                       div/M_ctr_q_8
+    SLICE_X3Y13.BQ       Tcko                  0.430   L_reg/M_trigger_type_q_19
+                                                       L_reg/wave_capture/M_trigger_type_q_17
+    SLICE_X5Y13.C4       net (fanout=3)        0.755   L_reg/M_trigger_type_q_17
+    SLICE_X5Y13.C        Tilo                  0.259   L_reg/wave_capture/M_trigger_type_q[32]_M_trigger_type_q[35]_OR_102_o
+                                                       L_reg/wave_capture/M_trigger_type_q[16]_M_trigger_type_q[19]_OR_86_o1
+    SLICE_X2Y13.A2       net (fanout=2)        1.069   L_reg/wave_capture/M_trigger_type_q[16]_M_trigger_type_q[19]_OR_86_o
+    SLICE_X2Y13.A        Tilo                  0.235   L_reg/wave_capture/M_trigger_type_q[24]_M_trigger_type_q[27]_OR_94_o
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In311
+    SLICE_X9Y18.A2       net (fanout=1)        1.513   L_reg/wave_capture/M_state_q_FSM_FFd2-In311
+    SLICE_X9Y18.A        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In314
+    SLICE_X9Y18.C2       net (fanout=10)       0.538   L_reg/wave_capture/M_state_q_FSM_FFd2-In314
+    SLICE_X9Y18.C        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en11
+    RAMB8_X1Y10.WEAWEL0  net (fanout=4)        1.228   L_reg/wave_capture/M_ram_write_en
+    RAMB8_X1Y10.CLKAWRCLKTrcck_WEA             0.330   L_reg/wave_capture/ram/Mram_mem
+                                                       L_reg/wave_capture/ram/Mram_mem
     -------------------------------------------------  ---------------------------
-    Total                                      4.045ns (1.297ns logic, 2.748ns route)
-                                                       (32.1% logic, 67.9% route)
+    Total                                      6.875ns (1.772ns logic, 5.103ns route)
+                                                       (25.8% logic, 74.2% route)
 
 --------------------------------------------------------------------------------
-Slack:                  15.909ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               div/M_ctr_q_23 (FF)
-  Destination:          div/M_ctr_q_21 (FF)
+Slack:                  12.975ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               L_reg/wave_capture/M_trigger_type_q_35 (FF)
+  Destination:          L_reg/wave_capture/ram/Mram_mem (RAM)
   Requirement:          20.000ns
-  Data Path Delay:      4.038ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.018ns (0.316 - 0.334)
+  Data Path Delay:      6.860ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.130ns (0.594 - 0.724)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -862,33 +972,38 @@ Slack:                  15.909ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: div/M_ctr_q_23 to div/M_ctr_q_21
+  Maximum Data Path at Slow Process Corner: L_reg/wave_capture/M_trigger_type_q_35 to L_reg/wave_capture/ram/Mram_mem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X9Y42.BQ       Tcko                  0.430   div/M_ctr_q[24]
-                                                       div/M_ctr_q_23
-    SLICE_X7Y39.A2       net (fanout=2)        1.077   div/M_ctr_q[23]
-    SLICE_X7Y39.A        Tilo                  0.259   div/N3
-                                                       div/GND_3_o_GND_3_o_equal_2_o<24>4
-    SLICE_X9Y40.C3       net (fanout=3)        0.911   div/GND_3_o_GND_3_o_equal_2_o<24>3
-    SLICE_X9Y40.C        Tilo                  0.259   div/M_ctr_q[13]
-                                                       div/Mcount_M_ctr_q_val251_1
-    SLICE_X10Y42.D4      net (fanout=12)       0.753   div/Mcount_M_ctr_q_val251
-    SLICE_X10Y42.CLK     Tas                   0.349   div/M_ctr_q[21]
-                                                       div/M_ctr_q_21_rstpot
-                                                       div/M_ctr_q_21
+    SLICE_X4Y14.DQ       Tcko                  0.525   L_reg/M_trigger_type_q_35
+                                                       L_reg/wave_capture/M_trigger_type_q_35
+    SLICE_X5Y13.D3       net (fanout=3)        1.157   L_reg/M_trigger_type_q_35
+    SLICE_X5Y13.D        Tilo                  0.259   L_reg/wave_capture/M_trigger_type_q[32]_M_trigger_type_q[35]_OR_102_o
+                                                       L_reg/wave_capture/M_trigger_type_q[32]_M_trigger_type_q[35]_OR_102_o1
+    SLICE_X3Y18.B3       net (fanout=2)        1.117   L_reg/wave_capture/M_trigger_type_q[32]_M_trigger_type_q[35]_OR_102_o
+    SLICE_X3Y18.B        Tilo                  0.259   L_reg/wave_capture/M_trigger_type_q[48]_M_trigger_type_q[51]_OR_118_o
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In312
+    SLICE_X9Y18.A4       net (fanout=1)        0.929   L_reg/wave_capture/M_state_q_FSM_FFd2-In312
+    SLICE_X9Y18.A        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In314
+    SLICE_X9Y18.C2       net (fanout=10)       0.538   L_reg/wave_capture/M_state_q_FSM_FFd2-In314
+    SLICE_X9Y18.C        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en11
+    RAMB8_X1Y10.WEAWEL0  net (fanout=4)        1.228   L_reg/wave_capture/M_ram_write_en
+    RAMB8_X1Y10.CLKAWRCLKTrcck_WEA             0.330   L_reg/wave_capture/ram/Mram_mem
+                                                       L_reg/wave_capture/ram/Mram_mem
     -------------------------------------------------  ---------------------------
-    Total                                      4.038ns (1.297ns logic, 2.741ns route)
-                                                       (32.1% logic, 67.9% route)
+    Total                                      6.860ns (1.891ns logic, 4.969ns route)
+                                                       (27.6% logic, 72.4% route)
 
 --------------------------------------------------------------------------------
-Slack:                  15.923ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               div/M_ctr_q_15 (FF)
-  Destination:          div/M_ctr_q_21 (FF)
+Slack:                  12.975ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               L_reg/wave_capture/M_trigger_type_q_35 (FF)
+  Destination:          L_reg/wave_capture/ram/Mram_mem (RAM)
   Requirement:          20.000ns
-  Data Path Delay:      4.026ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.016ns (0.316 - 0.332)
+  Data Path Delay:      6.860ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.130ns (0.594 - 0.724)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -899,33 +1014,38 @@ Slack:                  15.923ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: div/M_ctr_q_15 to div/M_ctr_q_21
+  Maximum Data Path at Slow Process Corner: L_reg/wave_capture/M_trigger_type_q_35 to L_reg/wave_capture/ram/Mram_mem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X9Y41.BQ       Tcko                  0.430   div/M_ctr_q[17]
-                                                       div/M_ctr_q_15
-    SLICE_X7Y39.A1       net (fanout=2)        1.065   div/M_ctr_q[15]
-    SLICE_X7Y39.A        Tilo                  0.259   div/N3
-                                                       div/GND_3_o_GND_3_o_equal_2_o<24>4
-    SLICE_X9Y40.C3       net (fanout=3)        0.911   div/GND_3_o_GND_3_o_equal_2_o<24>3
-    SLICE_X9Y40.C        Tilo                  0.259   div/M_ctr_q[13]
-                                                       div/Mcount_M_ctr_q_val251_1
-    SLICE_X10Y42.D4      net (fanout=12)       0.753   div/Mcount_M_ctr_q_val251
-    SLICE_X10Y42.CLK     Tas                   0.349   div/M_ctr_q[21]
-                                                       div/M_ctr_q_21_rstpot
-                                                       div/M_ctr_q_21
+    SLICE_X4Y14.DQ       Tcko                  0.525   L_reg/M_trigger_type_q_35
+                                                       L_reg/wave_capture/M_trigger_type_q_35
+    SLICE_X5Y13.D3       net (fanout=3)        1.157   L_reg/M_trigger_type_q_35
+    SLICE_X5Y13.D        Tilo                  0.259   L_reg/wave_capture/M_trigger_type_q[32]_M_trigger_type_q[35]_OR_102_o
+                                                       L_reg/wave_capture/M_trigger_type_q[32]_M_trigger_type_q[35]_OR_102_o1
+    SLICE_X3Y18.B3       net (fanout=2)        1.117   L_reg/wave_capture/M_trigger_type_q[32]_M_trigger_type_q[35]_OR_102_o
+    SLICE_X3Y18.B        Tilo                  0.259   L_reg/wave_capture/M_trigger_type_q[48]_M_trigger_type_q[51]_OR_118_o
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In312
+    SLICE_X9Y18.A4       net (fanout=1)        0.929   L_reg/wave_capture/M_state_q_FSM_FFd2-In312
+    SLICE_X9Y18.A        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In314
+    SLICE_X9Y18.C2       net (fanout=10)       0.538   L_reg/wave_capture/M_state_q_FSM_FFd2-In314
+    SLICE_X9Y18.C        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en11
+    RAMB8_X1Y10.WEAWEL1  net (fanout=4)        1.228   L_reg/wave_capture/M_ram_write_en
+    RAMB8_X1Y10.CLKAWRCLKTrcck_WEA             0.330   L_reg/wave_capture/ram/Mram_mem
+                                                       L_reg/wave_capture/ram/Mram_mem
     -------------------------------------------------  ---------------------------
-    Total                                      4.026ns (1.297ns logic, 2.729ns route)
-                                                       (32.2% logic, 67.8% route)
+    Total                                      6.860ns (1.891ns logic, 4.969ns route)
+                                                       (27.6% logic, 72.4% route)
 
 --------------------------------------------------------------------------------
-Slack:                  15.929ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               div/M_ctr_q_18 (FF)
-  Destination:          div/M_ctr_q_8 (FF)
+Slack:                  12.983ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               L_reg/wave_capture/M_trigger_type_q_17 (FF)
+  Destination:          L_reg/wave_capture/ram/Mram_mem (RAM)
   Requirement:          20.000ns
-  Data Path Delay:      4.023ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.013ns (0.320 - 0.333)
+  Data Path Delay:      6.846ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.136ns (0.594 - 0.730)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -936,33 +1056,38 @@ Slack:                  15.929ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: div/M_ctr_q_18 to div/M_ctr_q_8
+  Maximum Data Path at Slow Process Corner: L_reg/wave_capture/M_trigger_type_q_17 to L_reg/wave_capture/ram/Mram_mem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X10Y42.AQ      Tcko                  0.476   div/M_ctr_q[21]
-                                                       div/M_ctr_q_18
-    SLICE_X7Y39.B6       net (fanout=3)        0.922   div/M_ctr_q[18]
-    SLICE_X7Y39.B        Tilo                  0.259   div/N3
-                                                       div/GND_3_o_GND_3_o_equal_2_o<24>5_SW0
-    SLICE_X9Y37.B3       net (fanout=2)        0.888   div/N3
-    SLICE_X9Y37.B        Tilo                  0.259   div/M_ctr_q[2]
-                                                       div/Mcount_M_ctr_q_val251
-    SLICE_X6Y39.B4       net (fanout=13)       0.870   div/Mcount_M_ctr_q_val
-    SLICE_X6Y39.CLK      Tas                   0.349   div/M_ctr_q[10]
-                                                       div/M_ctr_q_8_rstpot
-                                                       div/M_ctr_q_8
+    SLICE_X3Y13.BQ       Tcko                  0.430   L_reg/M_trigger_type_q_19
+                                                       L_reg/wave_capture/M_trigger_type_q_17
+    SLICE_X5Y13.C4       net (fanout=3)        0.755   L_reg/M_trigger_type_q_17
+    SLICE_X5Y13.C        Tilo                  0.259   L_reg/wave_capture/M_trigger_type_q[32]_M_trigger_type_q[35]_OR_102_o
+                                                       L_reg/wave_capture/M_trigger_type_q[16]_M_trigger_type_q[19]_OR_86_o1
+    SLICE_X2Y13.A2       net (fanout=2)        1.069   L_reg/wave_capture/M_trigger_type_q[16]_M_trigger_type_q[19]_OR_86_o
+    SLICE_X2Y13.A        Tilo                  0.235   L_reg/wave_capture/M_trigger_type_q[24]_M_trigger_type_q[27]_OR_94_o
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In311
+    SLICE_X9Y18.A2       net (fanout=1)        1.513   L_reg/wave_capture/M_state_q_FSM_FFd2-In311
+    SLICE_X9Y18.A        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In314
+    SLICE_X9Y18.C2       net (fanout=10)       0.538   L_reg/wave_capture/M_state_q_FSM_FFd2-In314
+    SLICE_X9Y18.C        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en11
+    RAMB8_X1Y10.WEBWEU1  net (fanout=4)        1.199   L_reg/wave_capture/M_ram_write_en
+    RAMB8_X1Y10.CLKAWRCLKTrcck_WEB             0.330   L_reg/wave_capture/ram/Mram_mem
+                                                       L_reg/wave_capture/ram/Mram_mem
     -------------------------------------------------  ---------------------------
-    Total                                      4.023ns (1.343ns logic, 2.680ns route)
-                                                       (33.4% logic, 66.6% route)
+    Total                                      6.846ns (1.772ns logic, 5.074ns route)
+                                                       (25.9% logic, 74.1% route)
 
 --------------------------------------------------------------------------------
-Slack:                  15.946ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               div/M_ctr_q_2 (FF)
-  Destination:          div/M_ctr_q_10 (FF)
+Slack:                  12.983ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               L_reg/wave_capture/M_trigger_type_q_17 (FF)
+  Destination:          L_reg/wave_capture/ram/Mram_mem (RAM)
   Requirement:          20.000ns
-  Data Path Delay:      4.005ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.014ns (0.320 - 0.334)
+  Data Path Delay:      6.846ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.136ns (0.594 - 0.730)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -973,33 +1098,38 @@ Slack:                  15.946ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: div/M_ctr_q_2 to div/M_ctr_q_10
+  Maximum Data Path at Slow Process Corner: L_reg/wave_capture/M_trigger_type_q_17 to L_reg/wave_capture/ram/Mram_mem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X9Y37.DQ       Tcko                  0.430   div/M_ctr_q[2]
-                                                       div/M_ctr_q_2
-    SLICE_X9Y39.D2       net (fanout=2)        0.958   div/M_ctr_q[2]
-    SLICE_X9Y39.D        Tilo                  0.259   M_div_out
-                                                       div/GND_3_o_GND_3_o_equal_2_o<24>3
-    SLICE_X9Y37.B1       net (fanout=3)        0.932   div/GND_3_o_GND_3_o_equal_2_o<24>2
-    SLICE_X9Y37.B        Tilo                  0.259   div/M_ctr_q[2]
-                                                       div/Mcount_M_ctr_q_val251
-    SLICE_X6Y39.D5       net (fanout=13)       0.818   div/Mcount_M_ctr_q_val
-    SLICE_X6Y39.CLK      Tas                   0.349   div/M_ctr_q[10]
-                                                       div/M_ctr_q_10_rstpot
-                                                       div/M_ctr_q_10
+    SLICE_X3Y13.BQ       Tcko                  0.430   L_reg/M_trigger_type_q_19
+                                                       L_reg/wave_capture/M_trigger_type_q_17
+    SLICE_X5Y13.C4       net (fanout=3)        0.755   L_reg/M_trigger_type_q_17
+    SLICE_X5Y13.C        Tilo                  0.259   L_reg/wave_capture/M_trigger_type_q[32]_M_trigger_type_q[35]_OR_102_o
+                                                       L_reg/wave_capture/M_trigger_type_q[16]_M_trigger_type_q[19]_OR_86_o1
+    SLICE_X2Y13.A2       net (fanout=2)        1.069   L_reg/wave_capture/M_trigger_type_q[16]_M_trigger_type_q[19]_OR_86_o
+    SLICE_X2Y13.A        Tilo                  0.235   L_reg/wave_capture/M_trigger_type_q[24]_M_trigger_type_q[27]_OR_94_o
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In311
+    SLICE_X9Y18.A2       net (fanout=1)        1.513   L_reg/wave_capture/M_state_q_FSM_FFd2-In311
+    SLICE_X9Y18.A        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In314
+    SLICE_X9Y18.C2       net (fanout=10)       0.538   L_reg/wave_capture/M_state_q_FSM_FFd2-In314
+    SLICE_X9Y18.C        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en11
+    RAMB8_X1Y10.WEBWEU0  net (fanout=4)        1.199   L_reg/wave_capture/M_ram_write_en
+    RAMB8_X1Y10.CLKAWRCLKTrcck_WEB             0.330   L_reg/wave_capture/ram/Mram_mem
+                                                       L_reg/wave_capture/ram/Mram_mem
     -------------------------------------------------  ---------------------------
-    Total                                      4.005ns (1.297ns logic, 2.708ns route)
-                                                       (32.4% logic, 67.6% route)
+    Total                                      6.846ns (1.772ns logic, 5.074ns route)
+                                                       (25.9% logic, 74.1% route)
 
 --------------------------------------------------------------------------------
-Slack:                  15.958ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               div/M_ctr_q_23 (FF)
-  Destination:          div/M_ctr_q_19 (FF)
+Slack:                  13.004ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               L_reg/wave_capture/M_trigger_type_q_35 (FF)
+  Destination:          L_reg/wave_capture/ram/Mram_mem (RAM)
   Requirement:          20.000ns
-  Data Path Delay:      3.989ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.018ns (0.316 - 0.334)
+  Data Path Delay:      6.831ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.130ns (0.594 - 0.724)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -1010,33 +1140,38 @@ Slack:                  15.958ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: div/M_ctr_q_23 to div/M_ctr_q_19
+  Maximum Data Path at Slow Process Corner: L_reg/wave_capture/M_trigger_type_q_35 to L_reg/wave_capture/ram/Mram_mem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X9Y42.BQ       Tcko                  0.430   div/M_ctr_q[24]
-                                                       div/M_ctr_q_23
-    SLICE_X7Y39.A2       net (fanout=2)        1.077   div/M_ctr_q[23]
-    SLICE_X7Y39.A        Tilo                  0.259   div/N3
-                                                       div/GND_3_o_GND_3_o_equal_2_o<24>4
-    SLICE_X9Y40.C3       net (fanout=3)        0.911   div/GND_3_o_GND_3_o_equal_2_o<24>3
-    SLICE_X9Y40.C        Tilo                  0.259   div/M_ctr_q[13]
-                                                       div/Mcount_M_ctr_q_val251_1
-    SLICE_X10Y42.B5      net (fanout=12)       0.704   div/Mcount_M_ctr_q_val251
-    SLICE_X10Y42.CLK     Tas                   0.349   div/M_ctr_q[21]
-                                                       div/M_ctr_q_19_rstpot
-                                                       div/M_ctr_q_19
+    SLICE_X4Y14.DQ       Tcko                  0.525   L_reg/M_trigger_type_q_35
+                                                       L_reg/wave_capture/M_trigger_type_q_35
+    SLICE_X5Y13.D3       net (fanout=3)        1.157   L_reg/M_trigger_type_q_35
+    SLICE_X5Y13.D        Tilo                  0.259   L_reg/wave_capture/M_trigger_type_q[32]_M_trigger_type_q[35]_OR_102_o
+                                                       L_reg/wave_capture/M_trigger_type_q[32]_M_trigger_type_q[35]_OR_102_o1
+    SLICE_X3Y18.B3       net (fanout=2)        1.117   L_reg/wave_capture/M_trigger_type_q[32]_M_trigger_type_q[35]_OR_102_o
+    SLICE_X3Y18.B        Tilo                  0.259   L_reg/wave_capture/M_trigger_type_q[48]_M_trigger_type_q[51]_OR_118_o
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In312
+    SLICE_X9Y18.A4       net (fanout=1)        0.929   L_reg/wave_capture/M_state_q_FSM_FFd2-In312
+    SLICE_X9Y18.A        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In314
+    SLICE_X9Y18.C2       net (fanout=10)       0.538   L_reg/wave_capture/M_state_q_FSM_FFd2-In314
+    SLICE_X9Y18.C        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en11
+    RAMB8_X1Y10.WEBWEU0  net (fanout=4)        1.199   L_reg/wave_capture/M_ram_write_en
+    RAMB8_X1Y10.CLKAWRCLKTrcck_WEB             0.330   L_reg/wave_capture/ram/Mram_mem
+                                                       L_reg/wave_capture/ram/Mram_mem
     -------------------------------------------------  ---------------------------
-    Total                                      3.989ns (1.297ns logic, 2.692ns route)
-                                                       (32.5% logic, 67.5% route)
+    Total                                      6.831ns (1.891ns logic, 4.940ns route)
+                                                       (27.7% logic, 72.3% route)
 
 --------------------------------------------------------------------------------
-Slack:                  15.960ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               div/M_ctr_q_17 (FF)
-  Destination:          div/M_ctr_q_10 (FF)
+Slack:                  13.004ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               L_reg/wave_capture/M_trigger_type_q_35 (FF)
+  Destination:          L_reg/wave_capture/ram/Mram_mem (RAM)
   Requirement:          20.000ns
-  Data Path Delay:      3.993ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.012ns (0.320 - 0.332)
+  Data Path Delay:      6.831ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.130ns (0.594 - 0.724)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -1047,33 +1182,38 @@ Slack:                  15.960ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: div/M_ctr_q_17 to div/M_ctr_q_10
+  Maximum Data Path at Slow Process Corner: L_reg/wave_capture/M_trigger_type_q_35 to L_reg/wave_capture/ram/Mram_mem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X9Y41.DQ       Tcko                  0.430   div/M_ctr_q[17]
-                                                       div/M_ctr_q_17
-    SLICE_X7Y39.A3       net (fanout=2)        0.911   div/M_ctr_q[17]
-    SLICE_X7Y39.A        Tilo                  0.259   div/N3
-                                                       div/GND_3_o_GND_3_o_equal_2_o<24>4
-    SLICE_X9Y37.B5       net (fanout=3)        0.967   div/GND_3_o_GND_3_o_equal_2_o<24>3
-    SLICE_X9Y37.B        Tilo                  0.259   div/M_ctr_q[2]
-                                                       div/Mcount_M_ctr_q_val251
-    SLICE_X6Y39.D5       net (fanout=13)       0.818   div/Mcount_M_ctr_q_val
-    SLICE_X6Y39.CLK      Tas                   0.349   div/M_ctr_q[10]
-                                                       div/M_ctr_q_10_rstpot
-                                                       div/M_ctr_q_10
+    SLICE_X4Y14.DQ       Tcko                  0.525   L_reg/M_trigger_type_q_35
+                                                       L_reg/wave_capture/M_trigger_type_q_35
+    SLICE_X5Y13.D3       net (fanout=3)        1.157   L_reg/M_trigger_type_q_35
+    SLICE_X5Y13.D        Tilo                  0.259   L_reg/wave_capture/M_trigger_type_q[32]_M_trigger_type_q[35]_OR_102_o
+                                                       L_reg/wave_capture/M_trigger_type_q[32]_M_trigger_type_q[35]_OR_102_o1
+    SLICE_X3Y18.B3       net (fanout=2)        1.117   L_reg/wave_capture/M_trigger_type_q[32]_M_trigger_type_q[35]_OR_102_o
+    SLICE_X3Y18.B        Tilo                  0.259   L_reg/wave_capture/M_trigger_type_q[48]_M_trigger_type_q[51]_OR_118_o
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In312
+    SLICE_X9Y18.A4       net (fanout=1)        0.929   L_reg/wave_capture/M_state_q_FSM_FFd2-In312
+    SLICE_X9Y18.A        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In314
+    SLICE_X9Y18.C2       net (fanout=10)       0.538   L_reg/wave_capture/M_state_q_FSM_FFd2-In314
+    SLICE_X9Y18.C        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en11
+    RAMB8_X1Y10.WEBWEU1  net (fanout=4)        1.199   L_reg/wave_capture/M_ram_write_en
+    RAMB8_X1Y10.CLKAWRCLKTrcck_WEB             0.330   L_reg/wave_capture/ram/Mram_mem
+                                                       L_reg/wave_capture/ram/Mram_mem
     -------------------------------------------------  ---------------------------
-    Total                                      3.993ns (1.297ns logic, 2.696ns route)
-                                                       (32.5% logic, 67.5% route)
+    Total                                      6.831ns (1.891ns logic, 4.940ns route)
+                                                       (27.7% logic, 72.3% route)
 
 --------------------------------------------------------------------------------
-Slack:                  15.971ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               div/M_ctr_q_2 (FF)
-  Destination:          div/M_ctr_q_9 (FF)
+Slack:                  13.073ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               L_reg/wave_capture/M_trigger_type_q_18 (FF)
+  Destination:          L_reg/wave_capture/ram/Mram_mem (RAM)
   Requirement:          20.000ns
-  Data Path Delay:      3.980ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.014ns (0.320 - 0.334)
+  Data Path Delay:      6.756ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.136ns (0.594 - 0.730)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -1084,33 +1224,38 @@ Slack:                  15.971ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: div/M_ctr_q_2 to div/M_ctr_q_9
+  Maximum Data Path at Slow Process Corner: L_reg/wave_capture/M_trigger_type_q_18 to L_reg/wave_capture/ram/Mram_mem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X9Y37.DQ       Tcko                  0.430   div/M_ctr_q[2]
-                                                       div/M_ctr_q_2
-    SLICE_X9Y39.D2       net (fanout=2)        0.958   div/M_ctr_q[2]
-    SLICE_X9Y39.D        Tilo                  0.259   M_div_out
-                                                       div/GND_3_o_GND_3_o_equal_2_o<24>3
-    SLICE_X9Y37.B1       net (fanout=3)        0.932   div/GND_3_o_GND_3_o_equal_2_o<24>2
-    SLICE_X9Y37.B        Tilo                  0.259   div/M_ctr_q[2]
-                                                       div/Mcount_M_ctr_q_val251
-    SLICE_X6Y39.C5       net (fanout=13)       0.793   div/Mcount_M_ctr_q_val
-    SLICE_X6Y39.CLK      Tas                   0.349   div/M_ctr_q[10]
-                                                       div/M_ctr_q_9_rstpot
-                                                       div/M_ctr_q_9
+    SLICE_X3Y13.CQ       Tcko                  0.430   L_reg/M_trigger_type_q_19
+                                                       L_reg/wave_capture/M_trigger_type_q_18
+    SLICE_X5Y13.C5       net (fanout=3)        0.636   L_reg/M_trigger_type_q_18
+    SLICE_X5Y13.C        Tilo                  0.259   L_reg/wave_capture/M_trigger_type_q[32]_M_trigger_type_q[35]_OR_102_o
+                                                       L_reg/wave_capture/M_trigger_type_q[16]_M_trigger_type_q[19]_OR_86_o1
+    SLICE_X2Y13.A2       net (fanout=2)        1.069   L_reg/wave_capture/M_trigger_type_q[16]_M_trigger_type_q[19]_OR_86_o
+    SLICE_X2Y13.A        Tilo                  0.235   L_reg/wave_capture/M_trigger_type_q[24]_M_trigger_type_q[27]_OR_94_o
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In311
+    SLICE_X9Y18.A2       net (fanout=1)        1.513   L_reg/wave_capture/M_state_q_FSM_FFd2-In311
+    SLICE_X9Y18.A        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In314
+    SLICE_X9Y18.C2       net (fanout=10)       0.538   L_reg/wave_capture/M_state_q_FSM_FFd2-In314
+    SLICE_X9Y18.C        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en11
+    RAMB8_X1Y10.WEAWEL0  net (fanout=4)        1.228   L_reg/wave_capture/M_ram_write_en
+    RAMB8_X1Y10.CLKAWRCLKTrcck_WEA             0.330   L_reg/wave_capture/ram/Mram_mem
+                                                       L_reg/wave_capture/ram/Mram_mem
     -------------------------------------------------  ---------------------------
-    Total                                      3.980ns (1.297ns logic, 2.683ns route)
-                                                       (32.6% logic, 67.4% route)
+    Total                                      6.756ns (1.772ns logic, 4.984ns route)
+                                                       (26.2% logic, 73.8% route)
 
 --------------------------------------------------------------------------------
-Slack:                  15.972ns (requirement - (data path - clock path skew + uncertainty))
-  Source:               div/M_ctr_q_15 (FF)
-  Destination:          div/M_ctr_q_19 (FF)
+Slack:                  13.073ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               L_reg/wave_capture/M_trigger_type_q_18 (FF)
+  Destination:          L_reg/wave_capture/ram/Mram_mem (RAM)
   Requirement:          20.000ns
-  Data Path Delay:      3.977ns (Levels of Logic = 3)
-  Clock Path Skew:      -0.016ns (0.316 - 0.332)
+  Data Path Delay:      6.756ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.136ns (0.594 - 0.730)
   Source Clock:         clk_BUFGP rising at 0.000ns
   Destination Clock:    clk_BUFGP rising at 20.000ns
   Clock Uncertainty:    0.035ns
@@ -1121,29 +1266,50 @@ Slack:                  15.972ns (requirement - (data path - clock path skew + u
     Discrete Jitter (DJ):       0.000ns
     Phase Error (PE):           0.000ns
 
-  Maximum Data Path at Slow Process Corner: div/M_ctr_q_15 to div/M_ctr_q_19
+  Maximum Data Path at Slow Process Corner: L_reg/wave_capture/M_trigger_type_q_18 to L_reg/wave_capture/ram/Mram_mem
     Location             Delay type         Delay(ns)  Physical Resource
                                                        Logical Resource(s)
     -------------------------------------------------  -------------------
-    SLICE_X9Y41.BQ       Tcko                  0.430   div/M_ctr_q[17]
-                                                       div/M_ctr_q_15
-    SLICE_X7Y39.A1       net (fanout=2)        1.065   div/M_ctr_q[15]
-    SLICE_X7Y39.A        Tilo                  0.259   div/N3
-                                                       div/GND_3_o_GND_3_o_equal_2_o<24>4
-    SLICE_X9Y40.C3       net (fanout=3)        0.911   div/GND_3_o_GND_3_o_equal_2_o<24>3
-    SLICE_X9Y40.C        Tilo                  0.259   div/M_ctr_q[13]
-                                                       div/Mcount_M_ctr_q_val251_1
-    SLICE_X10Y42.B5      net (fanout=12)       0.704   div/Mcount_M_ctr_q_val251
-    SLICE_X10Y42.CLK     Tas                   0.349   div/M_ctr_q[21]
-                                                       div/M_ctr_q_19_rstpot
-                                                       div/M_ctr_q_19
+    SLICE_X3Y13.CQ       Tcko                  0.430   L_reg/M_trigger_type_q_19
+                                                       L_reg/wave_capture/M_trigger_type_q_18
+    SLICE_X5Y13.C5       net (fanout=3)        0.636   L_reg/M_trigger_type_q_18
+    SLICE_X5Y13.C        Tilo                  0.259   L_reg/wave_capture/M_trigger_type_q[32]_M_trigger_type_q[35]_OR_102_o
+                                                       L_reg/wave_capture/M_trigger_type_q[16]_M_trigger_type_q[19]_OR_86_o1
+    SLICE_X2Y13.A2       net (fanout=2)        1.069   L_reg/wave_capture/M_trigger_type_q[16]_M_trigger_type_q[19]_OR_86_o
+    SLICE_X2Y13.A        Tilo                  0.235   L_reg/wave_capture/M_trigger_type_q[24]_M_trigger_type_q[27]_OR_94_o
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In311
+    SLICE_X9Y18.A2       net (fanout=1)        1.513   L_reg/wave_capture/M_state_q_FSM_FFd2-In311
+    SLICE_X9Y18.A        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_FSM_FFd2-In314
+    SLICE_X9Y18.C2       net (fanout=10)       0.538   L_reg/wave_capture/M_state_q_FSM_FFd2-In314
+    SLICE_X9Y18.C        Tilo                  0.259   L_reg/wave_capture/N137
+                                                       L_reg/wave_capture/M_state_q_M_ram_write_en11
+    RAMB8_X1Y10.WEAWEL1  net (fanout=4)        1.228   L_reg/wave_capture/M_ram_write_en
+    RAMB8_X1Y10.CLKAWRCLKTrcck_WEA             0.330   L_reg/wave_capture/ram/Mram_mem
+                                                       L_reg/wave_capture/ram/Mram_mem
     -------------------------------------------------  ---------------------------
-    Total                                      3.977ns (1.297ns logic, 2.680ns route)
-                                                       (32.6% logic, 67.4% route)
+    Total                                      6.756ns (1.772ns logic, 4.984ns route)
+                                                       (26.2% logic, 73.8% route)
 
 --------------------------------------------------------------------------------
 
 Component Switching Limit Checks: TS_clk = PERIOD TIMEGRP "clk" 50 MHz HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 16.430ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKA(Fmax))
+  Physical resource: L_reg/wave_capture/ram/Mram_mem/CLKAWRCLK
+  Logical resource: L_reg/wave_capture/ram/Mram_mem/CLKAWRCLK
+  Location pin: RAMB8_X1Y10.CLKAWRCLK
+  Clock network: clk_BUFGP
+--------------------------------------------------------------------------------
+Slack: 16.430ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKB(Fmax))
+  Physical resource: L_reg/wave_capture/ram/Mram_mem/CLKBRDCLK
+  Logical resource: L_reg/wave_capture/ram/Mram_mem/CLKBRDCLK
+  Location pin: RAMB8_X1Y10.CLKBRDCLK
+  Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 Slack: 17.334ns (period - min period limit)
   Period: 20.000ns
@@ -1153,236 +1319,220 @@ Slack: 17.334ns (period - min period limit)
   Location pin: BUFGMUX_X2Y11.I0
   Clock network: clk_BUFGP/IBUFG
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 17.751ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
-  Physical resource: reset_cond/M_stage_q[2]/CLK
-  Logical resource: reset_cond/M_stage_q_0/CK
-  Location pin: SLICE_X6Y25.CLK
+  Min period limit: 2.249ns (444.642MHz) (Tockper)
+  Physical resource: M_txReg_q/CLK0
+  Logical resource: avr/uart_tx/M_txReg_q/CK0
+  Location pin: OLOGIC_X9Y0.CLK0
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 18.134ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
-  Physical resource: reset_cond/M_stage_q[2]/CLK
-  Logical resource: reset_cond/M_stage_q_1/CK
-  Location pin: SLICE_X6Y25.CLK
+  Min period limit: 1.866ns (535.906MHz) (Tickper)
+  Physical resource: avr/spi_slave/M_sck_reg_q[0]/CLK0
+  Logical resource: avr/spi_slave/M_sck_reg_q_0/CLK0
+  Location pin: ILOGIC_X2Y0.CLK0
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 18.134ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
-  Physical resource: reset_cond/M_stage_q[2]/CLK
-  Logical resource: reset_cond/M_stage_q_2/CK
-  Location pin: SLICE_X6Y25.CLK
+  Min period limit: 1.866ns (535.906MHz) (Tickper)
+  Physical resource: avr/uart_rx/M_rxd_q/CLK0
+  Logical resource: avr/uart_rx/M_rxd_q/CLK0
+  Location pin: ILOGIC_X7Y2.CLK0
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 18.134ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
-  Physical resource: div/M_ctr_q[10]/CLK
-  Logical resource: div/M_ctr_q_7/CK
-  Location pin: SLICE_X6Y39.CLK
+  Min period limit: 1.866ns (535.906MHz) (Tickper)
+  Physical resource: spi_ss_IBUF/CLK0
+  Logical resource: avr/spi_slave/M_ss_reg_q/CLK0
+  Location pin: ILOGIC_X3Y1.CLK0
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 18.601ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
-  Physical resource: div/M_ctr_q[10]/CLK
-  Logical resource: div/M_ctr_q_8/CK
-  Location pin: SLICE_X6Y39.CLK
+  Min period limit: 1.399ns (714.796MHz) (Tcp)
+  Physical resource: avr/M_block_q[3]/CLK
+  Logical resource: avr/Mshreg_M_block_q_2/CLK
+  Location pin: SLICE_X8Y10.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
-  Physical resource: div/M_ctr_q[10]/CLK
-  Logical resource: div/M_ctr_q_9/CK
-  Location pin: SLICE_X6Y39.CLK
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: L_reg/M_trigger_type_q_7/CLK
+  Logical resource: L_reg/wave_capture/M_trigger_type_q_4/CK
+  Location pin: SLICE_X0Y13.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
-  Physical resource: div/M_ctr_q[10]/CLK
-  Logical resource: div/M_ctr_q_10/CK
-  Location pin: SLICE_X6Y39.CLK
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: L_reg/M_trigger_type_q_7/CLK
+  Logical resource: L_reg/wave_capture/M_trigger_type_q_5/CK
+  Location pin: SLICE_X0Y13.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
-  Physical resource: div/M_ctr_q[21]/CLK
-  Logical resource: div/M_ctr_q_18/CK
-  Location pin: SLICE_X10Y42.CLK
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: L_reg/M_trigger_type_q_7/CLK
+  Logical resource: L_reg/wave_capture/M_trigger_type_q_6/CK
+  Location pin: SLICE_X0Y13.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
-  Physical resource: div/M_ctr_q[21]/CLK
-  Logical resource: div/M_ctr_q_19/CK
-  Location pin: SLICE_X10Y42.CLK
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: L_reg/M_trigger_type_q_7/CLK
+  Logical resource: L_reg/wave_capture/M_trigger_type_q_7/CK
+  Location pin: SLICE_X0Y13.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
-  Physical resource: div/M_ctr_q[21]/CLK
-  Logical resource: div/M_ctr_q_20/CK
-  Location pin: SLICE_X10Y42.CLK
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: L_reg/wave_capture/BUS_0003_Decoder_245_OUT[43]/CLK
+  Logical resource: L_reg/wave_capture/M_trigger_index_q_0/CK
+  Location pin: SLICE_X0Y18.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.525ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.475ns (2105.263MHz) (Tcp)
-  Physical resource: div/M_ctr_q[21]/CLK
-  Logical resource: div/M_ctr_q_21/CK
-  Location pin: SLICE_X10Y42.CLK
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: L_reg/M_trigger_type_q_39/CLK
+  Logical resource: L_reg/wave_capture/M_trigger_type_q_36/CK
+  Location pin: SLICE_X0Y19.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.530ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.470ns (2127.660MHz) (Tcp)
-  Physical resource: M_reset_cond_out/CLK
-  Logical resource: reset_cond/M_stage_q_3/CK
-  Location pin: SLICE_X7Y25.CLK
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: L_reg/M_trigger_type_q_39/CLK
+  Logical resource: L_reg/wave_capture/M_trigger_type_q_37/CK
+  Location pin: SLICE_X0Y19.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.530ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.470ns (2127.660MHz) (Tcp)
-  Physical resource: div/M_ctr_q[2]/CLK
-  Logical resource: div/M_ctr_q_0/CK
-  Location pin: SLICE_X9Y37.CLK
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: L_reg/M_trigger_type_q_39/CLK
+  Logical resource: L_reg/wave_capture/M_trigger_type_q_38/CK
+  Location pin: SLICE_X0Y19.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.530ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.470ns (2127.660MHz) (Tcp)
-  Physical resource: div/M_ctr_q[2]/CLK
-  Logical resource: div/M_ctr_q_1/CK
-  Location pin: SLICE_X9Y37.CLK
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: L_reg/M_trigger_type_q_39/CLK
+  Logical resource: L_reg/wave_capture/M_trigger_type_q_39/CK
+  Location pin: SLICE_X0Y19.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.530ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.470ns (2127.660MHz) (Tcp)
-  Physical resource: div/M_ctr_q[2]/CLK
-  Logical resource: div/M_ctr_q_2/CK
-  Location pin: SLICE_X9Y37.CLK
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: L_reg/M_trigger_type_q_58/CLK
+  Logical resource: L_reg/wave_capture/M_trigger_type_q_55/CK
+  Location pin: SLICE_X0Y20.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.530ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.470ns (2127.660MHz) (Tcp)
-  Physical resource: div/M_ctr_q[6]/CLK
-  Logical resource: div/M_ctr_q_3/CK
-  Location pin: SLICE_X9Y38.CLK
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: L_reg/M_trigger_type_q_58/CLK
+  Logical resource: L_reg/wave_capture/M_trigger_type_q_56/CK
+  Location pin: SLICE_X0Y20.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.530ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.470ns (2127.660MHz) (Tcp)
-  Physical resource: div/M_ctr_q[6]/CLK
-  Logical resource: div/M_ctr_q_4/CK
-  Location pin: SLICE_X9Y38.CLK
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: L_reg/M_trigger_type_q_58/CLK
+  Logical resource: L_reg/wave_capture/M_trigger_type_q_57/CK
+  Location pin: SLICE_X0Y20.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.530ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.470ns (2127.660MHz) (Tcp)
-  Physical resource: div/M_ctr_q[6]/CLK
-  Logical resource: div/M_ctr_q_5/CK
-  Location pin: SLICE_X9Y38.CLK
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: L_reg/M_trigger_type_q_58/CLK
+  Logical resource: L_reg/wave_capture/M_trigger_type_q_58/CK
+  Location pin: SLICE_X0Y20.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.530ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.470ns (2127.660MHz) (Tcp)
-  Physical resource: div/M_ctr_q[6]/CLK
-  Logical resource: div/M_ctr_q_6/CK
-  Location pin: SLICE_X9Y38.CLK
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: L_reg/M_trigger_type_q_106/CLK
+  Logical resource: L_reg/wave_capture/M_trigger_type_q_103/CK
+  Location pin: SLICE_X0Y21.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.530ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.470ns (2127.660MHz) (Tcp)
-  Physical resource: M_div_out/CLK
-  Logical resource: div/M_led_q/CK
-  Location pin: SLICE_X9Y39.CLK
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: L_reg/M_trigger_type_q_106/CLK
+  Logical resource: L_reg/wave_capture/M_trigger_type_q_104/CK
+  Location pin: SLICE_X0Y21.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.530ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.470ns (2127.660MHz) (Tcp)
-  Physical resource: div/M_ctr_q[13]/CLK
-  Logical resource: div/M_ctr_q_11/CK
-  Location pin: SLICE_X9Y40.CLK
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: L_reg/M_trigger_type_q_106/CLK
+  Logical resource: L_reg/wave_capture/M_trigger_type_q_105/CK
+  Location pin: SLICE_X0Y21.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.530ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.470ns (2127.660MHz) (Tcp)
-  Physical resource: div/M_ctr_q[13]/CLK
-  Logical resource: div/M_ctr_q_12/CK
-  Location pin: SLICE_X9Y40.CLK
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: L_reg/M_trigger_type_q_106/CLK
+  Logical resource: L_reg/wave_capture/M_trigger_type_q_106/CK
+  Location pin: SLICE_X0Y21.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.530ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.470ns (2127.660MHz) (Tcp)
-  Physical resource: div/M_ctr_q[13]/CLK
-  Logical resource: div/M_ctr_q_13/CK
-  Location pin: SLICE_X9Y40.CLK
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: L_reg/M_trigger_type_q_127/CLK
+  Logical resource: L_reg/wave_capture/M_trigger_type_q_127/CK
+  Location pin: SLICE_X0Y23.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.530ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.470ns (2127.660MHz) (Tcp)
-  Physical resource: div/M_ctr_q[17]/CLK
-  Logical resource: div/M_ctr_q_14/CK
-  Location pin: SLICE_X9Y41.CLK
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_miso_reg_q/CLK
+  Logical resource: avr/spi_slave/M_sck_reg_q_1/CK
+  Location pin: SLICE_X4Y4.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.530ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.470ns (2127.660MHz) (Tcp)
-  Physical resource: div/M_ctr_q[17]/CLK
-  Logical resource: div/M_ctr_q_15/CK
-  Location pin: SLICE_X9Y41.CLK
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: M_miso_reg_q/CLK
+  Logical resource: avr/spi_slave/M_miso_reg_q/CK
+  Location pin: SLICE_X4Y4.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.530ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.470ns (2127.660MHz) (Tcp)
-  Physical resource: div/M_ctr_q[17]/CLK
-  Logical resource: div/M_ctr_q_16/CK
-  Location pin: SLICE_X9Y41.CLK
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: L_reg/M_trigger_type_q_11/CLK
+  Logical resource: L_reg/wave_capture/M_trigger_type_q_8/CK
+  Location pin: SLICE_X4Y13.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
-Slack: 19.530ns (period - min period limit)
+Slack: 19.520ns (period - min period limit)
   Period: 20.000ns
-  Min period limit: 0.470ns (2127.660MHz) (Tcp)
-  Physical resource: div/M_ctr_q[17]/CLK
-  Logical resource: div/M_ctr_q_17/CK
-  Location pin: SLICE_X9Y41.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.530ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.470ns (2127.660MHz) (Tcp)
-  Physical resource: div/M_ctr_q[24]/CLK
-  Logical resource: div/M_ctr_q_22/CK
-  Location pin: SLICE_X9Y42.CLK
-  Clock network: clk_BUFGP
---------------------------------------------------------------------------------
-Slack: 19.530ns (period - min period limit)
-  Period: 20.000ns
-  Min period limit: 0.470ns (2127.660MHz) (Tcp)
-  Physical resource: div/M_ctr_q[24]/CLK
-  Logical resource: div/M_ctr_q_23/CK
-  Location pin: SLICE_X9Y42.CLK
+  Min period limit: 0.480ns (2083.333MHz) (Tcp)
+  Physical resource: L_reg/M_trigger_type_q_11/CLK
+  Logical resource: L_reg/wave_capture/M_trigger_type_q_9/CK
+  Location pin: SLICE_X4Y13.CLK
   Clock network: clk_BUFGP
 --------------------------------------------------------------------------------
 
@@ -1399,7 +1549,7 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    4.260|         |         |         |
+clk            |    7.212|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
@@ -1408,23 +1558,23 @@ Timing summary:
 
 Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
 
-Constraints cover 1005 paths, 0 nets, and 141 connections
+Constraints cover 17353 paths, 0 nets, and 2746 connections
 
 Design statistics:
-   Minimum period:   4.260ns{1}   (Maximum frequency: 234.742MHz)
+   Minimum period:   7.212ns{1}   (Maximum frequency: 138.658MHz)
 
 
 ------------------------------------Footnotes-----------------------------------
 1)  The minimum period statistic assumes all single cycle delays.
 
-Analysis completed Mon Mar 11 15:43:19 2024 
+Analysis completed Sat Mar 16 21:24:54 2024 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 4572 MB
+Peak Memory Usage: 4574 MB
 
 
 

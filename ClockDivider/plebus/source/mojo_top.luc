@@ -1,7 +1,7 @@
 module mojo_top (
     input clk,              // 50MHz clock
     input rst_n,            // reset button (active low)
-    output led [8],         // 8 user controllable LEDs
+    //output led [8],         // 8 user controllable LEDs
     input cclk,             // configuration clock, AVR ready when high
     output spi_miso,        // AVR SPI MISO
     input spi_ss,           // AVR SPI Slave Select
@@ -21,17 +21,44 @@ module mojo_top (
     reset_conditioner reset_cond;
 
     .rst(rst) {
+      avr_interface avr;
+      reg_interface_debug reg(#DATA_WIDTH(32), #CAPTURE_DEPTH(256));
       divBlinker div;
     }
   }
   
+  sig<Register.slave> dummyRegIn;
+  
   always {
     reset_cond.in = ~rst_n;    // input raw inverted reset signal
     rst = reset_cond.out;      // conditioned reset
-    div.divi = 2;
-    led = 8x{div.out}; // blink LEDs
-    spi_miso = bz;             // not using SPI
-    spi_channel = bzzzz;       // not using flags
-    avr_rx = bz;               // not using serial port
+    
+    // connect inputs of avr
+    avr.cclk = cclk;
+    avr.spi_ss = spi_ss;
+    avr.spi_mosi = spi_mosi;
+    avr.spi_sck = spi_sck;
+    avr.rx = avr_tx;
+    avr.channel = hf;                  // ADC is unused so disable
+    avr.tx_block = avr_rx_busy;        // block TX when AVR is busy
+ 
+    // connect outputs of avr
+    spi_miso = avr.spi_miso;
+    spi_channel = avr.spi_channel;
+    avr_rx = avr.tx;
+ 
+    // connect reg interface to avr interface
+    reg.rx_data = avr.rx_data;
+    reg.new_rx_data = avr.new_rx_data;
+    avr.tx_data = reg.tx_data;
+    avr.new_tx_data = reg.new_tx_data;
+    reg.tx_busy = avr.tx_busy;
+ 
+    // the reg_interface isn't used outside the logic analyzer so connect it to a dummy interface
+    dummyRegIn.drdy = 0;
+    dummyRegIn.data = 32hx;
+    reg.regIn = dummyRegIn;
+    reg.debug = div.clk_out;
+
   }
 }
